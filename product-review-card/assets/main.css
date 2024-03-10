@@ -127,14 +127,6 @@ body {
     width: 18.75rem;
   }
 
-  .card__image--m {
-    display: none;
-  }
-
-  .card__image--dt {
-    display: block;
-  }
-
   .card__content {
     width: 14.75rem;
   }

@@ -8,10 +8,10 @@
 </head>
 <body>
   <main class="card">
-    <figure class="card__figure">
-      <img src="./assets/images/image-product-mobile.jpg" alt="perfume" class="card__image card__image--m">
-      <img src="./assets/images/image-product-desktop.jpg" alt="perfume" class="card__image card__image--dt">
-    </figure>
+    <picture class="card__figure">
+      <source srcset="./assets/images/image-product-desktop.jpg" media="(min-width: 38em)">
+      <img src="./assets/images/image-product-mobile.jpg" alt="perfume" class="card__image">
+    </picture>
 
     <section class="card__content">
       <h1 class="card__heading--perfume">perfume</h1>
