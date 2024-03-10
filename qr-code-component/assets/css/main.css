@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Inter:wght@400;600&family=Jost:wght@400;700&family=Lato:wght@100;300;400&family=Poppins:wght@500;600;700&family=Red+Hat+Display:wght@500;900&display=swap');
+
+:root {
+    --background-color : hsl(212, 43%, 88%);
+    --card-background: hsl(0, 0%, 100%);
+    --Lightgray: hsl(206, 4%, 69%);
+    --Darkblue: hsl(218, 44%, 22%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--background-color);
+    font-family: 'Jost', sans-serif;
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 320px;
+    padding: 16px;
+    border-radius: 20px;
+    background: var(--card-background);
+}
+
+.card__image {
+    width: 288px;
+    border-radius: 15px;
+    margin-bottom: 24px;
+}
+
+.card__title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--Darkblue);
+}
+
+.card__text {
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--Lightgray);
+}
+
+
+.attribution { 
+    font-size: 11px;
+    margin-top: 25px;
+    visibility: hidden;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.card:hover + .attribution {
+    visibility: visible;
+}
+
