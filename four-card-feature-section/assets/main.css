@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+  --clr-red: hsl(0, 78%, 62%);
+  --clr-cyan: hsl(180, 62%, 55%);
+  --clr-orange: hsl(34, 97%, 50%);
+  --clr-blue: hsl(212, 86% 64%);
+  --clr-very-dark-blue: hsl(234, 12%, 34%);
+  --clr-white-gray: hsl(0, 0%, 98%);
+
+  --body-bg: var(--clr-white-gray);
+}
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--body-bg);
+}
