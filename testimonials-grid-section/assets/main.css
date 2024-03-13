@@ -132,6 +132,10 @@ body, html {
 }
 
 @media all and (min-width: 45.375em) {
+  .testimonials {
+    margin-top: 8.91625rem;
+  }
+
   .card--daniel {
     grid-column: span 2;
   }
