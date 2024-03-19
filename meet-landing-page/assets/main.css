@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --primary-clr: hsl(192, 37%, 48%);
+  --seconary-clr: hsl(268, 34%, 53%);
+
+  --body-text-clr: hsl(240, 10%, 57%);
+  --header-text-clr: hsl(240, 21%, 20%);
+
+  --body-clr: hsl(0, 0%, 98%);
+
+  --footer-clr: hsla(192, 37%, 48%, 90%);
+
+  --primary-hover-clr: hsl(192, 90%, 77%);
+  --secondary-hover-clr: hsl(268, 100%, 86%);
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+}
