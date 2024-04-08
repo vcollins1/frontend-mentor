@@ -10,51 +10,56 @@
   <title>Meet landing page</title>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero__logo"><img src="./assets/images/logo.svg" alt="logo"></div>
-    <picture>
-      <source media="(min-width: 90em)" srcset="./assets/images/desktop/image-hero-left.png" class="hero__image--left">
-      <img src="./assets/images/tablet/image-hero.png" alt="hero image" class="hero__image">
-    </picture>
-    <section class="hero__content">
-      <h1>Group Chat for Everyone</h1>
-      <p>Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.</p>
-      <div class="hero__buttons">
-        <button>Download <span class="version">v13</span></button>
-        <button>What is it?</button>
-      </div>
-    </section>
-    <picture>
-      <source media="(min-width: 90em)" srcset="./assets/images/desktop/image-hero-right.png" class="hero__image--right">
-      <img src="#" alt="">
-    </picture>
-  </header>
+    <div class="container">
+      <header class="hero">
+        <div class="hero__logo"><img src="./assets/images/logo.svg" alt="logo"></div>
+        <picture>
+          <source media="(min-width: 90em)" srcset="./assets/images/desktop/image-hero-left.png" class="hero__image--left">
+          <img src="./assets/images/tablet/image-hero.png" alt="hero image" class="hero__image">
+        </picture>
+        <section class="hero__content">
+            <h1>Group Chat<br>for Everyone</h1>
+          <p>Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.</p>
+          <div class="hero__buttons">
+            <button class="hero__buttons--download">Download <span class="version">v13</span></button>
+            <button class="hero__buttons--question">What is it?</button>
+          </div>
+        </section>
+        <picture>
+          <source media="(min-width: 90em)" srcset="./assets/images/desktop/image-hero-right.png" class="hero__image--right">
+          <img src="#" alt="">
+        </picture>
+      </header>
 
-  <div>01</div>
+      <div class="number number-01">01</div>
 
-  <div class="image-grid">
-    <img src="./assets/images/desktop/image-woman-in-videocall.jpg" alt="video call">
-    <img src="./assets/images/desktop/image-women-videochatting.jpg" alt="voice chatting">
-    <img src="./assets/images/desktop/image-men-in-meeting.jpg" alt="men in meeting">
-    <img src="./assets/images/desktop/image-man-texting.jpg" alt="man texting">
-  </div>
+      <section class="middle-content">
+          <div class="image-grid">
+            <img src="./assets/images/desktop/image-woman-in-videocall.jpg" alt="video call">
+            <img src="./assets/images/desktop/image-women-videochatting.jpg" alt="voice chatting">
+            <img src="./assets/images/desktop/image-men-in-meeting.jpg" alt="men in meeting">
+            <img src="./assets/images/desktop/image-man-texting.jpg" alt="man texting">
+          </div>
+          <h2>Built for modern use</h2>
+          <h3>Smarter meetings, all in one place</h3>
+          <p>Send messages, share files, show your screen, and record your meetings — all in one 
+            workspace. Control who can join with invite-only team access, data encryption, and data export.</p>
+      </section>
+       
+      <div class="number number--02">02</div>
 
-  <section>
-    <h2>Built for modern use</h2>
-    <h3>Smarter meetings, all in one place</h3>
-    <p>Send messages, share files, show your screen, and record your meetings — all in one 
-      workspace. Control who can join with invite-only team access, data encryption, and data export.</p>
-  </section>
-
-  <footer>
-    <div>02</div>
-    <picture>
-      <source media="(min-width: 48em)" srcset="./assets/images/tablet/image-footer.jpg">
-      <img src="./assets/images/mobile/image-footer.jpg" alt="">
-    </picture>
-    <h2>Experience more together</h2>
-    <p>Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.</p>
-    <button>Download <span class="version">v13</span></button>
-  </footer>
+      <footer class="footer">
+        <picture class="footer__img">
+          <source media="(min-width: 48em)" srcset="./assets/images/tablet/image-footer.jpg">
+          <img src="./assets/images/mobile/image-footer.jpg" alt="">
+        </picture>
+        <div class="footer__content">
+            <h2 class="footer__title">Experience more<br>together</h2>
+            <p class="footer__message">Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.</p>
+            <button class="footer__btn">Download <span class="version">v13</span></button>
+        </div>
+        </div>
+      </footer>
+   </div>
 </body>
 </html>
