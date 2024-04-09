@@ -256,6 +256,7 @@ body {
 
     .hero__logo {
         width: 100%;
+        margin-top: 80px;
         margin-bottom: 61px;
     }
 
@@ -279,7 +280,8 @@ body {
     }
 
     .middle-content {
-        width: 1110px
+        width: 1110px;
+        margin-top: 64px;
     }
 
     .image-grid {
@@ -292,7 +294,7 @@ body {
     }
 
     .number--02 {
-        margin-top: 154px;
+        margin-top: 156px;
     }
 
     .footer {
