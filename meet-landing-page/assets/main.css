@@ -55,9 +55,9 @@ body {
 }
 
 .hero__content > h1 {
-    font-size: 40px;
+    font-size: clamp(40px, 6vw, 64px);
     font-weight: 700;
-    line-height: 44px;
+    line-height: clamp(44px, 6vw, 64px);
     margin:51px auto 21px;
     color: var(--header-text-clr);
 }
@@ -214,6 +214,9 @@ body {
     border-radius: 29px;
 }
 
+.footer__btn .version {
+    color: var(--secondary-hover-clr);
+}
 @media screen and (min-width: 760px) {
     .hero__buttons {
         flex-direction: row;
@@ -222,10 +225,6 @@ body {
 
     .hero__content {
         width: 457px
-    }
-
-    .hero__content > h1 {
-        font-size: 44px;
     }
 
     .middle-content {
@@ -248,10 +247,16 @@ body {
     .hero {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .hero__content > h1 {
+        margin-top: 0;
     }
 
     .hero__logo {
         width: 100%;
+        margin-bottom: 61px;
     }
 
     .hero__image {
@@ -260,32 +265,74 @@ body {
         left: -8%;
     }
 
-   .hero__image--right {
-       position: relative;
+    .hero__image--right {
+        position: relative;
         right: -8%;
-   }
+    }
 
-  .middle-content {
-      width: 1110px
-  }
+    .main__content {
+        width: 540px;
+    }
 
-  .image-grid {
-     grid-template-columns: repeat(4, 255px);
-     gap: 30px;
-  }
+    .main__content > p {
+        font-size: 18px;
+    }
 
-  .hero__buttons--download:hover {
-      opacity: .8;
-      cursor: pointer;
-  }
+    .middle-content {
+        width: 1110px
+    }
 
-  .hero__buttons--question:hover {
-      opacity: .8;
-      cursor: pointer;
-  }
+    .image-grid {
+        grid-template-columns: repeat(4, 255px);
+        gap: 30px;
+    }
 
-  .footer__btn:hover {
-      opacity: .8;
-      cursor: pointer;
-  }
+    .number--01 {
+        margin-top: 194px;
+    }
+
+    .number--02 {
+        margin-top: 154px;
+    }
+
+    .footer {
+        height: 308px
+    }
+
+    .footer__content {
+        display: flex;
+        justify-content: center;
+        width: 1110px;
+        height: 88px;
+        text-align: left;
+        padding-top: 116px;
+        margin-inline: auto;
+    }
+
+    .footer__title,
+    .footer__message {
+        padding: 0;
+        margin: 0;
+        width: 350px;
+        height: 88px
+     }
+
+    .footer__btn {
+        margin-left: 92px;
+    }
+
+    .hero__buttons--download:hover {
+        opacity: .8;
+        cursor: pointer;
+    }
+
+    .hero__buttons--question:hover {
+        opacity: .8;
+        cursor: pointer;
+    }
+
+    .footer__btn:hover {
+        opacity: .8;
+        cursor: pointer;
+    }
 }
