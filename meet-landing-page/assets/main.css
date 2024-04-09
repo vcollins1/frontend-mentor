@@ -156,7 +156,8 @@ body {
 }
 
 .middle-content h3 {
-    font-size: 36px;
+    font-size: clamp(32px, 6vw, 40px);
+    line-height: clamp(40px, 6vw, 36px);
     font-weight: 700;
     color: var(--header-text-clr);
     margin-top: 24px;
@@ -277,6 +278,11 @@ body {
 
     .main__content > p {
         font-size: 18px;
+    }
+
+    .main__content h3 {
+        width: 445px;
+        margin-inline: auto;
     }
 
     .middle-content {
