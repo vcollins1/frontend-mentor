@@ -213,3 +213,79 @@ body {
     border: none;
     border-radius: 29px;
 }
+
+@media screen and (min-width: 760px) {
+    .hero__buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hero__content {
+        width: 457px
+    }
+
+    .hero__content > h1 {
+        font-size: 44px;
+    }
+
+    .middle-content {
+        width: 689px;
+    }
+
+    .main__content {
+        width: 573px;
+        margin-inline: auto;
+    }
+
+    .image-grid {
+        width: 100%;
+        grid-template-columns: repeat(4, 164px);
+        gap: 11px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .hero {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .hero__logo {
+        width: 100%;
+    }
+
+    .hero__image {
+        width:394px;
+        margin: 0;
+        left: -8%;
+    }
+
+   .hero__image--right {
+       position: relative;
+        right: -8%;
+   }
+
+  .middle-content {
+      width: 1110px
+  }
+
+  .image-grid {
+     grid-template-columns: repeat(4, 255px);
+     gap: 30px;
+  }
+
+  .hero__buttons--download:hover {
+      opacity: .8;
+      cursor: pointer;
+  }
+
+  .hero__buttons--question:hover {
+      opacity: .8;
+      cursor: pointer;
+  }
+
+  .footer__btn:hover {
+      opacity: .8;
+      cursor: pointer;
+  }
+}
