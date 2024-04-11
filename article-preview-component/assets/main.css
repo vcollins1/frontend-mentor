@@ -20,12 +20,12 @@ body {
   width: min(730px, 87.2%);
   border-radius: 10px;
   background-color: #FFF;
-  overflow: hidden;
 }
 
 .drawers {
   width: 100%;
-  height: 200px
+  height: 200px;
+  border-radius: 10px 10px 0 0;
 }
 
 .content {
@@ -66,6 +66,7 @@ body {
   height: 64px;
   background-color: hsl(217, 19%, 35%);
   margin-top: 32px;
+  border-radius: 0 0 10px 10px;
 }
 
 .share__header {
@@ -84,12 +85,13 @@ body {
 }
 
 .card__share .share {
-  margin-right: 32px;
+  margin-right: clamp(32px, 4vw, 40px);
   background-color: hsl(214, 17%, 51%);
+}
 
-  & .path {
-    fill: #FFF;
-  }
+.share__content {
+  display: flex;
+  margin-right: auto;
 }
 
 .avatar {
@@ -114,4 +116,47 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 830px) {
+  .card {
+    display: flex;
+    height: 280px;
+  }
+
+  .drawers {
+    width: 285px;
+    height: 100%;
+    border-radius: 10px 0 0 10px
+  }
+
+  .card__share {
+    background-color: #FFF;
+    justify-content: flex-end;
+    position: relative;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .share__content {
+    background-color: hsl(217, 19%, 35%);
+    width: 248px;
+    height: 55px;
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    top: -68px;
+    left: 59.5%;;
+  }
+
+  .share__content::before {
+    content: "";
+    background-color: hsl(217, 19%, 35%);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 43px;
+    transform: rotate(45deg);
+    left: calc(50% - 12px);
+  }
 }
