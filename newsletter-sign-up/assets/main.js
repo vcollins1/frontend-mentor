@@ -22,4 +22,6 @@ dismiss.addEventListener("submit", e => {
   e.preventDefault();
   card.style.display = "block";
   success.style.display = "none";
+  errorText.style.visibility = "hidden";
+  email.classList.remove("subscribe__error");
 });
