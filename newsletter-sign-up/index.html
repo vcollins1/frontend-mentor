@@ -14,9 +14,10 @@
 
   <!-- Sign-up form start -->
   <div class="card">
-    <figure>
+    <picture>
+      <source media="(min-width: 830px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
       <img class="card__img" src="./assets/images/illustration-sign-up-mobile.svg" alt="illustration">
-    </figure>
+    </picture>
 
     <main class="card__content">
       <h1 class="card__header">Stay updated!</h1>
@@ -28,7 +29,7 @@
       </ul>
       <form action="/" class="subscribe">
         <label for="email" class="subscribe__label">Email address<span class="subscribe__error--text">Valid email required</span></label>
-        <input type="text" placeholder="email@company.com" class="subscribe__input">
+        <input type="text" placeholder="email@company.com" autocomplete="off" id="email" class="subscribe__input">
         <button type="submit" class="subscribe__btn">Subscribe to monthy newsletter</button>
       </form>
     </main>

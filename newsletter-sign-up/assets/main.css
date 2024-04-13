@@ -22,15 +22,17 @@ body {
   align-items: center;
   font-family: "roboto";
   color: hsl(234, 29%, 20%);
+  background-color: hsl(234, 17%, 26%);
 }
 
 .card {
-  max-width: 928px;
+  width: 928px;
+  background-color: hsl(0, 0%, 100%);
 }
 
 .card__img {
   width: 100%;
-  margin-bottom: 37px;
+  height: 100%;
 }
 
 .card__content,
@@ -40,6 +42,7 @@ body {
 }
 
 .card__header {
+  margin-top: 37px;
   margin-bottom: 24px;
   font-size: 40px;
   font-family: "roboto-bold";
@@ -104,9 +107,11 @@ body {
 
 .success {
   display: none;
+  background-color: hsl(0, 0%, 100%);
 }
 
 .success__img {
+  margin-top: 149px;
   margin-bottom: 40px;
 }
 
@@ -123,4 +128,58 @@ body {
 .success__message {
   margin-bottom: 263px;
   line-height: 25px;
+}
+
+@media screen and (min-width: 830px) {
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 641px;
+    border-radius: 36px;
+    padding: 27px
+  }
+
+  .card__content {
+    width: 376px;
+    height: 446px;
+  }
+
+  .card__header {
+    margin-top: 72px;
+    font-size: 56px;
+  }
+
+  .subscribe__btn,
+  .dismiss__btn,
+  .subscribe__input {
+    cursor: pointer;
+  }
+
+  .subscribe__btn:hover,
+  .dismiss__btn:hover {
+    background: linear-gradient(to bottom, #ff6a3a 0%, #ff527b 100%);
+    box-shadow: 10px 5px 30px #ff6a3a;
+  }
+
+  .success {
+    width: 504px;
+    height: 520px;
+    border-radius: 36px;
+  }
+
+  .success__content {
+    width: 376px; 
+  }
+
+  .success__img {
+    margin-top: 48px;
+  }
+
+  .success__header {
+    font-size: 56px;
+  }
+
+  .success__message {
+    margin-bottom: 40px;
+  }
 }
