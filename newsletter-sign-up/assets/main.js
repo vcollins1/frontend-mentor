@@ -3,6 +3,7 @@ const email = document.querySelector(".subscribe__input");
 const errorText = document.querySelector(".subscribe__error--text");
 const card = document.querySelector(".card");
 const success = document.querySelector(".success");
+const dismiss = document.querySelector(".dismiss");
 
 const validEmail = /^(\w){3,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}$/;
 
@@ -15,4 +16,10 @@ subscribe.addEventListener("submit", e => {
     errorText.style.visibility = "visible";
     email.classList.add("subscribe__error");
   }
+});
+
+dismiss.addEventListener("submit", e => {
+  e.preventDefault();
+  card.style.display = "block";
+  success.style.display = "none";
 });
