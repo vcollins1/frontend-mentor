@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/main.css">
+  <script src="./assets/main.js" defer></script>
+  <title>Newsletter sign-up form with success message</title>
+
+</head>
+<body>
+
+  <!-- Sign-up form start -->
+  <div class="card">
+    <figure>
+      <img class="card__img" src="./assets/images/illustration-sign-up-mobile.svg" alt="illustration">
+    </figure>
+
+    <main class="card__content">
+      <h1 class="card__header">Stay updated!</h1>
+      <h3 class="card__sub-header"> Join 60,000+ product managers receiving monthly updates on:</h3>
+      <ul class="card__list">
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+      <form action="/" class="subscribe">
+        <label for="email" class="subscribe__label">Email address<span class="subscribe__error--text">Valid email required</span></label>
+        <input type="text" placeholder="email@company.com" class="subscribe__input">
+        <button type="submit" class="subscribe__btn">Subscribe to monthy newsletter</button>
+      </form>
+    </main>
+  </div>
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+  <div class="success">
+    <main class="success__content">
+      <figure>
+        <img src="./assets/images/icon-success.svg" alt="success" class="success__img">
+      </figure>
+      <h1 class="success__header">Thanks for subscribing!</h1>
+
+      <p class="success__message">A confirmation email has been sent to <span class="bold-email">ash@loremcompany.com</span>. 
+      Please open it and click the button inside to confirm your subscription.</p>
+      
+      <form action="/" class="dismiss">
+        <button type="submit" class="dismiss__btn">Dismiss message</button>
+      </form>
+    </main>
+  </div>
+  <!-- Success message end --> 
+</body>
+</html>
