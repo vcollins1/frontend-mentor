@@ -24,4 +24,5 @@ dismiss.addEventListener("submit", e => {
   success.style.display = "none";
   errorText.style.visibility = "hidden";
   email.classList.remove("subscribe__error");
+  email.value = "";
 });
