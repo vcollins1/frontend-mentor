@@ -1,0 +1,150 @@
+@font-face {
+  src: url("./fonts/Rubik-VariableFont_wght.ttf");
+  font-family: "rubik";
+}
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  font-family: "rubik";
+  display: flex;
+  justify-content: center;
+  background-color: hsl(226, 43%, 10%);
+}
+
+.report {
+  display: grid;
+  grid-template-columns: 327px;
+  grid-template-rows: 203px;
+  grid-auto-rows: 160px;
+  gap: 24px;
+  margin: 80px auto;
+}
+
+.report__user {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 15px;
+  color: hsl(0, 0%, 100%);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  background-color: hsl(246, 80%, 60%);
+  padding: 33px;
+  border-radius: 15px;
+}
+
+.info__img {
+  width: 64px;
+  border: 3px solid hsl(0, 0%, 100%);
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.info__header {
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.info__header--span {
+  font-size: 15px;
+  font-weight: 400;
+  color: hsl(236, 100%, 87%);
+}
+
+.selection {
+  height: 69px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: hsl(235, 45%, 62%);
+  font-size: 18px;
+}
+
+.selection .active {
+  color: hsl(0, 0%, 100%);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  color: hsl(0, 0%, 100%);
+}
+
+.card__figure {
+  text-align: right;
+  height: 75px;
+}
+
+.card__img {
+  margin-right: 14px;
+  position: relative;
+  top: -5px;
+}
+
+.card__figure--work {
+  background-color: hsl(15, 100%, 70%);
+}
+
+.card__figure--play {
+  background-color: hsl(195, 74%, 62%);
+}
+
+.card__figure--study {
+  background-color: hsl(348, 100%, 68%);
+}
+
+.card__figure--exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+
+.card__figure--social {
+  background-color: hsl(264, 64%, 52%);
+}
+
+.card__figure--self-care {
+  background-color: hsl(43, 84%, 65%);
+}
+
+.card__content {
+  background-color: hsl(235, 46%, 20%);
+  height: 122px;
+  position: relative;
+  top: -38px;
+  border-radius: 15px;
+  padding: 28px 24px;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.card__data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__title {
+  font-size: 18px;
+}
+
+.hours {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.last-hours {
+  font-size: 15px;
+  color: hsl(236, 100%, 87%);
+}
