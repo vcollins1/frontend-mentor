@@ -1,4 +1,6 @@
-import data from "../data.json" assert { type: "json" };
+// import data from "../data.json" assert { type: "json" };
+const response = await fetch("../data.json");
+const data = await response.json();
 
 const reportGrid = document.querySelector(".report");
 const cardPics = [
