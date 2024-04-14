@@ -11,6 +11,7 @@
 }
 
 body {
+  height: 100vh;
   font-family: "rubik";
   display: flex;
   justify-content: center;
@@ -19,7 +20,7 @@ body {
 
 .report {
   display: grid;
-  grid-template-columns: 327px;
+  grid-template-columns: minmax(327px, 600px);
   grid-template-rows: 203px;
   grid-auto-rows: 160px;
   gap: 24px;
@@ -147,4 +148,82 @@ body {
 .last-hours {
   font-size: 15px;
   color: hsl(236, 100%, 87%);
+}
+
+@media screen and (min-width: 740px) {
+  .report {
+    grid-template-columns: repeat(2, minmax(255px, 355px));
+  }
+
+  .report__user {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  body {
+    align-items: center;
+  }
+
+  .report {
+    grid-template-columns: repeat(4, 255px);
+    grid-template-rows: repeat(2, 244px);
+    gap: 30px;
+  }
+
+  .report__user {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .info {
+    height: 354px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .info__header {
+    font-size: 40px;
+  }
+
+  .selection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21px;
+    margin-top: 26px;
+    margin-left: 32px;
+  }
+
+  .select {
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      color: hsl(0, 0%, 100%);
+    }
+  }
+
+  .card {
+    cursor: pointer;
+    &:hover .card__content {
+      background-color: hsl(236, 41%, 34%);
+    }
+  }
+
+  .card__content {
+    height: 199px;
+  }
+
+  .card__figure {
+    height: 80px;
+  }
+
+  .card__data {
+    flex-wrap: wrap;
+  }
+
+  .hours {
+    font-size: 56px;
+    margin-top: 24px;
+  }
 }
