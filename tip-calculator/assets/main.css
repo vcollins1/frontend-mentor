@@ -41,6 +41,10 @@ body {
   color: var(--clr-leaf-green);
 }
 
+input {
+  color: var(--clr-dark-green);
+}
+
 .tip-calculator__input {
   margin-bottom: 32px;
 }
@@ -78,7 +82,7 @@ body {
   margin-top: 16px;
 }
 
-.tip-grid__value {
+.tip {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,17 +92,29 @@ body {
   font-size: 24px;
 }
 
-.custom-value {
+.tip.active {
+  background-color: var(--clr-green);
+  color: var(--clr-dark-green);
+}
+
+.tip--custom {
   background-color: var(--clr-light-green);
   color: var(--clr-leaf-green);
+  padding: 0 8px;
 }
 
-.custom-value__input {
+.tip--custom input {
+  width: 100%;
   background: transparent;
   border: none;
+  text-align: right;
+
+  &::placeholder {
+    text-align: center;
+  }
 }
 
-.custom-value__input:focus {
+.tip--custom input:focus {
   outline: none;
 }
 
