@@ -29,6 +29,16 @@ document.addEventListener("click", e => {
     if (!(billInput.value == "" || peopleCountInput.value == ""))
       updateResults(e.target);
   }
+
+  if (e.target.classList.contains("reset")) {
+    billInput.value = "";
+    peopleCountInput.value = "";
+    tipAmountLabel.innerText = "$0.00";
+    totalLabel.innerText = "$0.00";
+    const currentActive = document.querySelector(".active");
+    if (currentActive !== null)
+      currentActive.classList.remove("active");
+  }
 });
 
 document.addEventListener("keyup", e => {
