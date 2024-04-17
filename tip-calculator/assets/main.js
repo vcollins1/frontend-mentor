@@ -15,6 +15,7 @@ tips.forEach(tip => {
     div.innerHTML = `<input class="custom" type="number" placeholder="${tip}">`;
   } else {
     div.classList.add(`tip--${tip}`);
+    div.classList.add("tip--set");
     div.innerText = `${tip}%`;
   }
 

@@ -15,27 +15,30 @@
   <main>
     <h1 class="logo"><img src="./assets/images/logo.svg" alt="logo"></h1>
     <div class="tip-calculator">
-      <section class="tip-calculator__input">
-        <label class="title" for="bill">Bill</label>
-        <div class="input-box">
-          <img src="./assets/images/icon-dollar.svg" alt="">
-          <input type="number" class="input-box--value bill" id="bill" placeholder="0">
-        </div>
+      <section class="input-section">
+        <section class="tip-calculator__input tip-calculator__input--bill">
+          <label class="title" for="bill">Bill</label>
+          <div class="input-box">
+            <img src="./assets/images/icon-dollar.svg" alt="">
+            <input type="number" class="input-box--value bill" id="bill" placeholder="0">
+          </div>
 
+        </section>
+
+        <section class="tip-calculator__tip">
+          <h2 class="title">Select Tip %</h2>
+          <div class="tip-grid"></div>
+        </section>
+
+        <section class="tip-calculator__input tip-calculator__input--people">
+          <label class="title" for="people">Number of People</label>
+          <div class="input-box">
+            <img src="./assets/images/icon-person.svg" alt="person icon">
+            <input type="number" class="input-box--value people" id="people" placeholder="0">
+          </div>
+        </section>
       </section>
 
-      <section class="tip-calculator__tip">
-        <h2 class="title">Select Tip %</h2>
-        <div class="tip-grid"></div>
-      </section>
-
-      <section class="tip-calculator__input">
-        <label class="title" for="people">Number of People</label>
-        <div class="input-box">
-          <img src="./assets/images/icon-person.svg" alt="person icon">
-          <input type="number" class="input-box--value people" id="people" placeholder="0">
-        </div>
-      </section>
 
       <section class="tip-calculator__results">
         <div class="result result--amount">
