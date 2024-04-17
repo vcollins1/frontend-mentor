@@ -10,7 +10,8 @@
   --clr-light-green: hsl(185, 38%, 97%);
   --clr-leaf-green: hsl(183, 15%, 56%);
   --clr-body: hsl(185, 41%, 84%);
-  --clr--hover: hsl(172, 61%, 77%);
+  --clr-hover: hsl(172, 61%, 77%);
+  --clr-error: hsl(13, 70%, 61%);
 }
 
 *, *::after, *::before {
@@ -47,6 +48,11 @@ body {
   padding: 32px;
   border-radius: 25px 25px 0 0;
   margin-inline: auto;
+}
+
+.tip-calculator__header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .title {
@@ -173,6 +179,15 @@ input {
   margin-bottom: 32px;
 }
 
+.error {
+  color: var(--clr-error);
+  visibility: hidden;
+}
+
+.input-error {
+  border-color: var(--clr-error);
+}
+
 @media screen and (min-width: 920px) {
   .tip-calculator {
     height: 481px;
@@ -213,12 +228,12 @@ input {
 
   .reset:hover {
     cursor: pointer;
-    background-color: var(--clr--hover);
+    background-color: var(--clr-hover);
   }
 
   .tip--set:hover {
     cursor: pointer;
-    background-color: var(--clr--hover);
+    background-color: var(--clr-hover);
     color: var(--clr-dark-green);
   }
 

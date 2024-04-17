@@ -27,8 +27,20 @@ document.addEventListener("click", e => {
   if (e.target.classList.contains("tip")) {
     document.querySelector(".custom").value = "";
   
-    if (!(billInput.value == "" || peopleCountInput.value == ""))
+    if (!(billInput.value == "" || peopleCountInput.value == "")) {
+      document.querySelector(".error--select").style.visibility = "hidden";
+
+      const count = parseInt(peopleCountInput.value);
+      if (count <= 0) {
+        document.querySelector(".error--people").style.visibility = "visible";
+        return;
+      }
+
+      document.querySelector(".error--people").style.visibility = "hidden";
       updateResults(e.target);
+    } else {
+      document.querySelector(".error--select").style.visibility = "visible";
+    }
   }
 
   if (e.target.classList.contains("reset")) {
