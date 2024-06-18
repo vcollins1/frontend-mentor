@@ -1,0 +1,32 @@
+@font-face {
+  font-family: beans;
+  src: url(./fonts/JetBrainsMono-Italic-VariableFont_wght.ttf);
+}
+
+:root {
+  --almost-white:  #E6E5EA;
+  --gray:          #817D92;
+  --dark-gray:     #24232C;
+  --very-dark-gray:#18171F;
+  --neon:          #A4FFAF;
+  --red:           #F64A4A;
+  --orange:        #FB7C58;
+  --yellow:        #F8CD65;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  font-family: "beans";
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--almost-white);
+  background: var(--very-dark-gray);
+}
