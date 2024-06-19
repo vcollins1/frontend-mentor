@@ -28,7 +28,7 @@ html {
 }
 
 .container {
-  width: min(100%, 91.15%);
+  width: min(540px, 91.15%);
   margin-inline: auto;
   margin-top: clamp(64px, 17vw, 133px);
 }
