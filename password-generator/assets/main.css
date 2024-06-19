@@ -142,6 +142,15 @@ CONTROLS - PASSWORD OPTIONS
   display: none;
 }
 
+.option__input:checked ~ .option__box {
+  background: var(--neon);
+  border-color: var(--neon);
+}
+
+.option__input:checked ~ .option__box > .option__box--img {
+  visibility: visible;
+}
+
 .option__box {
   display: flex;
   justify-content: center;
