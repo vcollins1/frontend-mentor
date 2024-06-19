@@ -32,3 +32,10 @@ html {
   margin-inline: auto;
   margin-top: clamp(64px, 17vw, 133px);
 }
+
+/*************************************
+HEADER
+*************************************/
+.header {
+  font-size: clamp(16px, 4vw, 24px);
+}
