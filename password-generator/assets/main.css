@@ -23,10 +23,12 @@
 
 html {
   font-family: "beans";
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: var(--almost-white);
   background: var(--very-dark-gray);
+}
+
+.container {
+  width: min(100%, 91.15%);
+  margin-inline: auto;
+  margin-top: clamp(64px, 17vw, 133px);
 }
