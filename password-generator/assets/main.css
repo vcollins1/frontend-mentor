@@ -119,6 +119,12 @@ CONTROLS - PASSWORD LENGTH
   border-radius: 100%;
 }
 
+.slider--input::-webkit-slider-thumb:hover {
+  cursor: pointer;
+  background-color: var(--very-dark-gray);
+  border-color: var(--neon);
+}
+
 /*************************************
 CONTROLS - PASSWORD OPTIONS
 *************************************/
@@ -146,6 +152,10 @@ CONTROLS - PASSWORD OPTIONS
   background: var(--very-dark-gray);
   margin-right: 20px;
   cursor: pointer;
+}
+
+.option__box:hover {
+  border-color: var(--neon);
 }
 
 .option__box--img {
@@ -207,6 +217,15 @@ CONTROLS - GENERATE PASSWORD BUTTON
   color: var(--dark-gray);
   margin: 16px auto;
   cursor: pointer;
+}
+
+.generate-btn:hover {
+  background-color: var(--very-dark-gray);
+  color: var(--neon);
+}
+
+.generate-btn:hover .arrow-path {
+  fill: var(--neon);
 }
 
 .generate-btn__text {
