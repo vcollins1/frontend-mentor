@@ -118,3 +118,36 @@ CONTROLS - PASSWORD LENGTH
   border: 2px solid var(--almost-white);
   border-radius: 100%;
 }
+
+/*************************************
+CONTROLS - PASSWORD OPTIONS
+*************************************/
+.options {
+  margin-bottom: 32px;
+}
+
+.option {
+  display: flex;
+  margin-bottom: clamp(16px, 4.2vw, 20px);
+  font-size: clamp(16px, 4.3vw, 18px);
+}
+
+.option__input {
+  display: none;
+}
+
+.option__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--almost-white);
+  background: var(--very-dark-gray);
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.option__box--img {
+  visibility: hidden;
+}
