@@ -151,3 +151,42 @@ CONTROLS - PASSWORD OPTIONS
 .option__box--img {
   visibility: hidden;
 }
+
+/*************************************
+CONTROLS - PASSWORD STRENGTH METER
+*************************************/
+.meter {
+  background-color: var(--very-dark-gray);
+  padding: clamp(14px, 3.7vw, 20px) clamp(16px, 4.2vw, 32px);
+  margin-bottom: clamp(16px, 4.2vw, 32px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.meter__title {
+  color: var(--gray);
+  font-size: clamp(16px, 4.3vw, 18px);
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+}
+
+.indicator__text {
+  font-size: clamp(18px, 4vw, 24px);
+  margin-right: 16px;
+}
+
+.indicator__strength {
+  display: flex;
+  gap: 8px;
+}
+
+.indicator__bar {
+  border: 1px solid var(--almost-white);
+  width: 10px;
+  height: 28px;
+}
