@@ -39,3 +39,34 @@ HEADER
 .header {
   font-size: clamp(16px, 4vw, 24px);
 }
+
+
+/*************************************
+DISPLAY
+*************************************/
+.display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dark-gray);
+  padding: clamp(16px, 4.2vw, 19px) clamp(16px, 4.2vw, 32px);
+  margin: clamp(16px, 4.2vw, 31px) 0 clamp(16px, 4.2vw, 24px);
+}
+
+.display__text {
+  background-color: inherit;
+  border: none;
+  font-size: clamp(18px, 4vw, 32px);
+}
+
+.display__copy {
+  display: flex;
+  align-items: center;
+}
+
+.display__copy--text {
+  color: var(--neon);
+  text-transform: uppercase;
+  font-size: clamp(13px, 3vw, 18px);
+  margin-right: 16px;
+}
