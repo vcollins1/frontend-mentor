@@ -38,6 +38,8 @@ HEADER
 *************************************/
 .header {
   font-size: clamp(16px, 4vw, 24px);
+  text-align: center;
+  color: var(--gray);
 }
 
 
