@@ -190,3 +190,25 @@ CONTROLS - PASSWORD STRENGTH METER
   width: 10px;
   height: 28px;
 }
+
+/*************************************
+CONTROLS - GENERATE PASSWORD BUTTON
+*************************************/
+.generate-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  background: var(--neon);
+  border: 1px solid var(--neon);
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--dark-gray);
+  margin: 16px auto;
+  cursor: pointer;
+}
+
+.generate-btn__text {
+  margin-right: 16px;
+}
