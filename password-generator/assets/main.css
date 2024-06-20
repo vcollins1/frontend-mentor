@@ -73,6 +73,14 @@ DISPLAY
   margin-right: 16px;
 }
 
+.display__copy--svg:hover {
+  cursor: pointer;
+}
+
+.display__copy--svg:hover path {
+  fill: var(--almost-white);
+}
+
 /*************************************
 CONTROLS
 *************************************/
