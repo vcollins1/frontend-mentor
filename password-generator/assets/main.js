@@ -16,6 +16,7 @@ document.addEventListener("input", e => {
 
     pwLength = e.target.value;
     document.querySelector(".slider--value").innerText = pwLength;
+    setStrength();
   }
 });
 
@@ -23,6 +24,7 @@ document.addEventListener("click", e => {
   if (e.target.classList.contains("option__input")) {
     if (e.target.checked) {
       optionCount++;
+      setStrength();
       if (e.target.classList.contains("option-1"))
         passwordOptions["upper"] = true;
       else if (e.target.classList.contains("option-2"))
@@ -35,6 +37,7 @@ document.addEventListener("click", e => {
     
     else {
       optionCount--;
+      setStrength();
       if (e.target.classList.contains("option-1"))
         passwordOptions["upper"] = false;
       else if (e.target.classList.contains("option-2"))
@@ -46,3 +49,41 @@ document.addEventListener("click", e => {
     }
   }
 });
+
+function setStrength() {
+  const bars = document.querySelectorAll(".indicator__bar");
+  const strength = document.querySelector(".indicator__text");
+  bars.forEach(bar => {
+    bar.style.borderColor = "var(--almost-white)";
+    bar.style.background = "var(--very-dark-gray)";
+  });
+  strength.textContent = "";
+
+  if (pwLength >= 4) {
+    for (let i = 0; i < optionCount; i++) {
+      let color = "";
+      if (optionCount === 1) {
+        color = "var(--red)";
+        strength.textContent = "too weak!"
+      }
+
+      if (optionCount === 2) {
+          color = "var(--orange)";
+          strength.textContent = "weak"
+      }
+          
+      if (optionCount === 3) {
+          color = "var(--yellow)";
+          strength.textContent = "medium"
+      }
+          
+      if (optionCount === 4) {
+          color = "var(--neon)";
+          strength.textContent = "strong"
+      }
+        
+      bars[i].style.borderColor = color;
+      bars[i].style.background = color;
+    }
+  }
+}
