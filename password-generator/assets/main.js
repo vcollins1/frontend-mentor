@@ -48,6 +48,13 @@ document.addEventListener("click", e => {
         passwordOptions["symbols"] = false;
     }
   }
+
+  if (e.target.classList.contains("generate-btn")) {
+    if (pwLength >= 4 && optionCount > 0) {
+      document.querySelector(".display__text").value = generatePassword();
+      document.querySelector(".display__text").style.color = "var(--almost-white)";
+    }
+  }
 });
 
 function setStrength() {
@@ -86,4 +93,36 @@ function setStrength() {
       bars[i].style.background = color;
     }
   }
+}
+
+function generatePassword() {
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  const numbers = "0123456789";
+  const symbols = "!@#$%^&*";
+
+  let password = "";
+  let passwordChars = "";
+  passwordChars += passwordOptions["upper"] ? letters.toUpperCase() : "";
+  passwordChars += passwordOptions["lower"] ? letters : "";
+  passwordChars += passwordOptions["numbers"] ? numbers : "";
+  passwordChars += passwordOptions["symbols"] ? symbols : "";
+  passwordChars = shuffleString(passwordChars);
+
+  for (let i = 0; i < pwLength; i++) {
+      password += passwordChars[Math.floor(Math.random() * passwordChars.length)];
+  }
+
+  return password;
+}
+
+function shuffleString(s) {
+  let sArray = s.split("");
+  for (let i = 0; i < sArray.length; i++) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let tmp = sArray[i];
+    sArray[i] = sArray[j];
+    sArray[j] = tmp;
+  }
+
+  return sArray.join("");
 }
