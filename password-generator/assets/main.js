@@ -4,7 +4,7 @@ document.addEventListener("input", e => {
     e.target.style.background = `
         linear-gradient(to right, var(--neon) ${percentage}%, var(--very-dark-gray) 0%)
     `;
-  }
 
-  document.querySelector(".slider--value").innerText = e.target.value;
+    document.querySelector(".slider--value").innerText = e.target.value;
+  }
 });
