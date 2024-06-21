@@ -6,6 +6,7 @@ const passwordOptions = {
   "symbols": false,
 };
 let optionCount = 0;
+let canCopy = false;
 
 document.addEventListener("input", e => {
   if (e.target.classList.contains("slider--input")) {
@@ -53,6 +54,19 @@ document.addEventListener("click", e => {
     if (pwLength >= 4 && optionCount > 0) {
       document.querySelector(".display__text").value = generatePassword();
       document.querySelector(".display__text").style.color = "var(--almost-white)";
+      canCopy = true;
+    }
+  }
+
+  if (e.target.classList.contains("display__copy--svg")) {
+    if (canCopy) {
+      const current = document.querySelector(".display__text");
+      current.select();
+      navigator.clipboard.writeText(current.value);
+      document.querySelector(".display__copy--text").textContent = "copied";
+      setTimeout(() => {
+        document.querySelector(".display__copy--text").textContent = "";
+      }, 1000);
     }
   }
 });
