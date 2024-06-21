@@ -9,6 +9,7 @@ let optionCount = 0;
 let canCopy = false;
 
 document.addEventListener("input", e => {
+  // set password length
   if (e.target.classList.contains("slider--input")) {
     let percentage =  (e.target.value / e.target.max) * 100;
     e.target.style.background = `
@@ -22,6 +23,7 @@ document.addEventListener("input", e => {
 });
 
 document.addEventListener("click", e => {
+  // record checked options
   if (e.target.classList.contains("option__input")) {
     if (e.target.checked) {
       optionCount++;
@@ -50,14 +52,16 @@ document.addEventListener("click", e => {
     }
   }
 
+  // generate new password
   if (e.target.classList.contains("generate-btn") || e.target.parentElement.classList.contains("generate-btn")) {
-    if (pwLength >= 4 && optionCount > 0) {
+    if (pwLength > 0 && optionCount > 0) {
       document.querySelector(".display__text").value = generatePassword();
       document.querySelector(".display__text").style.color = "var(--almost-white)";
       canCopy = true;
     }
   }
 
+  // copy generated password
   if (e.target.classList.contains("display__copy--svg")) {
     if (canCopy) {
       const current = document.querySelector(".display__text");
@@ -80,32 +84,67 @@ function setStrength() {
   });
   strength.textContent = "";
 
-  if (pwLength >= 4) {
-    for (let i = 0; i < optionCount; i++) {
-      let color = "";
-      if (optionCount === 1) {
-        color = "var(--red)";
-        strength.textContent = "too weak!"
-      }
+  // set meter strength text
+  if (optionCount !== 0) {
+    if (pwLength >= 1 && pwLength <= 4) {
+      strength.textContent = "too weak!";
 
-      if (optionCount === 2) {
-          color = "var(--orange)";
-          strength.textContent = "weak"
-      }
-          
-      if (optionCount === 3) {
-          color = "var(--yellow)";
-          strength.textContent = "medium"
-      }
-          
-      if (optionCount === 4) {
-          color = "var(--neon)";
-          strength.textContent = "strong"
-      }
-        
-      bars[i].style.borderColor = color;
-      bars[i].style.background = color;
+      if (optionCount > 1)
+        strength.textContent = "weak";
     }
+  
+    else if (pwLength >= 5 && pwLength <= 10) {
+      strength.textContent = "weak";
+
+      if (pwLength == 10 && optionCount > 2)
+        strength.textContent = "medium";
+    }
+  
+    else if (pwLength >= 11 && pwLength <= 15) {
+      strength.textContent = "weak";
+            
+      if (optionCount >= 2)
+        strength.textContent = "medium";
+
+      if (pwLength == 15 && optionCount > 3)
+        strength.textContent = "strong";
+    }
+  
+    else if (pwLength >= 16 && pwLength <= 20) {
+      strength.textContent = "medium";
+
+      if (optionCount > 2)
+        strength.textContent = "strong";
+    }
+  }
+  
+  // set meter bar color and count
+  let barCount = 0;
+  let color = "";
+  if (strength.textContent == "too weak!") {
+    barCount = 1;
+    color = "var(--red)";
+  }
+
+  if (strength.textContent == "weak") {
+    barCount = 2;
+    color = "var(--orange)";
+  }
+
+  if (strength.textContent == "medium") {
+    barCount = 3;
+    color = "var(--yellow)";
+  }
+
+  if (strength.textContent == "strong") {
+    barCount = 4;
+    color = "var(--neon)";
+  }
+
+  // loop indicator bars to set color
+  for (let i = 0; i < barCount; ++i) {
+    bars[i].style.borderColor = color;
+    bars[i].style.background = color;
   }
 }
 
