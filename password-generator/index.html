@@ -16,7 +16,7 @@
 
     <!-- password generator display -->
     <div class="display">
-      <input class="display__text" placeholder="P4$5W0rD!" disabled/>
+      <input class="display__text" id="display__text" placeholder="P4$5W0rD!" disabled>
       <div class="display__copy">
         <p class="display__copy--text"></p>
         <svg class="display__copy--svg" width="21" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -40,25 +40,25 @@
       <!-- password options -->
       <div class="options">
         <label class="option">
-          <input type="checkbox" class="option__input option-1">
+          <input type="checkbox" class="option__input option-1" id="option-1">
           <span class="option__box"><img src="./assets/images/icon-check.svg" alt="" class="option__box--img"></span>
           Include Uppercase Letters
         </label>
 
         <label class="option">
-          <input type="checkbox" class="option__input option-2">
+          <input type="checkbox" class="option__input option-2" id="option-2">
           <span class="option__box"><img src="./assets/images/icon-check.svg" alt="" class="option__box--img"></span>
           Include Lowercase Letters
         </label>
 
         <label class="option">
-          <input type="checkbox" class="option__input option-3">
+          <input type="checkbox" class="option__input option-3" id="option-3">
           <span class="option__box"><img src="./assets/images/icon-check.svg" alt="" class="option__box--img"></span>
           Include Numbers
         </label>
 
         <label class="option">
-          <input type="checkbox" class="option__input option-4">
+          <input type="checkbox" class="option__input option-4" id="option-4">
           <span class="option__box"><img src="./assets/images/icon-check.svg" alt="" class="option__box--img"></span>
           Include Symbols
         </label>
@@ -82,11 +82,9 @@
        <!-- generate password button -->
       <button class="generate-btn">
         <span class="generate-btn__text">Generate</span>
-        <div>
-          <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
-            <path class="arrow-path" fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
-          </svg>
-        </div>
+        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+          <path class="arrow-path" fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
+        </svg>
       </button>
     </div>
   </main>

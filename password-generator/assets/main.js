@@ -50,7 +50,7 @@ document.addEventListener("click", e => {
     }
   }
 
-  if (e.target.classList.contains("generate-btn")) {
+  if (e.target.classList.contains("generate-btn") || e.target.parentElement.classList.contains("generate-btn")) {
     if (pwLength >= 4 && optionCount > 0) {
       document.querySelector(".display__text").value = generatePassword();
       document.querySelector(".display__text").style.color = "var(--almost-white)";
