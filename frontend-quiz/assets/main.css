@@ -32,10 +32,139 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font: inherit;
 }
 
 body {
   font-family: rubik;
   background: var(--primary-background-color);
   color: var(--primay-text);
+}
+
+.container {
+  background-image: url(./images/pattern-background-mobile-light.svg);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.container--content {
+  width: calc(100% - 48px);
+  margin-inline: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.quiz {
+  width: 167px;
+  height: 40px;
+}
+
+.clr-theme {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle__input {
+  display: none;
+}
+
+.toggle__input:checked + .toggle__switch::before {
+  transform: translate(12px);
+}
+
+.toggle__switch {
+  width: 32px;
+  height: 20px;
+  background-color: var(--purple);
+  display: flex;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle__switch::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--pure-white);
+  border-radius: 100%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.section-info {
+  color: var(--dark-navy);
+  margin: 0 0 40px;
+}
+
+.section-info__header {
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 100%;
+}
+
+.section-info__header--span {
+  font-weight: bold;
+  display: block;
+  margin: 8px 0 16px;
+}
+
+.section-info__choice {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 150%;
+}
+
+.quiz-select {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+}
+
+.box {
+  width: 100%;
+  height: 64px;
+  background-color: var(--pure-white);
+  border-radius: 12px;
+  border: 2px solid var(--pure-white);
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 16px;
+}
+
+.box__image {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box__image img {
+  width: 28px;
+  height: 28px;
+}
+
+.html {
+  background-color: var(--html);
+}
+
+.css {
+  background-color: var(--css);
+}
+
+.accessibility {
+  background-color: var(--accessibility);
+}
+
+.javascript {
+  background-color: var(--javascript);
 }
