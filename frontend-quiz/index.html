@@ -13,7 +13,7 @@
 <body>
   <main class="container">
     <header class="header container--content">
-      <div class="quiz"></div>
+      <div class="quiz-header"></div>
       <div class="clr-theme">
         <img src="./assets/images/icon-moon-dark.svg" alt="">
         <label class="toggle" aria-label="theme-toggle">
@@ -28,13 +28,17 @@
       <div class="section-info">
         <h1 class="section-info__header">Welcome to the<span class="section-info__header--span">Frontend Quiz!</span></h1>
         <h2 class="section-info__choice">Pick a subject to get started</h2>
+        <div class="progress">
+          <div class="progress__value"></div>
+        </div>
       </div>
 
       <div class="quiz-select">
-        <div class="box box-1"></div>
-        <div class="box box-2"></div>
-        <div class="box box-3"></div>
-        <div class="box box-4"></div>
+        <div class="box box--1"></div>
+        <div class="box box--2"></div>
+        <div class="box box--3"></div>
+        <div class="box box--4"></div>
+        <button class="btn"></button>
       </div>
     </section>
   </main>
