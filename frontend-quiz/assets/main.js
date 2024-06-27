@@ -48,6 +48,20 @@ quizzes.forEach((quiz, i) => {
 
 
 document.addEventListener("click", e => {
+  if (e.target.classList.contains("toggle__switch")) {
+    const toggleInput = document.querySelector(".toggle__input");
+    if (!toggleInput.checked) {
+      document.body.classList.add("dark");
+      document.querySelector(".sun").src = "./assets/images/icon-sun-light.svg";
+      document.querySelector(".moon").src = "./assets/images/icon-moon-light.svg"
+    }
+    else {
+      document.body.classList.remove("dark");
+      document.querySelector(".sun").src = "./assets/images/icon-sun-dark.svg";
+      document.querySelector(".moon").src = "./assets/images/icon-moon-dark.svg";
+    }
+  }
+
   if (e.target.parentElement.classList.contains("box")) {
     if (screen == "start") {
       quizSelected = e.target.parentElement;

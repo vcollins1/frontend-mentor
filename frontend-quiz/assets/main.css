@@ -25,7 +25,15 @@
   --primay-text: var(--dark-navy);
   --secondary-text: var(--gray-navy);
 
-  --primary-background-img: url("../images/pattern-background-mobile-light.svg");
+  --primary-background-img: url("./images/pattern-background-mobile-light.svg");
+}
+
+.dark {
+  --primary-background-color: var(--dark-navy);
+  --secondary-background-color: var(--navy);
+  --primay-text: var(--pure-white);
+  --secondary-text: var(--light-bluish);
+  --primary-background-img: url("./images/pattern-background-mobile-dark.svg");
 }
 
 *, *::after, *::before {
@@ -46,7 +54,7 @@ CONTAINER
 ********************/
 
 .container {
-  background-image: url(./images/pattern-background-mobile-light.svg);
+  background-image: var(--primary-background-img);
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -75,6 +83,8 @@ HEADER
 
 .quiz-header img {
   padding: 5px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   margin-right: 16px;
 }
@@ -119,7 +129,7 @@ PAGE INFO
 ********************/
 
 .section-info {
-  color: var(--dark-navy);
+  color: var(--primay-text);
   margin: 0 0 40px;
   display: flex;
   flex-flow: row wrap;
@@ -187,9 +197,9 @@ SELECTION
 .box {
   width: 100%;
   height: 64px;
-  background-color: var(--pure-white);
+  background-color: var(--secondary-background-color);
   border-radius: 12px;
-  border: 2px solid var(--pure-white);
+  border: 2px solid var(--secondary-background-color);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -229,6 +239,7 @@ SELECTION
   justify-content: center;
   align-items: center;
   margin-left: 12px;
+  color: var(--secondary-text);
 }
 
 .box__image img {
