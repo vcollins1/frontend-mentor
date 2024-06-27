@@ -16,7 +16,7 @@ let options = [];
 let curTarget = undefined;
 
 let optionSelected = undefined;
-let correct = false;
+let correct = 0;
 
 let quizSelected = undefined;
 let ansSelected = undefined; 
@@ -120,6 +120,7 @@ document.addEventListener("click", e => {
         if (options[optionSelected] === question["answer"]) {
           ansSelected.classList.add("correct");
           ansSelected.querySelector(".result--correct").style.display = "block";
+          correct += 1;
         }
         else {
           ansSelected.classList.add("error");
@@ -163,7 +164,32 @@ document.addEventListener("click", e => {
     }
 
     else if (btn.textContent == "View Results") {
-      console.log("Viewing results.");
+      console.log(`You got ${correct} correct answers`);
+      document.querySelector(".selected").classList.remove("correct", "error", "selected");
+
+      document.querySelector(".progress").style.display = "none";
+      currentQuestion.style.display = "none";
+      questionH1.innerHTML = `
+        Quiz completed<span class="section-info__header--span">You scored...</span>
+      `;
+      questionH1.classList.remove("quiz-question");
+
+      document.querySelectorAll(".box").forEach(box => {
+        box.innerHTML = "";
+        box.style.display = "none";
+      });
+
+      const resultBox = document.querySelector(".box--1");
+      resultBox.style.display = "flex";
+      resultBox.classList.add("box--result");
+      
+      const html = `
+        <div><span class="num-correct">${correct}</span><br>out of ${maxQuestions}</div>
+      `;
+
+      resultBox.innerHTML = html;
+
+      btn.textContent = "Play Again";
     }
   }
 });

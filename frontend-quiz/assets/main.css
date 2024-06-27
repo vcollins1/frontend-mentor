@@ -283,3 +283,13 @@ SELECTION
   margin-right: 12px;
   display: none;
 }
+
+.box--result {
+  display: flex;
+  justify-content: center;
+  height: 242px;
+}
+
+.num-correct {
+  font-size: 88px;
+}
