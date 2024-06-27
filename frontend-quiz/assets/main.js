@@ -201,5 +201,37 @@ document.addEventListener("click", e => {
 
       btn.textContent = "Play Again";
     }
+
+    else if (btn.textContent == "Play Again") {
+      screen = "start";
+      questionCount = 0;
+      btn.style.visibility = "hidden";
+      quizHeader.innerHTML = "";
+
+      document.querySelectorAll(".box").forEach(box => {
+        box.innerHTML = "";
+        box.style.display = "flex";
+      });
+
+      document.querySelector(".box--result").classList.remove("box--result");
+
+      quizzes.forEach((quiz, i) => {
+        const box = document.querySelector(`.box--${i+1}`);
+        const html = `
+          <div class="box__image ${quiz["title"].toLowerCase()}"><img src=${quiz["icon"]} alt=${quiz["title"]}></div>
+          <div class="box__text">${quiz["title"]}</div>
+        `;
+
+        questionH1.innerHTML = `
+          Welcome to the<span class="section-info__header--span">Frontend Quiz!</span>
+        `;
+
+        document.querySelector(".section-info").classList.remove("quiz-select");
+        currentQuestion.style.display = "block";
+        currentQuestion.textContent = "Pick a subject to get started";
+      
+        box.innerHTML = html;
+      });
+    }
   }
 });
