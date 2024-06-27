@@ -79,6 +79,8 @@ document.addEventListener("click", e => {
         const html = `
           <div class="box__image box__image--option">${optionsLetters[i]}</div>
           <div class="box__text">${escapeHTML(option)}</div>
+          <img class="result result--correct" src="./assets/images/icon-correct.svg">
+          <img class="result result--error" src="./assets/images/icon-error.svg">
         `;
 
         box.innerHTML = html;
@@ -117,9 +119,13 @@ document.addEventListener("click", e => {
     
         if (options[optionSelected] === question["answer"]) {
           ansSelected.classList.add("correct");
+          ansSelected.querySelector(".result--correct").style.display = "block";
         }
         else {
           ansSelected.classList.add("error");
+          ansSelected.querySelector(".result--error").style.display = "block";
+          const rightAns = document.querySelector(`.box--${options.indexOf(question["answer"]) + 1}`);
+          rightAns.querySelector(".result--correct").style.display = "block";
         }
     
         btn.textContent = "Next Question";
@@ -145,6 +151,8 @@ document.addEventListener("click", e => {
         const html = `
           <div class="box__image box__image--option">${optionsLetters[i]}</div>
           <div class="box__text">${escapeHTML(option)}</div>
+          <img class="result result--correct" src="./assets/images/icon-correct.svg">
+          <img class="result result--error" src="./assets/images/icon-error.svg">
         `;
 
         box.innerHTML = html;

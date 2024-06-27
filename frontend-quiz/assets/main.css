@@ -276,3 +276,10 @@ SELECTION
   gap: 8px;
   visibility: hidden;
 }
+
+.result {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  display: none;
+}
