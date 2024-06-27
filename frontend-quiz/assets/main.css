@@ -69,6 +69,14 @@ HEADER
 .quiz-header {
   width: 167px;
   height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.quiz-header img {
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 16px;
 }
 
 .clr-theme {
@@ -286,8 +294,9 @@ SELECTION
 
 .box--result {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   height: 242px;
+  padding: 32px;
 }
 
 .num-correct {

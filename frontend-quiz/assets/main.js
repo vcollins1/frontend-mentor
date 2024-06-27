@@ -6,7 +6,9 @@ const questionH1 = document.querySelector(".section-info__header");
 const currentQuestion = document.querySelector(".section-info__choice");
 const btn = document.querySelector(".btn");
 const progressValue = document.querySelector(".progress__value");
+const quizHeader = document.querySelector(".quiz-header");
 
+let quiz = {};
 let questionCount = 0;
 let maxQuestions = 0;
 let screen = "start";
@@ -53,7 +55,7 @@ document.addEventListener("click", e => {
       
       document.querySelector(".progress").style.display = "block";
       document.querySelector(".section-info").classList.add("quiz-select");
-      let quiz = {};
+    
       if (quizSelected.classList.contains("box--1"))
         quiz = quizzes[0];
       else if (quizSelected.classList.contains("box--2"))
@@ -85,6 +87,11 @@ document.addEventListener("click", e => {
 
         box.innerHTML = html;
       });
+
+      quizHeader.innerHTML = `
+      <img src="${quiz["icon"]}" class="${quiz["title"].toLowerCase()}">
+      <span>${quiz["title"]}</span>
+      `;
 
       btn.textContent = "Submit Answer";
       btn.style.visibility = "visible";
@@ -164,7 +171,6 @@ document.addEventListener("click", e => {
     }
 
     else if (btn.textContent == "View Results") {
-      console.log(`You got ${correct} correct answers`);
       document.querySelector(".selected").classList.remove("correct", "error", "selected");
 
       document.querySelector(".progress").style.display = "none";
@@ -184,6 +190,10 @@ document.addEventListener("click", e => {
       resultBox.classList.add("box--result");
       
       const html = `
+        <div class="quiz-header">
+          <img src="${quiz["icon"]}" class="${quiz["title"].toLowerCase()}">
+          <span>${quiz["title"]}</span>
+        </div>
         <div><span class="num-correct">${correct}</span><br>out of ${maxQuestions}</div>
       `;
 
