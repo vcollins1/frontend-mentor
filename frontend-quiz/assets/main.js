@@ -17,7 +17,9 @@ let curTarget = undefined;
 
 let optionSelected = undefined;
 let correct = false;
-let madeSelection = false;
+
+let quizSelected = undefined;
+let ansSelected = undefined; 
 
 const escapeHTML = str =>
   str.replace(
@@ -45,20 +47,20 @@ quizzes.forEach((quiz, i) => {
 
 document.addEventListener("click", e => {
   if (e.target.parentElement.classList.contains("box")) {
-    curTarget = e.target.parentElement;
     if (screen == "start") {
-      screen = "quiz"
+      quizSelected = e.target.parentElement;
+      screen = "quizStart";
       
       document.querySelector(".progress").style.display = "block";
       document.querySelector(".section-info").classList.add("quiz-select");
       let quiz = {};
-      if (curTarget.classList.contains("box--1"))
+      if (quizSelected.classList.contains("box--1"))
         quiz = quizzes[0];
-      else if (curTarget.classList.contains("box--2"))
+      else if (quizSelected.classList.contains("box--2"))
         quiz = quizzes[1];
-      else if (curTarget.classList.contains("box--3"))
+      else if (quizSelected.classList.contains("box--3"))
         quiz = quizzes[2];
-      else if (curTarget.classList.contains("box--4"))
+      else if (quizSelected.classList.contains("box--4"))
         quiz = quizzes[3];
 
       questions = quiz["questions"];
@@ -87,41 +89,48 @@ document.addEventListener("click", e => {
       progressValue.style.width = `${((questionCount+1)/maxQuestions) * 100}%`;
     }
 
-    else if (screen == "quiz" && !madeSelection) {
+    else if (screen === "quizStart" && btn.textContent == "Submit Answer") {
+      ansSelected = e.target.parentElement;
+      document.querySelector(".no-selection").style.visibility = "hidden";
       if (document.querySelector(".selected") != null)
         document.querySelector(".selected").classList.remove("selected");
         
-      curTarget.classList.add("selected"); 
+      ansSelected.classList.add("selected"); 
     }
   }
 
   if (e.target.classList.contains("btn")) {
 
     if (btn.textContent == "Submit Answer") {
-      madeSelection = true;
-      if (curTarget.classList.contains("box--1"))
-        optionSelected = 0;
-      else if (curTarget.classList.contains("box--2"))
-        optionSelected = 1;
-      else if (curTarget.classList.contains("box--3"))
-        optionSelected = 2;
-      else if (curTarget.classList.contains("box--4"))
-        optionSelected = 3;
-  
-      if (options[optionSelected] === question["answer"]) {
-        curTarget.classList.add("correct");
+      if (ansSelected == null) {
+        document.querySelector(".no-selection").style.visibility = "visible";
       }
       else {
-        curTarget.classList.add("error");
+        if (ansSelected.classList.contains("box--1"))
+          optionSelected = 0;
+        else if (ansSelected.classList.contains("box--2"))
+          optionSelected = 1;
+        else if (ansSelected.classList.contains("box--3"))
+          optionSelected = 2;
+        else if (ansSelected.classList.contains("box--4"))
+          optionSelected = 3;
+    
+        if (options[optionSelected] === question["answer"]) {
+          ansSelected.classList.add("correct");
+        }
+        else {
+          ansSelected.classList.add("error");
+        }
+    
+        btn.textContent = "Next Question";
+        questionCount += 1;
+        if (questionCount >= maxQuestions)
+          btn.textContent = "View Results";
       }
-  
-      btn.textContent = "Next Question";
-      questionCount += 1;
-      if (questionCount >= maxQuestions)
-        btn.textContent = "View Results";
     }
 
-    else if (btn.textContent == "Next Question") {   
+    else if (btn.textContent == "Next Question") {
+      ansSelected = undefined;
       progressValue.style.width = `${((questionCount+1)/maxQuestions) * 100}%`; 
       question = questions[questionCount];
       options = question["options"];
@@ -141,7 +150,6 @@ document.addEventListener("click", e => {
         box.innerHTML = html;
       });
       document.querySelector(".selected").classList.remove("correct", "error", "selected");
-      madeSelection = false;
 
       btn.textContent = "Submit Answer";
     }

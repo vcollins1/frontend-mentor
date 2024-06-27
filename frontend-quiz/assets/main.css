@@ -266,3 +266,13 @@ SELECTION
   color: var(--pure-white);
   cursor: pointer;
 }
+
+.no-selection {
+  color: var(--red);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  visibility: hidden;
+}
