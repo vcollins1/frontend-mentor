@@ -32,7 +32,7 @@
   --primary-background-color: var(--dark-navy);
   --secondary-background-color: var(--navy);
   --primay-text: var(--pure-white);
-  --secondary-text: var(--light-bluish);
+  --secondary-text: var(--dark-navy);
   --primary-background-img: url("./images/pattern-background-mobile-dark.svg");
 }
 
@@ -244,6 +244,7 @@ SELECTION
   align-items: center;
   margin-left: clamp(12px, 1.72vw, 20px);
   color: var(--secondary-text);
+  font-size: clamp(18px, 3.68vw, 28px);
 }
 
 .box__image img {

@@ -52,7 +52,7 @@ document.addEventListener("click", e => {
       document.querySelector(".section-info").classList.add("quiz-select");
       quiz = quizzes[quizSelected.classList[1].slice(-1) - 1];
       quizHeader.innerHTML = `
-        <img src="${quiz["icon"]}" class="${quiz["title"].toLowerCase()}">
+        <img src="${quiz["icon"]}" class="${quiz["title"].toLowerCase()}" alt="${quiz["title"].toLowerCase()}-quiz">
         <span>${quiz["title"]}</span>
       `;  
       questions = quiz["questions"];
@@ -61,7 +61,6 @@ document.addEventListener("click", e => {
 
       updateQuestionPage(question);
 
-      btn.textContent = "Submit Answer";
       btn.style.display = "block";
     }
 
@@ -138,6 +137,7 @@ document.addEventListener("click", e => {
 
 
 function populateStartMenu() {
+  btn.textContent = "Submit Answer";
   btn.style.display = "none";
   quizHeader.innerHTML = "";
   questionH1.innerHTML = `
@@ -171,8 +171,8 @@ function displayOptions(options) {
     const html = `
       <div class="box__image box__image--option">${optionsLetters[i]}</div>
       <div class="box__text">${escapeHTML(option)}</div>
-      <img class="result result--correct" src="./assets/images/icon-correct.svg">
-      <img class="result result--error" src="./assets/images/icon-error.svg">
+      <img class="result result--correct" src="./assets/images/icon-correct.svg" alt="icon-correct">
+      <img class="result result--error" src="./assets/images/icon-error.svg" alt="icon-error">
     `;
 
     box.innerHTML = html;
@@ -200,7 +200,7 @@ function updatResultsPage() {
   
   const html = `
     <div class="quiz-header">
-      <img src="${quiz["icon"]}" class="${quiz["title"].toLowerCase()}">
+      <img src="${quiz["icon"]}" class="${quiz["title"].toLowerCase()}" alt="${quiz["title"].toLowerCase()}-result">
       <span>${quiz["title"]}</span>
     </div>
     <div><span class="num-correct">${correct}</span><br>out of ${maxQuestions}</div>
