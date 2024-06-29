@@ -1,5 +1,5 @@
 // Read quiz data from json file
-const response = await fetch("../data.json");
+const response = await fetch("data.json");
 const data = await response.json();
 const quizzes = data["quizzes"]; // quizzes object
 
