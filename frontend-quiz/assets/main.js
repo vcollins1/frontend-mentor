@@ -62,12 +62,12 @@ document.addEventListener("click", e => {
       updateQuestionPage(question);
 
       btn.textContent = "Submit Answer";
-      btn.style.visibility = "visible";
+      btn.style.display = "block";
     }
 
     else if (screen === "quizStart" && btn.textContent == "Submit Answer") {
       ansSelected = e.target.parentElement;
-      document.querySelector(".no-selection").style.visibility = "hidden";
+      document.querySelector(".no-selection").style.display = "none";
       if (document.querySelector(".selected") != null)
         document.querySelector(".selected").classList.remove("selected");
         
@@ -79,7 +79,7 @@ document.addEventListener("click", e => {
 
     if (btn.textContent == "Submit Answer") {
       if (ansSelected == null) {
-        document.querySelector(".no-selection").style.visibility = "visible";
+        document.querySelector(".no-selection").style.display = "flex";
       }
       else {
         optionSelected = ansSelected.classList[1].slice(-1) - 1;
@@ -138,7 +138,7 @@ document.addEventListener("click", e => {
 
 
 function populateStartMenu() {
-  btn.style.visibility = "hidden";
+  btn.style.display = "none";
   quizHeader.innerHTML = "";
   questionH1.innerHTML = `
     Welcome to the<span class="section-info__header--span">Frontend Quiz!</span>
