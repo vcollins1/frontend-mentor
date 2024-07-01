@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Overpass";
+  src: url(./fonts/Overpass/Overpass-VariableFont_wght.ttf);
+}
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --lightgrey: hsl(217, 12%, 63%);
+  --darkblue: hsl(213, 19%, 18%);
+  --very-darkblue: hsl(216, 12%, 8%);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
+body {
+  font-family: "Overpass";
+}
