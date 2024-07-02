@@ -23,28 +23,26 @@ document.addEventListener("keydown", e => {
     case "ArrowLeft":
     case "ArrowUp":
       e.preventDefault();
-      if (selected === -1)
+      
+      if (selected == -1)
         setSelected(0);
-      if (selected === 0) {
+      else if (selected == 0)
         setSelected(ratings.length - 1);
-      }
-      else {
-        setSelected(--selected);
-      }
+      else
+        setSelected(selected - 1);
 
       break;
 
     case "ArrowRight":
     case "ArrowDown":
       e.preventDefault();
-      if (selected === -1)
-        setSelected(ratings.length - 1);
-      if (selected === ratings.length - 1) {
+      
+      if (selected == -1)
         setSelected(0);
-      }
-      else {
-        setSelected(++selected);
-      }
+      else if (selected == ratings.length - 1)
+        setSelected(0);
+      else
+        setSelected(selected + 1);
 
       break;
 
@@ -52,11 +50,17 @@ document.addEventListener("keydown", e => {
 }) 
 
 function setSelected(idx) {
-  let previousSelected = ratings[selected];
-  previousSelected.setAttribute("tabindex", -1);
-  previousSelected.setAttribute("aria-checked", false);
+  let previousSelected = undefined;
+  let newSelected = undefined;
 
-  let newSelected = ratings[idx];
+  if (selected != -1) {
+    previousSelected = ratings[selected];
+    previousSelected.setAttribute("tabindex", -1);
+    previousSelected.setAttribute("aria-checked", false);
+    previousSelected.querySelector(".rating").checked = false;
+  }
+
+  newSelected = ratings[idx];
   newSelected.setAttribute("tabindex", 0);
   newSelected.setAttribute("aria-checked", true);
   newSelected.querySelector(".rating").checked = true;
