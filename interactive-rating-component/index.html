@@ -12,46 +12,48 @@
   
 </head>
 <body>
-  <main>
-    <figure class="page-icon">
-      <img src="./assets/images/icon-star.svg" alt="star icon">
-    </figure>
-
-    <section  class="content">
-      <h1 class="content__header">How did we do?</h1>
-      <p class="content__text">Please let us know how we did with your support request. All feedback is appreciated 
-        to help us improve our offering!</p>
-    </section>
-
-    <fieldset class="ratings">
-      <legend aria-label="select a rating"></legend>
-      <label>
-        1
-        <input type="radio" name="rating" value="1" class="rating">
-      </label>
-
-      <label>
-        2
-        <input type="radio" name="rating" value="2" class="rating">
-      </label>
-
-      <label>
-        3
-        <input type="radio" name="rating" value="3" class="rating">
-      </label>
-
-      <label>
-        4
-        <input type="radio" name="rating" value="4" class="rating">
-      </label>
-
-      <label>
-        5
-        <input type="radio" name="rating" value="5" class="rating">
-      </label>
-    </fieldset>
-
-    <button class="submit-rating">submit</button>
+  <main class="main">
+    <div class="main__card">
+      <figure class="page-icon">
+        <img src="./assets/images/icon-star.svg" alt="star icon">
+      </figure>
+  
+      <section  class="content">
+        <h1 class="content__header">How did we do?</h1>
+        <p class="content__text">Please let us know how we did with your support request. All feedback is appreciated 
+          to help us improve our offering!</p>
+      </section>
+  
+      <fieldset class="ratings" role="radiogroup" tabindex="0">
+        <legend aria-label="select a rating"></legend>
+        <label tabindex="-1" id="one" class="radio-btn" role="radio" aria-checked="false">
+          1
+          <input type="radio" name="rating" value="1" class="rating">
+        </label>
+  
+        <label tabindex="-1" id="two" class="radio-btn" role="radio" aria-checked="false">
+          2
+          <input type="radio" name="rating" value="2" class="rating">
+        </label>
+  
+        <label tabindex="-1" id="three" class="radio-btn" role="radio" aria-checked="false">
+          3
+          <input type="radio" name="rating" value="3" class="rating">
+        </label>
+  
+        <label tabindex="-1" id="four" class="radio-btn" role="radio" aria-checked="false">
+          4
+          <input type="radio" name="rating" value="4" class="rating">
+        </label>
+  
+        <label tabindex="-1" id="five" class="radio-btn" role="radio" aria-checked="false">
+          5
+          <input type="radio" name="rating" value="5" class="rating">
+        </label>
+      </fieldset>
+  
+      <button class="submit-rating" aria-label="submit rating">submit</button>
+    </div>
   </main>
 </body>
 </html>

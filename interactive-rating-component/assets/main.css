@@ -9,6 +9,7 @@
   --lightgrey: hsl(217, 12%, 63%);
   --darkblue: hsl(213, 19%, 18%);
   --very-darkblue: hsl(216, 12%, 8%);
+  --black: hsl(0, 0%, 0%);
 }
 
 *, *::before, *::after {
@@ -20,4 +21,99 @@
 
 body {
   font-family: "Overpass";
+  font-size: 0.875rem;
+  background-color: var(--black);
+}
+
+.main__card {
+  background-color: hsl(213, 22%, 16%);
+  padding: 24px 24px 32px;
+  width: min(412px, 87.2%);
+  border-radius: 15px;
+  margin-inline: auto;
+  margin-top: clamp(154px, 40vw, 195px);
+}
+
+.page-icon {
+  width: clamp(2.5rem, 9.7vw, 3rem);
+  height: clamp(2.5rem, 9.7vw, 3rem);
+  background-color: var(--darkblue);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.content {
+  margin-bottom: 24px;
+}
+
+.content__header {
+  color: var(--white);
+  font-size: clamp(1.5rem, 5vw, 1.75rem);
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.content__text {
+  color: var(--lightgrey);
+  line-height: 22px;
+  font-size: clamp(0.875rem, 3vw, 0.9375rem);
+}
+
+.ratings {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  color: var(--lightgrey);
+  margin-bottom: 24px;
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  font-weight: 700;
+}
+
+.ratings > label {
+  width: clamp(2.625rem, 11vw, 3.1875rem);
+  height: clamp(2.625rem, 11vw, 3.1875rem);
+  background-color:  var(--darkblue);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+label:has(.rating:checked),
+label:has(.rating:checked):hover {
+  background-color: var(--white);
+  color: var(--darkblue);
+}
+
+label:has(.rating):hover,
+label:has(.rating):focus {    
+  background-color: var(--orange);
+  color: var(--darkblue);
+}
+
+.rating {
+  position: absolute;
+  visibility: hidden;
+}
+
+.submit-rating {
+  border: none;
+  width: 100%;
+  height: 45px;
+  background-color: var(--orange);
+  border-radius: 22.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.87px;
+  font-weight: 700;
+  font-size: clamp(0.875rem, 3vw, 0.9375rem);
+  cursor: pointer;
+}
+
+.submit-rating:hover, 
+.submit-rating:focus {
+  background-color: var(--white);
 }
