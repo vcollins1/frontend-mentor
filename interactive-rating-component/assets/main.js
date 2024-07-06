@@ -3,8 +3,11 @@ let selected = -1;
 
 
 document.addEventListener("click", e => {
-  if (e.target.classList.contains("rating")) {
-    
+  if (e.target.classList.contains("submit-rating")) {
+    if (document.querySelector(".rating:checked")) {
+      const rated = document.querySelector(".rating:checked").value;
+      thankYouPage(rated);
+    }
   }
 })
 
@@ -68,4 +71,23 @@ function setSelected(idx) {
 
   document.querySelector(".ratings").setAttribute("selected", idx);
   selected = idx;
+}
+
+function thankYouPage(rating) {
+  const html = `
+    <figure class="page-icon--thanks">
+      <img src="./assets/images/illustration-thank-you.svg" alt="mobile phone with credit card">
+    </figure>
+
+    <div class="rating-result">You selected ${rating} out of 5</div>
+
+    <section  class="content">
+      <h1 class="content__header">Thank you!</h1>
+      <p class="content__text">We appreciate you taking the time to give a rating. 
+        If you ever need more support, don't hesitate to get in touch!</p>
+    </section>
+  `;
+
+  document.querySelector(".main__card").innerHTML = html;
+  document.querySelector(".main__card").classList.add("main__card--thanks");
 }

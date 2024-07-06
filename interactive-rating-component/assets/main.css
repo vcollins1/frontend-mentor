@@ -27,11 +27,15 @@ body {
 
 .main__card {
   background-color: hsl(213, 22%, 16%);
-  padding: 24px 24px 32px;
+  padding: clamp(24px, 6.4vw, 32px);
   width: min(412px, 87.2%);
   border-radius: 15px;
   margin-inline: auto;
   margin-top: clamp(154px, 40vw, 195px);
+}
+
+.main__card--thanks {
+  text-align: center;
 }
 
 .page-icon {
@@ -42,24 +46,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: clamp(16px, 4.26vw, 30px);
 }
 
-.content {
-  margin-bottom: 24px;
+.page-icon--thanks {
+  margin-inline: auto;
+}
+
+.page-icon--thanks > img {
+  height: 6rem;
 }
 
 .content__header {
   color: var(--white);
   font-size: clamp(1.5rem, 5vw, 1.75rem);
   font-weight: 700;
-  margin-bottom: 17px;
+  margin-bottom: 15px;
 }
 
 .content__text {
   color: var(--lightgrey);
   line-height: 22px;
   font-size: clamp(0.875rem, 3vw, 0.9375rem);
+  margin-bottom: 24px;
 }
 
 .ratings {
@@ -67,7 +76,7 @@ body {
   display: flex;
   justify-content: space-between;
   color: var(--lightgrey);
-  margin-bottom: 24px;
+  margin-bottom: clamp(24px, 6.4vw, 32px);
   font-size: clamp(0.875rem, 3vw, 1rem);
   font-weight: 700;
 }
@@ -98,6 +107,19 @@ label:has(.rating):focus {
 .rating {
   position: absolute;
   visibility: hidden;
+}
+
+.rating-result {
+  background-color: var(--darkblue);
+  color: var(--orange);
+  height: 2rem;
+  width: 12.0625rem;
+  border-radius: 1.406rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9375rem;
+  margin: 1.5rem auto;
 }
 
 .submit-rating {
