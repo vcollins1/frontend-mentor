@@ -29,11 +29,11 @@ body {
 
 .card {
   background-color: var(--white);
-  padding: 1.5rem;
+  padding:clamp(1.5rem, 6.66vw, 2.5rem);
   border-radius: 0.5rem;
-  width: 87.2%;
+  width: min(600px, 87.2%);
   margin-inline: auto;
-  margin-top: 8.90625rem;
+  margin-top: clamp(8.90625rem, 38vw, 10.46875rem);
 }
 
 .faq {
@@ -41,7 +41,7 @@ body {
 }
 
 .faq > li {
-  padding: 1.25rem 0;
+  padding: clamp(1.25rem, 4vw, 1.5rem) 0;
   border-bottom: 1px solid var(--light-pink);
 }
 
@@ -58,18 +58,18 @@ body {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1.5rem, 5.33vw, 2rem);
 }
 
 .header__title {
   order: 1;
-  font-size: 2rem;
+  font-size: clamp(2rem, 8.66vw, 3.5rem);
   font-weight: 700;
 }
 
 .header__img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: clamp(1.5rem, 6.66vw, 2.5rem);
+  height: clamp(1.5rem, 6.66vw, 2.5rem);
 }
 
 .accordion {
@@ -80,6 +80,7 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: left;
+  font-size: clamp(1rem, 3vw, 1.125rem);
   cursor: pointer;
 }
 
@@ -88,15 +89,21 @@ body {
 }
 
 .question {
-  width: 14.0625rem;
+  width: clamp(14.0625rem, 66.66vw, 100%);
 }
 
 .accordion ~ p {
   color: var(--grayish-purple);
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 2.66vw, 1rem);
   margin-top: 1.25rem;
 }
 
 .show {
   display: none;
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    background-image: url(./images/background-pattern-desktop.svg);
+  }
 }
