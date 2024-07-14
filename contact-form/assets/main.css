@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "karla";
+  src: url(./fonts/Karla-VariableFont_wght.ttf);
+}
+
+:root {
+  --grey900: hsl(187, 24%, 22%);
+  --grey500: hsl(186, 15%, 58%);
+  --green600: hsl(169, 82%, 27%);
+  --green200: hsl(148, 38%, 91%);
+  --white: hsl(0, 0%, 100%);
+  --red: hsl(0, 66%, 54%);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--green200);
+  font-family: "karla";
+  color: var(--grey900);
+}
