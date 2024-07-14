@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <main class="card">
+  <main class="card" tabindex="0" aria-label="Frequenly asked questions">
     <header class="header">
       <h1 class="header__title">FAQs</h1>
       <img class="header__img" src="./assets/images/icon-star.svg" alt="start icon">
@@ -20,39 +20,39 @@
 
     <ul class="faq">
       <li>
-        <button class="accordion accordion--1 accordion--group">
+        <button id="btn1" class="accordion accordion--1 accordion--group" aria-expanded="false" aria-controls="p1">
           <span class="question accordion--1 accordion--group">What is Frontend Mentor, and how will it help me?</span>
           <img src="./assets/images/icon-plus.svg" alt="plus icon" class="accordion__img accordion--1 accordion--group">
         </button>
-        <p class="p1 show">Frontend Mentor offers realistic coding challenges to help developers improve their 
+        <p id="p1" role="region" aria-labelledby="btn1" class="p1 show" tabindex="0">Frontend Mentor offers realistic coding challenges to help developers improve their 
           frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
           all levels and ideal for portfolio building.</p>
       </li>
   
       <li>
-        <button class="accordion accordion--2 accordion--group">
+        <button id="btn2" class="accordion accordion--2 accordion--group" aria-expanded="false" aria-controls="p2">
           <span class="question accordion--2 accordion--group">Is Frontend Mentor free?</span>
           <img src="./assets/images/icon-plus.svg" alt="plus icon" class="accordion__img accordion--2 accordion--group">
         </button>
-        <p class="p2 show">Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+        <p id="p2" role="region" aria-labelledby="btn2" class="p2 show" tabindex="0">Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
           option providing access to a range of projects suitable for all skill levels.</p>
       </li>
   
       <li>
-        <button class="accordion accordion--3 accordion--group">
+        <button id="btn3" class="accordion accordion--3 accordion--group" aria-expanded="false" aria-controls="p3">
           <span class="question accordion--3 accordion--group">Can I use Frontend Mentor projects in my portfolio?</span>
           <img src="./assets/images/icon-plus.svg" alt="plus icon" class="accordion__img accordion--3 accordion--group">
         </button>
-        <p class="p3 show">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+        <p id="p3" role="region" aria-labelledby="btn3" class="p3 show" tabindex="0">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
           way to showcase your skills to potential employers!</p>
       </li>
   
       <li>
-        <button class="accordion accordion--4 accordion--group">
+        <button id="btn4" class="accordion accordion--4 accordion--group" aria-expanded="false" aria-controls="p4">
           <span class="question accordion--4 accordion--group">How can I get help if I'm stuck on a Frontend Mentor challenge?</span>
           <img src="./assets/images/icon-plus.svg" alt="plus icon" class="accordion__img accordion--4 accordion--group">
         </button>
-        <p class="p4 show">The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+        <p id="p4" role="region" aria-labelledby="btn4" class="p4 show" tabindex="0">The best place to get help is inside Frontend Mentor's Discord community. There's a help 
           channel where you can ask questions and seek support from other community members.
         </p>
       </li>
