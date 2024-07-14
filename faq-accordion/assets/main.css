@@ -5,6 +5,7 @@
 
 :root {
   --white: hsl(0, 0%, 100%);
+  --pink: hsl(281, 83%, 54%);
   --light-pink: hsl(275, 100%, 97%);
   --grayish-purple: hsl(292, 16%, 49%);
   --dark-purple: hsl(292, 42%, 14%);
@@ -20,4 +21,82 @@
 body {
   font-family: "worksans";
   color: var(--dark-purple);
+  background-image: url(./images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-color: var(--light-pink);
+  background-size: 100%;
+}
+
+.card {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  width: 87.2%;
+  margin-inline: auto;
+  margin-top: 8.90625rem;
+}
+
+.faq {
+  list-style: none;
+}
+
+.faq > li {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--light-pink);
+}
+
+.faq > li:first-child {
+  padding-top: 0;
+}
+
+.faq > li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.header__title {
+  order: 1;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header__img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.accordion {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion:hover {
+  color: var(--pink);
+}
+
+.question {
+  width: 14.0625rem;
+}
+
+.accordion ~ p {
+  color: var(--grayish-purple);
+  font-size: 0.875rem;
+  margin-top: 1.25rem;
+}
+
+.show {
+  display: none;
 }
