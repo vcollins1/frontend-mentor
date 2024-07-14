@@ -4,5 +4,5 @@ This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://w
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [FAQ-Accordion](https://vcollins1.github.io/frontend-mentor/faq-accordion/)
 
