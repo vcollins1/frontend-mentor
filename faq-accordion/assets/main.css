@@ -90,6 +90,7 @@ body {
 
 .question {
   width: clamp(14.0625rem, 66.66vw, 100%);
+  font-weight: 600;
 }
 
 .accordion ~ p {
