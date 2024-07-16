@@ -59,6 +59,7 @@ body {
   border-radius: 0.5rem;
   border: 1px solid var(--grey500);
   margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
 }
 
 .form__query {
@@ -101,6 +102,7 @@ body {
   margin-top: 0.5rem;
   border: 1px solid var(--grey500);
   border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
 }
 
 .form__consent {
@@ -163,5 +165,12 @@ textarea:has(+ .error.active) {
   padding: 1.5rem;
   left: calc(50% - 164px);
   margin-top: 1.5rem;
+  line-height: 1.5rem;
   display: none;
+}
+
+.success__sent {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
