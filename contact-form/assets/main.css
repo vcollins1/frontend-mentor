@@ -163,7 +163,9 @@ textarea:has(+ .error.active) {
   border-radius: 0.75rem;
   width: 20.4375rem;
   padding: 1.5rem;
-  left: calc(50% - 164px);
+  left: 0;
+  right: 0;
+  margin: auto;
   margin-top: 1.5rem;
   line-height: 1.5rem;
   display: none;
