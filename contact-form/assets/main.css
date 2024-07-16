@@ -147,7 +147,7 @@ body {
 }
 
 input[type="text"]:has(+ .error.active),
-input[type="email"]:has(+ .error.ative),
+input[type="email"]:has(+ .error.active),
 textarea:has(+ .error.active) {
   border: 1px solid var(--red);
 }
