@@ -32,6 +32,7 @@ body {
   padding: 1.5rem;
   border-radius: 1rem;
   margin-top: 2rem;
+  position: relative;
 }
 
 .form__header {
@@ -150,4 +151,17 @@ input[type="text"]:has(+ .error.active),
 input[type="email"]:has(+ .error.active),
 textarea:has(+ .error.active) {
   border: 1px solid var(--red);
+}
+
+.success {
+  background-color: var(--grey900);
+  color: var(--white);
+  position: absolute;
+  top: 0;
+  border-radius: 0.75rem;
+  width: 20.4375rem;
+  padding: 1.5rem;
+  left: calc(50% - 164px);
+  margin-top: 1.5rem;
+  display: none;
 }
