@@ -18,16 +18,19 @@
       <label>
         First Name <span class="star">*</span>
         <input type="text" name="firstname">
+        <span class="error">This field is required</span>
       </label>
   
       <label>
         Last Name <span class="star">*</span>
         <input type="text" name="lastname">
+        <span class="error">This field is required</span>
       </label>
 
       <label>
         Email Address <span class="star">*</span>
         <input type="email" name="email">
+        <span class="error">This field is required</span>
       </label>
     </fieldset>
 
@@ -42,16 +45,22 @@
         <input type="radio" name="query" value="support">
         Support Request
       </label>
+
+      <span class="error">Please select a query type</span>
     </fieldset>
 
     <label class="form__message">
       Message <span class="star">*</span>
       <textarea name="message" id="message"></textarea>
+      <span class="error">This field is required</span>
     </label>
 
     <label class="form__consent">
-      <input type="checkbox" name="consent">
-      <p>I consent to being contacted by the team <span class="star">*</span></p>
+      <span  class="form__consent--box">
+        <input type="checkbox" name="consent">
+        <p>I consent to being contacted by the team <span class="star">*</span></p>
+      </span>
+      <span class="error">To submit this form, please consent to being contacted</span>
     </label>
 
     <button type="submit" class="form__btn">Submit</button>

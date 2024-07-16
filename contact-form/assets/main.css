@@ -47,12 +47,17 @@ body {
   border: none;
 }
 
+.form__user label {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
 .form__user input {
   width: 100%;
   height: 3.1875rem;
   border-radius: 0.5rem;
   border: 1px solid var(--grey500);
-  margin: 0.5rem 0 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .form__query {
@@ -98,10 +103,8 @@ body {
 }
 
 .form__consent {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 2.5rem auto;
+  display: block;
+  margin: 2.5rem 0;
 }
 
 .form__consent input {
@@ -118,6 +121,12 @@ body {
   background-position: center;
 }
 
+.form__consent--box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .form__btn {
   color: var(--white);
   border: none;
@@ -125,4 +134,20 @@ body {
   width: 100%;
   height: 3.6875rem;
   border-radius: 0.5rem;
+}
+
+.error {
+  display: none;
+  color: var(--red);
+  margin-top: 0.5rem;
+}
+
+.error.active {
+  display: block;
+}
+
+input[type="text"]:has(+ .error.active),
+input[type="email"]:has(+ .error.ative),
+textarea:has(+ .error.active) {
+  border: 1px solid var(--red);
 }
