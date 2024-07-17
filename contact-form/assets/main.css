@@ -64,6 +64,12 @@ body {
   border: 1px solid var(--grey500);
   margin-top: 0.5rem;
   padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+.form__user input:hover,
+.form__user input:active {
+  border: 1px solid var(--green600);
 }
 
 .form__query {
@@ -79,6 +85,12 @@ body {
   border: 1px solid var(--grey500);
   border-radius: 0.5rem;
   padding: 0.84375rem 1.5rem;
+  cursor: pointer;
+}
+
+.form_query label:hover,
+.form_query label:active {
+  border: 1px solid var(--green600);
 }
 
 .form__query label:has(input:checked) {
@@ -107,6 +119,12 @@ body {
   border: 1px solid var(--grey500);
   border-radius: 0.5rem;
   padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+.form__message textarea:hover,
+.form__message textarea:active {
+  border: 1px solid var(--green600);
 }
 
 .form__consent {
@@ -119,6 +137,7 @@ body {
   width: 1.125rem;
   height: 1.125rem;
   border: 1px solid var(--grey500);
+  cursor: pointer;
 }
 
 .form__consent input:checked {
@@ -132,6 +151,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
 }
 
 .form__btn {
