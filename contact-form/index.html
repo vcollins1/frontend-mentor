@@ -11,67 +11,70 @@
   <title>Frontend Mentor | Contact form</title>
 </head>
 <body>
-  <form class="form">
-    <h1 class="form__header">Contact Us</h1>
+  <main>
+    <form class="form">
+      <h1 class="form__header">Contact Us</h1>
 
-    <fieldset class="form__user">
-      <label>
-        First Name <span class="star">*</span>
-        <input type="text" name="firstname" aria-describedby="fn-error">
-        <span class="error" id="fn-error">This field is required</span>
+      <fieldset class="form__user">
+        <legend aria-label="user information"></legend>
+        <label>
+          First Name <span class="star">*</span>
+          <input type="text" name="firstname" aria-describedby="fn-error">
+          <span class="error" id="fn-error">This field is required</span>
+        </label>
+    
+        <label>
+          Last Name <span class="star">*</span>
+          <input type="text" name="lastname" aria-describedby="ln-error">
+          <span class="error" id="ln-error">This field is required</span>
+        </label>
+
+        <label>
+          Email Address <span class="star">*</span>
+          <input type="email" name="email" aria-describedby="email-error">
+          <span class="error" id="email-error">Please enter a valid email address</span>
+        </label>
+      </fieldset>
+
+      <fieldset class="form__query" tabindex="0" role="radiogroup" aria-describedby="query-error">
+        <legend>Query Type <span class="star">*</span></legend>
+        <label>
+          <input type="radio" name="query" value="general" aria-describedby="query-error">
+          General Enquiry
+        </label>
+
+        <label>
+          <input type="radio" name="query" value="support" aria-describedby="query-error">
+          Support Request
+        </label>
+
+        <span class="error" id="query-error">Please select a query type</span>
+      </fieldset>
+
+      <label class="form__message">
+        Message <span class="star">*</span>
+        <textarea name="message" id="message" aria-describedby="messsage-error"></textarea>
+        <span class="error" id="messsage-error">This field is required</span>
       </label>
-  
-      <label>
-        Last Name <span class="star">*</span>
-        <input type="text" name="lastname" aria-describedby="ln-error">
-        <span class="error" id="ln-error">This field is required</span>
+
+      <label class="form__consent">
+        <span  class="form__consent--box">
+          <input type="checkbox" name="consent" aria-describedby="consent-error">
+          <span>I consent to being contacted by the team <span class="star">*</span></span>
+        </span>
+        <span class="error" id="consent-error">To submit this form, please consent to being contacted</span>
       </label>
 
-      <label>
-        Email Address <span class="star">*</span>
-        <input type="email" name="email" aria-describedby="email-error">
-        <span class="error" id="email-error">Please enter a valid email address</span>
-      </label>
-    </fieldset>
+      <button type="submit" class="form__btn">Submit</button>
+    </form>
 
-    <fieldset class="form__query" tabindex="0" role="radiogroup" aria-describedby="query-error">
-      <legend>Query Type <span class="star">*</span></legend>
-      <label>
-        <input type="radio" name="query" value="general" aria-describedby="query-error">
-        General Enquiry
-      </label>
-
-      <label>
-        <input type="radio" name="query" value="support" aria-describedby="query-error">
-        Support Request
-      </label>
-
-      <span class="error" id="query-error">Please select a query type</span>
-    </fieldset>
-
-    <label class="form__message">
-      Message <span class="star">*</span>
-      <textarea name="message" id="message" aria-describedby="messsage-error"></textarea>
-      <span class="error" id="messsage-error">This field is required</span>
-    </label>
-
-    <label class="form__consent">
-      <span  class="form__consent--box">
-        <input type="checkbox" name="consent" aria-describedby="consent-error">
-        <p>I consent to being contacted by the team <span class="star">*</span></p>
+    <div class="success">
+      <span class="success__sent">
+        <img src="./assets/images/icon-success-check.svg" alt="check is for success">
+        <span>Message Sent!</span>
       </span>
-      <span class="error" id="consent-error">To submit this form, please consent to being contacted</span>
-    </label>
-
-    <button type="submit" class="form__btn">Submit</button>
-  </form>
-
-  <div class="success">
-    <span class="success__sent">
-      <img src="./assets/images/icon-success-check.svg" alt="check is for success">
-      <h2>Message Sent!</h2>
-    </span>
-    <p>Thanks for completing the form. We'll be in touch soon!</p>
-  </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+  </main>
 </body>
 </html>
