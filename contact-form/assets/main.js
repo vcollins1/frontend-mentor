@@ -35,7 +35,7 @@ document.addEventListener("submit", e => {
     if (e.checked)
       queryChoice = e;
   });
-  if (queryChoice.value === undefined) {
+  if (queryChoice === undefined) {
     document.querySelector(".form__query > .error").classList.add("active");
     success = false;
   } else {
@@ -51,6 +51,7 @@ document.addEventListener("submit", e => {
   }
 
   const consent = e.target.querySelector("input[name='consent']");
+  console.log(!consent.checked);
   if (!consent.checked) {
     document.querySelector(".form__consent > .error").classList.add("active");
     success = false;
