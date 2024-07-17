@@ -48,6 +48,10 @@ body {
   border: none;
 }
 
+.form__user legend {
+  display: none;
+}
+
 .form__user label {
   display: block;
   margin-bottom: 1.5rem;
