@@ -33,9 +33,9 @@ document.addEventListener("submit", e => {
   let queryChoice = undefined;
   queryType.forEach(e => {
     if (e.checked)
-      queryChoice = e.value;
+      queryChoice = e;
   });
-  if (queryChoice === undefined) {
+  if (queryChoice.value === undefined) {
     document.querySelector(".form__query > .error").classList.add("active");
     success = false;
   } else {
@@ -58,6 +58,13 @@ document.addEventListener("submit", e => {
     document.querySelector(".form__consent > .error").classList.remove("active");
   }
 
-  if (success)
+  if (success) {
     document.querySelector(".success").style.display = "block";
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
+    message.value = "";
+    queryChoice.checked = false;
+    consent.checked = false;
+  }
 })
