@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "inter";
+  src: url(./fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+:root {
+  --almost-white: hsl(36, 100%, 99%);
+  --light-vermillion: hsl(5, 85%, 63%);
+  --orange-yellow: hsl(35, 77%, 62%);
+  --gunmetal: hsl(237, 14%, 42%);
+  --dark-space-blue: hsl(240, 100%, 5%);
+  --silver: hsl(236, 8%, 79%);
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  font-family: "inter";
+  background-color: var(--almost-white);
+  font-size: 0.9375rem;
+}
