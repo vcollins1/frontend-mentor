@@ -17,75 +17,78 @@
 </head>
 <body>
 
-  <header>
-    <img src="./assets/images/logo.svg" alt="site logo">
+  <header class="header content">
+    <img src="./assets/images/logo.svg" alt="site logo" class="logo">
 
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>New</li>
-        <li>Popular</li>
-        <li>Trending</li>
-        <li>Categories</li>
+    <img src="./assets/images/icon-menu.svg" alt="menu open button">
+
+    <nav class="main-nav">
+      <ul class="main-nav__list">
+        <li class="main-nav__item">Home</li>
+        <li class="main-nav__item">New</li>
+        <li class="main-nav__item">Popular</li>
+        <li class="main-nav__item">Trending</li>
+        <li class="main-nav__item">Categories</li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section>
+  <main class="content">
+    <section class="future">
       <picture>
-        <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width: 700px)">
-        <img src="./assets/images/image-web-3-mobile.jpg" alt="building blocks">
+        <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width: 700px)" class="future__img">
+        <img src="./assets/images/image-web-3-mobile.jpg" alt="building blocks" class="future__img">
       </picture>
 
-      <h1>The Bright Future of Web 3.0?</h1>
+      <h1 class="future__header">The Bright Future of Web 3.0?</h1>
 
-      <div>
+      <div class="future__content">
         <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
           But is it really fulfilling its promise?</p>
 
-        <button>Read more</button>
-        </div>
+        <button class="future__btn">Read more</button>
+      </div>
     </section>
 
-    <aside>
-      <h2>New</h2>
-      <div>
+    <aside class="news">
+      <h2 class="news__heading">New</h2>
+
+      <div class="news__item news__item--div">
         <h3>Hydrogen VS Electric Cars</h3>
         <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
       </div>
 
-      <div>
+      <div class="news__item news__item--div news__item--top">
         <h3>The Downsides of AI Artistry</h3>
         <p> What are the possible adverse effects of on-demand AI image generation?</p>
       </div>
 
-      <div>
+      <div class="news__item news__item--top">
         <h3>Is VC Funding Drying Up?</h3>
         <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
       </div>
     </aside>
 
-    <section>
-      <div>
-        <img src="./assets/images/image-retro-pcs.jpg" alt="retro computer">
-        <h3>01</h3>
-        <h4>Reviving Retro PCs</h4>
-        <p>What happens when old PCs are given modern upgrades?</p>
+    <section class="news-list">
+      <div class="news-list__item news-list__item--bottom">
+        <img src="./assets/images/image-retro-pcs.jpg" alt="retro computer" class="item item--img">
+        <h3 class="item item--header">01</h3>
+        <h4 class="item item--secondary">Reviving Retro PCs</h4>
+        <p class="item item--text">What happens when old PCs are given modern upgrades?</p>
       </div>
 
-      <div>
-        <img src="./assets/images/image-top-laptops.jpg" alt="keyboard keys">
-        <h3>02</h3>
-        <h4>Top 10 Laptops of 2022</h4>
-        <p>Our best picks for various needs and budgets.</p>
+      <div class="news-list__item news-list__item--bottom">
+        <img src="./assets/images/image-top-laptops.jpg" alt="keyboard keys" class="item item--img">
+        <h3 class="item item--header">02</h3>
+        <h4 class="item item--secondary">Top 10 Laptops of 2022</h4>
+        <p class="item item--text">Our best picks for various needs and budgets.</p>
       </div>
 
-      <div>
-        <img src="./assets/images/image-gaming-growth.jpg" alt="gaming controller">
-        <h3>03</h3>
-        <h4>The Growth of Gaming</h4>
-        <p>How the pandemic has sparked fresh opportunities.</p>
+      <div class="news-list__item">
+        <img src="./assets/images/image-gaming-growth.jpg" alt="gaming controller" class="item item--img">
+        <h3 class="item item--header">03</h3>
+        <h4 class="item item--secondary">The Growth of Gaming</h4>
+        <p class="item item--text">How the pandemic has sparked fresh opportunities.</p>
       </div>
     </section>
   </main>
