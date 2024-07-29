@@ -187,6 +187,11 @@ body {
   display: block;
 }
 
+.item--secondary:hover {
+  color: var(--light-vermillion);
+  cursor: pointer;
+}
+
 .item--text {
   align-self: end;
 }
