@@ -30,6 +30,7 @@ body {
 .content {
   width: min(69.375rem, 91.46%);
   margin-inline: auto;
+  z-index: -2;
 }
 
 .header {
@@ -42,12 +43,36 @@ body {
   margin-right: auto;
 }
 
+.hamburger {
+  z-index: 2;
+}
+
+.main-nav {
+  position: absolute;
+  display: none;
+  justify-content: flex-end;
+  z-index: 1;
+  background-color: rgba(151, 151, 151, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav-list__container {
+  background-color: var(--almost-white);
+  display: flex;
+  padding-top: 144px;
+  width: 75%;
+}
+
 .main-nav__list {
   list-style: none;
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 1.5rem;
   font-size: 1.125rem;
+  padding-left: 1.5rem;
 }
 
 .future {
@@ -150,7 +175,28 @@ body {
   align-self: end;
 }
 
+.open {
+  display: flex;
+}
+
 @media screen and (min-width: 67.5rem) {
+  .main-nav {
+    position: static;
+    display: flex;
+    background-color: var(--almost-white);
+    width: 100%;
+  }
+
+  .nav-list__container {
+    padding: 0;
+    justify-content: flex-end;
+  }
+
+  .main-nav__list {
+    padding: 0;
+    flex-direction: row;
+  }
+
   .main {
     display: grid;
     grid-template-columns:  repeat(3, minmax(17.15rem, 23.125rem));
@@ -186,11 +232,6 @@ body {
 
   .header {
     align-items: flex-end;
-  }
-
-  .main-nav__list {
-    display: flex;
-    flex-direction: row;
   }
 
   .hamburger {
