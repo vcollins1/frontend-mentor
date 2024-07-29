@@ -8,19 +8,13 @@
   <link rel="stylesheet" href="./assets/main.css">
   
   <title>Frontend Mentor | News homepage</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
   <header class="header content">
     <img src="./assets/images/logo.svg" alt="site logo" class="logo">
 
-    <img src="./assets/images/icon-menu.svg" alt="menu open button">
+    <img src="./assets/images/icon-menu.svg" alt="menu open button" class="hamburger">
 
     <nav class="main-nav">
       <ul class="main-nav__list">
@@ -33,20 +27,22 @@
     </nav>
   </header>
 
-  <main class="content">
+  <main class="main content">
     <section class="future">
       <picture>
         <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width: 700px)" class="future__img">
         <img src="./assets/images/image-web-3-mobile.jpg" alt="building blocks" class="future__img">
       </picture>
 
-      <h1 class="future__header">The Bright Future of Web 3.0?</h1>
+      <div class="future__sub">
+        <h1 class="future__header">The Bright Future of Web 3.0?</h1>
 
-      <div class="future__content">
-        <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-          But is it really fulfilling its promise?</p>
+        <div class="future__content">
+          <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+            But is it really fulfilling its promise?</p>
 
-        <button class="future__btn">Read more</button>
+          <button class="future__btn">Read more</button>
+        </div>
       </div>
     </section>
 
