@@ -131,14 +131,15 @@ body {
   margin-bottom: 2.1875rem;
 }
 
-.news__item h3 {
+.news__item a {
+  display: block;
   color: var(--almost-white);
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.news__item h3:hover {
+.news__item a:hover {
   color: var(--orange-yellow);
   cursor: pointer;
 }
