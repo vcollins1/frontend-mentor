@@ -37,6 +37,32 @@ body {
 .header {
   display: flex;
   position: relative;
+  justify-content: space-between;
+  padding: 
+    clamp(1.1875rem, 5.067vw, 2.5625rem)
+    clamp(1.5rem, 6.4vw, 10.3125rem)
+    clamp(1.5625rem, 6.67vw, 2.8125rem);
+}
+
+.logo-area {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  gap: 1.38625rem;
+  align-items: center;
+}
+
+.cart-icon {
+  width: 1.36375rem;
+  height: 1.25rem;
+}
+
+.avatar {
+  width: clamp(1.5rem, 6.4vw , 3.125rem);
 }
 
 .main-nav__list {
@@ -55,6 +81,7 @@ body {
   height: 16rem;
   background-color: var(--clr--white);
   border-radius: .625rem;
+  display: none;
 }
 
 .shopping-cart__header {
