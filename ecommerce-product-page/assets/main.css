@@ -3,6 +3,20 @@
   src: url(./fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf);
 }
 
+:root {
+  --clr--shark: hsl(220, 13%, 13%);
+  --clr--pumpkin: hsl(26, 100%, 55%);
+  --clr--white: hsl(0, 0%, 100%);
+  --clr--pale-sky: hsl(219, 9%, 45%);
+
+
+
+
+  --clr--primary: var(--clr--shark);
+  --clr_secondary: var(--clr--pumpkin);
+  --clr--body: var(--clr--pale-sky);
+}
+
 *, *::backdrop, *::after {
   padding: 0;
   margin: 0;
