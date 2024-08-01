@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "kumbh sans";
+  src: url(./fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf);
+}
+
+*, *::backdrop, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  font-family: "kumbh sans";
+}
