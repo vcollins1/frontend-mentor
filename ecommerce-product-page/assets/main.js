@@ -12,4 +12,10 @@ document.addEventListener("click", e => {
       e.target.src = "./assets/images/icon-close.svg";
     }
   }
+
+
+  if (e.target.classList.contains("cart-icon")) {
+    const cart = document.querySelector(".shopping-cart");
+    cart.classList.toggle("open")
+  }
 });

@@ -103,6 +103,8 @@ body {
   background-color: var(--clr--white);
   border-radius: .625rem;
   display: none;
+ left: 0;
+ margin: clamp(3.75rem, 16vw, 6.875rem) calc(50% - 11.25rem) 0;
 }
 
 .shopping-cart__header {
@@ -127,7 +129,8 @@ body {
   height: 18.75rem;
 }
 
-.main-nav.open {
+.main-nav.open,
+.shopping-cart.open {
   display: block;
 }
 
