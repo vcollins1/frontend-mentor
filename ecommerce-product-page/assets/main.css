@@ -72,7 +72,8 @@ body {
   left: 0;
   right: 0;
   height: 56.25rem;
-  display: none;  
+  display: none;
+  z-index: 1;
 }
 
 .main-nav__list {
@@ -80,7 +81,7 @@ body {
   background-color: var(--clr--white);
   width: 66.67%;
   height: 100%;
-  padding-top: 86px;
+  padding-top: 5.375rem;
   padding-left: 1.5625rem;
 }
 
@@ -139,7 +140,7 @@ body {
   left: 0;
   right: 0;
   justify-content: space-between;
-  top: 130px;
+  top: 8.125rem;
   padding: 0 1rem;
 }
 
