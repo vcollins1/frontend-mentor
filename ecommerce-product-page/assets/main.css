@@ -65,14 +65,35 @@ body {
   width: clamp(1.5rem, 6.4vw , 3.125rem);
 }
 
+.main-nav {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 80%);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56.25rem;
+  display: none;  
+}
+
 .main-nav__list {
   list-style: none;
-  display: none;
+  background-color: var(--clr--white);
+  width: 66.67%;
+  height: 100%;
+  padding-top: 86px;
+  padding-left: 1.5625rem;
+}
+
+.nav-item {
+  width: 100%;
+  margin-bottom: 1.25rem;
 }
 
 .main-nav__list a {
   text-decoration: none;
   color: var(--clr--primary);
+  font-size: 1.125rem;
+  font-weight: 700;
 }
 
 .shopping-cart {
@@ -104,4 +125,12 @@ body {
 .image-slider__image {
   width: 100%;
   height: 18.75rem;
+}
+
+.main-nav.open {
+  display: block;
+}
+
+.menu-icon.active {
+  z-index: 2;
 }
