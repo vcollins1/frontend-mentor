@@ -1,3 +1,14 @@
+const sliderImages = [
+  "./assets/images/image-product-1.jpg",
+  "./assets/images/image-product-2.jpg",
+  "./assets/images/image-product-3.jpg",
+  "./assets/images/image-product-4.jpg"
+];
+
+let currentImage = 0;
+
+
+
 document.addEventListener("click", e => {
   if (e.target.classList.contains("menu-icon")) {
     const mainNav = document.querySelector(".main-nav");
@@ -17,5 +28,16 @@ document.addEventListener("click", e => {
   if (e.target.classList.contains("cart-icon")) {
     const cart = document.querySelector(".shopping-cart");
     cart.classList.toggle("open")
+  }
+
+  const sliderImage = document.querySelector(".image-slider__image");
+  if (e.target.classList.contains("next")) {
+    currentImage = ++currentImage % sliderImages.length;
+    sliderImage.src = `${sliderImages[currentImage]}`;
+  }
+
+  if (e.target.classList.contains("previous")) {
+    currentImage = currentImage == 0 ? 3 : --currentImage;
+    sliderImage.src = `${sliderImages[currentImage]}`;
   }
 });
