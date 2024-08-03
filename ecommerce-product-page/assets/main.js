@@ -53,4 +53,38 @@ document.addEventListener("click", e => {
     quantityNum = (quantityNum == -1) ? 0 : quantityNum;
     quantity.textContent = quantityNum;
   }
+
+  const cartQuantity = document.styleSheets[0].cssRules[9];
+  if (e.target.classList.contains("add-cart")) {
+    
+    if (quantityNum === 0) {
+      cartQuantity.style.display = "none";
+      document.querySelector(".shopping-cart__content").innerHTML = "Your cart is empty.";
+    } else {
+      cartQuantity.style.content = `"${quantityNum}"`;
+      cartQuantity.style.display = "flex";
+      const template = `
+        <div class="product-info">
+          <img src="./assets/images/image-product-1-thumbnail.jpg" alt="shoe" class="checkout-img">
+          <p class="checkout-text">
+            Fall Limited Edition Seakers<br> $125.00 x 
+            <span class="checkout-quantity">3</span>
+            <span class="checkout-total">375.00</span>
+          </p>
+          <img src="./assets/images/icon-delete.svg" alt="trash can" class="delete">
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      `;
+      document.querySelector(".shopping-cart__content").innerHTML = template;
+      document.querySelector(".checkout-quantity").textContent = quantityNum;
+      document.querySelector(".checkout-total").textContent = `$${(quantityNum * 125).toFixed(2)}`;
+    }
+  }
+
+  if (e.target.classList.contains("delete")) {
+    document.querySelector(".shopping-cart__content").innerHTML = "Your cart is empty.";
+    cartQuantity.style.display = "none";
+    quantityNum = 0;
+    quantity.textContent = quantityNum;
+  }
 });
