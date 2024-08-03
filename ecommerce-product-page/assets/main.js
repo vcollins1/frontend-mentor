@@ -6,6 +6,7 @@ const sliderImages = [
 ];
 
 let currentImage = 0;
+let quantityNum = 0;
 
 
 
@@ -39,5 +40,17 @@ document.addEventListener("click", e => {
   if (e.target.classList.contains("previous")) {
     currentImage = currentImage == 0 ? 3 : --currentImage;
     sliderImage.src = `${sliderImages[currentImage]}`;
+  }
+
+  const quantity = document.querySelector(".quantity");
+  if (e.target.classList.contains("inc-quantity")) {
+    ++quantityNum;
+    quantity.textContent = quantityNum;
+  }
+
+  if (e.target.classList.contains("dec-quantity")) {
+    --quantityNum;
+    quantityNum = (quantityNum == -1) ? 0 : quantityNum;
+    quantity.textContent = quantityNum;
   }
 });
