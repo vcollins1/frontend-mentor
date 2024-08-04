@@ -57,12 +57,12 @@ body {
   position: relative;
 }
 
-.cart-icon {
+.cart-icon-wrap {
   width: 1.36375rem;
   height: 1.25rem;
 }
 
-.icons::after {
+.cart-icon-wrap::after {
   content: "0";
   background-color: var(--clr--pumpkin);
   width: 19px;
@@ -76,7 +76,7 @@ body {
 
   position: absolute;
   left: 0.625rem;
-  top: 0;
+  top: clamp(-4px, 1.067vw, 8px);
 }
 
 .avatar {
