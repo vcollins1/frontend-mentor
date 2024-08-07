@@ -39,9 +39,11 @@ body {
   position: relative;
   justify-content: space-between;
   padding: 
-    clamp(1.1875rem, 5.067vw, 2.5625rem)
+    clamp(1.1875rem, 5.067vw, 1.75rem)
     clamp(1.5rem, 6.4vw, 10.3125rem)
-    clamp(1.5625rem, 6.67vw, 2.8125rem);
+    clamp(1.5625rem, 6.67vw, 2.125rem);
+
+  margin: auto;
 }
 
 .logo-area {
@@ -203,11 +205,6 @@ body {
   display: none;
 }
 
-.thumbnails__image {
-  width: 5.5rem;
-  border-radius: 0.625rem;
-}
-
 .main-section {
   margin: 1.5rem auto 5.5rem;
   width: 87.2%;
@@ -310,4 +307,105 @@ body {
 
 .menu-icon.active {
   z-index: 3;
+}
+
+@media screen and (min-width: 900px) {
+  .header.container {
+    width: min(77.08%, 1110px);
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid hsl(219, 35%, 92%);
+    padding-left: 0;
+    padding-right: 0;
+    margin-inline: auto;
+  }
+
+  .logo-area__header {
+    margin-right: 56.5px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .main-nav {
+    display: flex;
+    background-color: transparent;
+    width: 24.8125rem;
+    height: 1.625rem;
+    position: static;
+    margin-right: auto;
+  }
+
+  .main-nav__list {
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-item a {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--clr--pale-sky);
+  }
+
+  .main.container {
+    margin-top: 5.625rem;
+    margin-inline: auto;
+    width: min(1015px, 70.44%);
+    display: flex;
+  }
+
+  .image-selector {
+    display: none;
+  }
+
+  .image-slider__image {
+    width: clamp(18rem, 27.22vw, 27.8125rem);
+    height: clamp(18rem, 27.22vw, 27.8125rem);
+    margin-bottom: 2rem;
+    border-radius: 0.625rem;
+  }
+
+  .thumbnails {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .thumbnails__image {
+    width: clamp(3.03125rem, 5.389vw, 5.5rem);
+    border-radius: 0.625rem;
+  }
+
+  .main-section {
+    width: clamp(20rem, 27.22vw, 27.8125rem);
+    height: clamp(20rem, 27.22vw, 27.8125rem);
+    margin-bottom: 0;
+    margin-top: clamp(0.5rem, 4.4vw, 4rem);
+  }
+
+  .info__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .info__sub-header {
+    font-size: clamp(1.5rem, 2.67vw, 2.75rem);
+    margin-bottom: 2rem;
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    height: 3.5rem;
+  }
+
+  .quantity-selector,
+  .cart-btn {
+    margin: 0;
+  }
+
+  .quantity-selector {
+    width: 45%;
+  }
 }
