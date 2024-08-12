@@ -474,4 +474,10 @@ body {
   .shadow-close:hover path {
     fill: var(--clr--pumpkin);
   }
+
+  .shopping-cart {
+    top: -20px;
+    left: clamp(200px, 30vw, 400px);
+    box-shadow: 0 0 20px var(--clr--body);
+  }
 }
