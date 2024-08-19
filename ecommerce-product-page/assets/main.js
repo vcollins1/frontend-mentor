@@ -7,14 +7,21 @@ const sliderImages = [
 
 let currentImage = 0;
 let quantityNum = 0;
+let shadowOpen = false;
 
 
 
 document.addEventListener("click", e => {
   const activeThumbnails = document.querySelectorAll(".active-thumbnail");
+  const sliderImage = document.querySelector(".image-slider__image");
+  const sliderImageShadow = document.querySelector(".shadow .image-slider__image");
 
-  
-  if (e.target.classList.contains("image-slider__image")) {
+
+  if (e.target.classList.contains("image-slider__btn") || e.target.classList.contains("image-slider__image")) {
+    if (shadowOpen) 
+      return;
+
+    shadowOpen = true;
     const sliderClone = document.querySelector(".image-slider").cloneNode(true);
 
     const shadowBody = document.createElement("div");
@@ -24,16 +31,21 @@ document.addEventListener("click", e => {
     shadow.classList.add("shadow");
 
     shadow.innerHTML = `
-      <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg" class="shadow-close">
+    <button class="shadow-close">
+      <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
         <path class="shadow-close" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/>
-      </svg>`;
+      </svg>
+    </button>`;
     shadow.appendChild(sliderClone);
     shadowBody.appendChild(shadow);
-
     document.body.append(shadowBody);
+
+    const shadowClose = document.querySelector(".shadow-close");
+    shadowClose.focus();
   }
 
   if (e.target.classList.contains("thumbnails__image")) {
+    console.log("clicked thumbnail...")
     const currentThumbnail = e.target.parentElement
     currentImage = currentThumbnail.classList[1].slice(-1) - 1;
 
@@ -45,11 +57,14 @@ document.addEventListener("click", e => {
       item.classList.add("active-thumbnail");
     });
 
+    sliderImage.src = `${sliderImages[currentImage]}`;
   }
 
   if (e.target.classList.contains("shadow-close")) {
     const shadowBody = document.querySelector(".shadow-body");
     document.body.removeChild(shadowBody);
+    shadowOpen = false;
+    document.querySelector(".image-slider__btn").focus();
   }
 
   if (e.target.classList.contains("menu-icon")) {
@@ -72,8 +87,6 @@ document.addEventListener("click", e => {
     cart.classList.toggle("open")
   }
 
-  const sliderImage = document.querySelector(".image-slider__image");
-  const sliderImageShadow = document.querySelector(".shadow .image-slider__image");
   if (e.target.classList.contains("next")) {
     currentImage = ++currentImage % sliderImages.length;
     sliderImage.src = `${sliderImages[currentImage]}`;
@@ -86,7 +99,7 @@ document.addEventListener("click", e => {
       item.classList.add("active-thumbnail");
     });
 
-    if (sliderImages != null) {
+    if (shadowOpen) {
       sliderImageShadow.src = `${sliderImages[currentImage]}`;
     }
   }
@@ -103,7 +116,7 @@ document.addEventListener("click", e => {
       item.classList.add("active-thumbnail");
     });
 
-    if (sliderImages != null) {
+    if (shadowOpen) {
       sliderImageShadow.src = `${sliderImages[currentImage]}`;
     }
   }
@@ -120,7 +133,7 @@ document.addEventListener("click", e => {
     quantity.textContent = quantityNum;
   }
 
-  const cartQuantity = document.styleSheets[0].cssRules[9];
+  const cartQuantity = document.styleSheets[0].cssRules[10];
   if (e.target.classList.contains("add-cart")) {
     
     if (quantityNum === 0) {
