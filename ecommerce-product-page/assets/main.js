@@ -133,7 +133,7 @@ document.addEventListener("click", e => {
     quantity.textContent = quantityNum;
   }
 
-  const cartQuantity = document.styleSheets[0].cssRules[10];
+  const cartQuantity = document.styleSheets[0].cssRules[9];
   if (e.target.classList.contains("add-cart")) {
     
     if (quantityNum === 0) {
