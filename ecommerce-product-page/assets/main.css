@@ -46,17 +46,11 @@ body {
   margin: auto;
 }
 
-.logo-area {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
 .menu-icon {
   margin-right: 1rem;
 }
 
-.logo-area__header {
+.logo-header {
   margin-right: auto;
 }
 
@@ -244,7 +238,7 @@ body {
 }
 
 .info__text {
-  line-height: 1.625rem;
+  line-height: 26px;
 }
 
 .price-info {
@@ -330,9 +324,9 @@ body {
   z-index: 3;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1015px) {
   .header.container {
-    width: min(77.08%, 1110px);
+    width: min(100%, 1110px);
     justify-content: flex-start;
     align-items: center;
     border-bottom: 1px solid hsl(219, 35%, 92%);
@@ -341,8 +335,8 @@ body {
     margin-inline: auto;
   }
 
-  .logo-area__header {
-    margin-right: 56.5px;
+  .logo-header {
+    margin-right: 3.53125rem;
   }
 
   .menu-icon {
@@ -381,7 +375,8 @@ body {
   .main.container {
     margin-top: 5.625rem;
     margin-inline: auto;
-    width: min(1015px, 70.44%);
+    width: 1015px;
+    height: 568px;
     display: flex;
   }
 
@@ -389,11 +384,16 @@ body {
     display: none;
   }
 
-  .image-slider__image {
-    width: clamp(18rem, 27.22vw, 27.8125rem);
-    height: clamp(18rem, 27.22vw, 27.8125rem);
+  .image-slider__btn {
+    width: 27.8125rem;
+    height: 27.8125rem;
     margin-bottom: 2rem;
     border-radius: 0.625rem;
+    overflow: hidden;
+  }
+
+  .image-slider__image {
+    height: 100%;
   }
 
   .thumbnails {
@@ -402,7 +402,7 @@ body {
   }
 
   .thumbnails__box {
-    width: clamp(3.03125rem, 5.389vw, 5.5rem);
+    width: 5.5rem;
     border-radius: 0.625rem;
     overflow: hidden;
     background-color: var(--clr--white);
@@ -426,19 +426,20 @@ body {
   }
 
   .main-section {
-    width: clamp(20rem, 27.22vw, 27.8125rem);
-    height: clamp(20rem, 27.22vw, 27.8125rem);
-    margin-bottom: 0;
-    margin-top: clamp(0.5rem, 4.4vw, 4rem);
+    width: 27.8125rem;
+    height: 27.8125rem;
+    margin: 0;
+    margin-top: 4rem;
+    margin-left: 7.8125rem;
   }
 
   .info__header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.846em;
   }
 
   .info__sub-header {
-    font-size: clamp(1.5rem, 2.67vw, 2.75rem);
-    margin-bottom: 2rem;
+    font-size: 2.75rem;
+    margin-bottom: 0.7273em;
   }
 
   .controls {
@@ -454,6 +455,15 @@ body {
 
   .quantity-selector {
     width: 45%;
+  }
+
+  .price-info {
+    flex-wrap: wrap;
+  }
+
+  .total {
+    margin-top: 0.625rem;
+    width: 100%;
   }
 
   .shadow-body {
@@ -474,7 +484,7 @@ body {
     flex-direction: column;
   }
 
-  .shadow .image-slider__image {
+  .shadow .image-slider__btn {
     width: 100%;
     height: 550px;
     border-radius: 1rem;
