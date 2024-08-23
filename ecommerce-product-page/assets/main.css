@@ -226,7 +226,8 @@ body {
   cursor: pointer;
 }
 
-.selector-box:hover path {
+.selector-box:hover path,
+.selector-box:focus path {
   stroke: var(--clr--pumpkin);
 }
 
