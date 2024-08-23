@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./assets/main.css">
-  <script src="./assets/main.js"></script>
+  <script src="./assets/main.js" defer></script>
   
   <title>Frontend Mentor | E-commerce product page</title>
 </head>
@@ -30,7 +30,7 @@
       <img src="./assets/images/icon-cart.svg" alt="shopping cart icon press to open cart" class="cart-icon">
     </button>
     
-    <a href="#"><img src="./assets/images/image-avatar.png" alt="user avatar" class="avatar"></a>
+    <a href="#" class="avatar"><img src="./assets/images/image-avatar.png" alt="user avatar"></a>
 
     <div class="shopping-cart">
       <h2 class="shopping-cart__header">cart</h2>
@@ -58,21 +58,21 @@
       </div>
 
       <div class="thumbnails">
-        <div class="thumbnails__box thumbnails__box--1 active-thumbnail">
+        <button class="thumbnails__box thumbnails__box--1 active-thumbnail">
           <img src="./assets/images/image-product-1-thumbnail.jpg" alt="" class="thumbnails__image">
-        </div>
+        </button>
 
-        <div class="thumbnails__box thumbnails__box--2">
+        <button class="thumbnails__box thumbnails__box--2">
           <img src="./assets/images/image-product-2-thumbnail.jpg" alt="" class="thumbnails__image">
-        </div>
+        </button>
 
-        <div class="thumbnails__box thumbnails__box--3">
+        <button class="thumbnails__box thumbnails__box--3">
           <img src="./assets/images/image-product-3-thumbnail.jpg" alt="" class="thumbnails__image">
-        </div>
+        </button>
 
-        <div class="thumbnails__box thumbnails__box--4">
+        <button class="thumbnails__box thumbnails__box--4">
           <img src="./assets/images/image-product-4-thumbnail.jpg" alt="" class="thumbnails__image">
-        </div>
+        </button>
       </div>
     </div>
 

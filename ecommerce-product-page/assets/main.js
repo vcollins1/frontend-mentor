@@ -17,7 +17,7 @@ document.addEventListener("click", e => {
   const sliderImageShadow = document.querySelector(".shadow .image-slider__image");
 
 
-  if (e.target.classList.contains("image-slider__btn") || e.target.classList.contains("image-slider__image")) {
+  if (e.target.classList.contains("image-slider__image")) {
     if (shadowOpen) 
       return;
 
@@ -40,13 +40,27 @@ document.addEventListener("click", e => {
     shadowBody.appendChild(shadow);
     document.body.append(shadowBody);
 
-    const shadowClose = document.querySelector(".shadow-close");
-    shadowClose.focus();
+    // const shadowClose = document.querySelector(".shadow-close");
+    // shadowClose.focus();
   }
 
   if (e.target.classList.contains("thumbnails__image")) {
-    console.log("clicked thumbnail...")
     const currentThumbnail = e.target.parentElement
+    currentImage = currentThumbnail.classList[1].slice(-1) - 1;
+
+    activeThumbnails.forEach(item => {
+      item.classList.remove("active-thumbnail");
+    });
+    
+    document.querySelectorAll(`.thumbnails__box--${currentImage + 1}`).forEach(item => {
+      item.classList.add("active-thumbnail");
+    });
+
+    sliderImage.src = `${sliderImages[currentImage]}`;
+  }
+
+  if (e.target.classList.contains("thumbnails__box")) {
+    const currentThumbnail = e.target
     currentImage = currentThumbnail.classList[1].slice(-1) - 1;
 
     activeThumbnails.forEach(item => {
@@ -167,3 +181,70 @@ document.addEventListener("click", e => {
     quantity.textContent = quantityNum;
   }
 });
+
+document.addEventListener("keydown", e => {
+  console.log(e.key)
+  if (e.key === " ") {
+    if (e.target.classList.contains("image-slider__btn")) {
+      if (shadowOpen) 
+        return;
+  
+      shadowOpen = true;
+      const sliderClone = document.querySelector(".image-slider").cloneNode(true);
+      sliderClone.querySelector(".image-slider__btn").setAttribute("tabindex", -1);
+      let sThumbnails = sliderClone.querySelectorAll(".thumbnails__box");
+      sThumbnails.forEach(item => {
+        item.setAttribute("tabindex", -1)
+      });
+      
+      const shadowBody = document.createElement("div");
+      shadowBody.classList.add("shadow-body");
+  
+      const shadow = document.createElement("div");
+      shadow.classList.add("shadow");
+  
+      shadow.innerHTML = `
+      <button class="shadow-close shadow-close--btn">
+        <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+          <path class="shadow-close" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/>
+        </svg>
+      </button>`;
+      shadow.appendChild(sliderClone);
+      shadowBody.appendChild(shadow);
+      document.body.append(shadowBody);
+
+      shadow
+  
+      shadowClose = document.querySelector(".shadow-close");
+      shadowClose.focus();
+    }
+  }
+
+  if (shadowOpen && e.key == "Tab") {
+    console.log(e.shiftKey);
+    const close = document.querySelector(".shadow-close--btn");
+    const previous = document.querySelector(".shadow-body .previous");
+    const next = document.querySelector(".shadow-body .next");
+
+
+    if (e.target === next) { 
+      if (e.shiftKey) {
+        e.preventDefault();
+        previous.focus();
+      } else {
+        e.preventDefault();
+        close.focus();
+      }
+    }
+
+    if (e.target === close) { 
+      if (e.shiftKey) {
+        e.preventDefault();
+        next.focus();
+      } else {
+        e.preventDefault();
+        previous.focus();
+      }
+    }
+  }
+})

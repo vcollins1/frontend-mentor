@@ -86,11 +86,16 @@ body {
 
 .avatar {
   width: clamp(1.5rem, 6.4vw , 3.125rem);
+}
+
+.avatar img {
+  width: 100%;
   border-radius: 100%;
   border: 2px solid var(--clr--white);
 }
 
-.avatar:hover {
+.avatar:hover img,
+.avatar:focus img {
   border-color: var(--clr--pumpkin);
 }
 
@@ -218,11 +223,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.previous,
-.next {
-  cursor: pointer;
+.selector-box:hover path {
+  stroke: var(--clr--pumpkin);
 }
 
 .thumbnails {
@@ -310,7 +315,8 @@ body {
   cursor: pointer;
 }
 
-.quantity-btn:hover path {
+.quantity-btn:hover path,
+.quantity-btn:focus path {
   fill: hsl(26, 100%, 71%);
 }
 
@@ -329,7 +335,9 @@ body {
 }
 
 .cart-btn:hover,
-.checkout-btn:hover {
+.checkout-btn:hover,
+.cart-btn:focus,
+.checkout-btn:focus {
   cursor: pointer;
   background-color: hsl(26, 100%, 71%);
 }
@@ -393,7 +401,7 @@ body {
     margin: 0;
     display: flex;
     align-items: center;
-    border-bottom: 3px solid var(--clr--white);
+    border-bottom: 3px solid transparent;
   }
 
   .nav-item a {
@@ -404,7 +412,7 @@ body {
   }
 
   .nav-item:has(a:hover),
-  .nav-item:active {
+  .nav-item:has(a:focus) {
     border-color: var(--clr--pumpkin);
   }
 
@@ -439,16 +447,18 @@ body {
 
   .thumbnails__box {
     width: 5.5rem;
+    height: 5.5rem;
     border-radius: 0.625rem;
     overflow: hidden;
     background-color: var(--clr--white);
+    border: 1px solid var(--clr--white);
   }
 
-  .thumbnails__box.active-thumbnail {
+  .active-thumbnail {
     border: 2px solid var(--clr--pumpkin);
   }
 
-  .thumbnails__box.active-thumbnail .thumbnails__image {
+  .active-thumbnail .thumbnails__image {
     opacity: 0.5;
   }
 
@@ -460,6 +470,10 @@ body {
   .thumbnails__image:hover {
     opacity: 0.5;
     cursor: pointer;
+  }
+
+  .thumbnails__box:focus .thumbnails__image {
+    opacity: 0.5;
   }
 
   .main-section {
@@ -549,10 +563,11 @@ body {
     cursor: pointer;
   }
 
-  .shadow-close:hover path {
+  .shadow-close:hover path,
+  .shadow-close:focus path {
     fill: var(--clr--pumpkin);
   }
-
+  
   .shopping-cart {
     top: -20px;
     left: clamp(200px, 30vw, 400px);
