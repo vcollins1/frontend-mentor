@@ -48,7 +48,13 @@ document.addEventListener("click", e => {
 
   if (e.target.classList.contains("cart-icon")) {
     const cart = document.querySelector(".shopping-cart");
-    cart.classList.toggle("open")
+    cart.classList.toggle("open");
+
+    if (cart.classList.contains("open")) {
+      e.target.setAttribute("aria-expanded", true);
+    } else {
+      e.target.setAttribute("aria-expanded", false);
+    }
   }
 
   if (e.target.classList.contains("next")) {
@@ -148,12 +154,13 @@ const openImageModal = () => {
 
   const shadowBody = document.createElement("div");
   shadowBody.classList.add("shadow-body");
+  shadowBody.setAttribute("aria-modal", true);
 
   const shadow = document.createElement("div");
   shadow.classList.add("shadow");
 
   shadow.innerHTML = `
-  <button class="shadow-close shadow-focus">
+  <button class="shadow-close shadow-focus" aria-label="close image modal">
     <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
       <path class="shadow-close" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/>
     </svg>
