@@ -12,7 +12,7 @@
     --dark-electric-blue: hsl(215, 17%, 45%);
     --pure-white: hsl(0, 0%, 100%);
     --hawkes-blue: hsl(216, 95%, 92%);
-    --oyster-bay: hsl(183, 95%, 92%);
+    --oyster-bay: hsl(189, 64%, 98%);
 
     /*-----------------------------------------------------
     Site Typography
@@ -22,11 +22,156 @@
     --heading-m: 1.5rem;
     --heading-s: 1.25rem;
     --body-m: 1rem;
-    --body: 0.875rem;
+    --body-s: 0.875rem;
 }
 
 
 body {
     font-family: inter;
     font-size: var(--body-m);
+    background-color: var(--oyster-bay);
+    color: var(--dark-electric-blue);
+}
+
+.header {
+    width: 87.467%;
+    margin-inline: auto;
+    margin-bottom: 4.5rem;
+}
+
+.header::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 40rem;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom right, var(--oyster-bay), var(--hawkes-blue));
+    padding: 0;
+    border-radius: 0 0 2.1875rem 2.1875rem;
+    z-index: -1;
+}
+
+.header__logo {
+    width: clamp(2.5rem, 10.67vw, 4rem);
+    margin-inline: auto;
+    padding-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.header__title {
+    font-size: clamp(var(--heading-l), 12.8vw, var(--heading-xl));
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.1;
+    color: var(--gunmental);
+    margin-bottom: 1.5rem;
+}
+
+.header__text {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.bmi-calc {
+    background-color: var(--pure-white);
+    height: 41.0625rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.bmi-calc__header {
+    font-size: var(--heading-m);
+    font-weight: 500;
+    color: var(--gunmental);
+    margin-bottom: 1.5rem;
+}
+
+.bmi-calc__units {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio-btn {
+    width: 8rem;
+    display: flex;
+    gap: 1.125rem;
+    align-items: center;
+    color: var(--gunmental);
+    font-weight: 700;
+}
+
+.bmi-calc__units--radio {
+    width: 1.9375rem;
+    height: 1.9375rem;
+    border:1px solid var(--dark-electric-blue);
+    border-radius: 100%;
+}
+
+.bmi-calc__units--radio-input {
+    display: none;
+}
+
+.bmi-calc__inputs {
+    margin-bottom: 1.5rem;
+}
+
+.user-input {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-input > * {
+    width: 100%;
+}
+
+.user-input:first-child {
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: var(--body-s);
+    margin-bottom: 0.5rem;
+}
+
+.input {
+    padding: 1.25rem;
+    border: 1px solid var(--dark-electric-blue);
+    border-radius: 0.75rem;
+    height: 4.3125rem;
+    font-size: var(--heading-m);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.input__field {
+    border: none;
+    width: 10.8125rem;
+}
+
+.input__unit {
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.results {
+    height: 16.0625rem;
+    color: var(--pure-white);
+    background-color: var(--blue);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.results__header {
+    font-weight: 700;
+}
+
+.results__bmi {
+    font-size: var(--heading-l);
+}
+
+.results__summary {
+    font-size: var(--body-s);
 }
