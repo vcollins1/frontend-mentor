@@ -33,9 +33,12 @@ body {
     color: var(--dark-electric-blue);
 }
 
-.header {
-    width: 87.467%;
+.container {
+    width: 87.467% !important; 
     margin-inline: auto;
+}
+
+.header {
     margin-bottom: 4.5rem;
 }
 
@@ -174,4 +177,26 @@ body {
 
 .results__summary {
     font-size: var(--body-s);
+}
+
+.bmi-meaning {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 4.475625rem;
+}
+
+.bmi-meaning > * {
+    width: 100%;
+}
+
+.bmi-meaning__img {
+    order: -1;
+    margin-bottom: 3rem;
+}
+
+.bmi-meaning__header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    letter-spacing: -5%;
 }
