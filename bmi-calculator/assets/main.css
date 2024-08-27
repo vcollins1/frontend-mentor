@@ -1,0 +1,32 @@
+@font-face {
+    font-family: inter;
+    src: url(./fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+:root {
+    /*-----------------------------------------------------
+    Site Colors
+    -----------------------------------------------------*/
+    --blue: hsl(227, 92%, 58%);
+    --gunmental: hsl(215, 31%, 21%);
+    --dark-electric-blue: hsl(215, 17%, 45%);
+    --pure-white: hsl(0, 0%, 100%);
+    --hawkes-blue: hsl(216, 95%, 92%);
+    --oyster-bay: hsl(183, 95%, 92%);
+
+    /*-----------------------------------------------------
+    Site Typography
+    -----------------------------------------------------*/
+    --heading-xl: 4rem;
+    --heading-l: 3rem;
+    --heading-m: 1.5rem;
+    --heading-s: 1.25rem;
+    --body-m: 1rem;
+    --body: 0.875rem;
+}
+
+
+body {
+    font-family: inter;
+    font-size: var(--body-m);
+}
