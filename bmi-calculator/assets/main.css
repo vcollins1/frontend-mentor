@@ -219,3 +219,43 @@ body {
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
+
+.limitations {
+    margin-bottom: 6rem;
+}
+
+.limitations-summary {
+    margin-bottom: 3.5rem;
+}
+
+.limitations-summary__header {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--gunmental);
+    text-align: center;
+}
+
+.limitations__articles {
+    display: grid;
+    gap: 1rem;
+}
+
+.limitations__article {
+    padding: 1.5rem;
+    background-color: var(--pure-white);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+}
+
+.limitations__article h3 {
+    align-self: center;
+    color: var(--gunmental);
+    font-size: var(--heading-s);
+    font-weight: 500;
+}
+
+.article-text {
+    grid-column: span 2;
+}
