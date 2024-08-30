@@ -157,6 +157,21 @@ Header
     margin-bottom: 1rem;
 }
 
+.bmi-calc__inputs.imperial {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.imperial > .user-input {
+    width: 100%;
+    display: grid;
+    gap: 5%;
+}
+
+.imperial .description {
+    grid-column: span 2;
+}
+
 .description {
     font-size: var(--body-s);
     margin-bottom: 0.5rem;
@@ -329,7 +344,7 @@ Media Queries
     .bmi-calc {
         height: 29.1875rem;
     }
-
+    
     .bmi-calc__header {
         margin-bottom: 2rem;
     }
@@ -346,7 +361,7 @@ Media Queries
     }
 
     .user-input {
-        width: 18.75rem;
+        width: 50%;
     }
 
     .user-input:first-child {
@@ -452,6 +467,10 @@ Media Queries
         height: 30.25rem;
         grid-row: 2 / span 2;
         grid-column-start: 2;
+    }
+
+    .bmi-calc:has(.bmi-calc__inputs.imperial) {
+        height: 606px;
     }
 
     .user-input {
