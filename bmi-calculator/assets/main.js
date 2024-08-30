@@ -61,6 +61,8 @@ document.addEventListener("change", e => {
     if (e.target.classList.contains("input__field")) {
         if (currentUnits === "metric") {
             resultsBMI.innerHTML = calculateMetricBMI();
+        } else {
+            resultsBMI.innerHTML = calculateImperialBMI();
         }
     }
 })
@@ -77,4 +79,19 @@ const calculateMetricBMI = () => {
     const hcm = parseFloat(height.value) / 100.0;
 
     return (wkg / (hcm * hcm)).toFixed(1);
+}
+
+const calculateImperialBMI = () => {
+    const heightFT = document.querySelector(".height-ft");
+    const heightIN = document.querySelector(".height-in");
+    const weightST = document.querySelector(".weight-st");
+    const weightLBS = document.querySelector(".weight-lbs");
+
+    if (weightST.value === "" || weightLBS.value === "" || heightFT.value === "" || heightIN.value === "")
+        return 0;
+
+    const wlbs = parseFloat(weightST.value) * 14.0 + parseFloat(weightLBS.value);
+    const hin = parseFloat(heightFT.value) * 12.0 + parseFloat(heightIN.value);
+
+    return (703.0 * (wlbs / (hin * hin))).toFixed(1);
 }
