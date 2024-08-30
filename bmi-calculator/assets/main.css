@@ -117,17 +117,22 @@ Header
     background-color: var(--blue);
     border-radius: 100%;
     display: block;
-    top: 7px;
-    left: 7px;
+    top: 5px;
+    left: 5px;
     position: absolute;
 }
 
 .bmi-calc__units--radio {
     width: 1.9375rem;
     height: 1.9375rem;
-    border:1px solid var(--dark-electric-blue);
+    border:3px solid var(--dark-electric-blue);
     border-radius: 100%;
     position: relative;
+    cursor: pointer;
+}
+
+.bmi-calc__units--radio:hover {
+    border-color: var(--blue);
 }
 
 .bmi-calc__units--radio-input {
@@ -141,6 +146,7 @@ Header
 .user-input {
     display: flex;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .user-input > * {
@@ -165,6 +171,16 @@ Header
     display: flex;
     align-items: center;
     gap: 1.5rem;
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+.input:focus-within,
+.input:hover {
+    border-width: 0.25rem;
+    border-color: var(--blue);
 }
 
 .input__field {
