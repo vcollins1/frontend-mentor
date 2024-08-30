@@ -173,6 +173,12 @@ Header
     gap: 1.5rem;
 }
 
+.input__field {
+    border: none;
+    width: 90%;
+    cursor: pointer;
+}
+
 .input__field:focus {
     outline: none;
 }
@@ -181,11 +187,6 @@ Header
 .input:hover {
     border-width: 0.25rem;
     border-color: var(--blue);
-}
-
-.input__field {
-    border: none;
-    width: 90%;
 }
 
 .input__unit {
