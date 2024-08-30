@@ -105,11 +105,29 @@ Header
     font-weight: 700;
 }
 
+.radio-btn:has(input:checked) .bmi-calc__units--radio {
+    background-color: var(--hawkes-blue);
+    border-color: var(--hawkes-blue);
+}
+
+.radio-btn:has(input:checked) .bmi-calc__units--radio::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: var(--blue);
+    border-radius: 100%;
+    display: block;
+    top: 7px;
+    left: 7px;
+    position: absolute;
+}
+
 .bmi-calc__units--radio {
     width: 1.9375rem;
     height: 1.9375rem;
     border:1px solid var(--dark-electric-blue);
     border-radius: 100%;
+    position: relative;
 }
 
 .bmi-calc__units--radio-input {
