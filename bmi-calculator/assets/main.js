@@ -10,6 +10,7 @@ document.addEventListener("change", e => {
         resultsBMI.innerHTML = "0";
         currentUnits = e.target.classList[1];
         bmiInputs.classList.toggle("imperial");
+        
         bmiCategory.innerHTML = "...";
         weightRange.innerHTML = "...";
 
@@ -34,6 +35,26 @@ document.addEventListener("change", e => {
                 resultsBMI.innerHTML = imperialResults["bmi"];
                 updateSummary(imperialResults["bmi"], imperialResults["heightInches"], currentUnits);
             }
+        }
+    }
+})
+
+document.addEventListener("keydown", e => {
+    if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("bmi-calc__units--radio")) {
+        e.preventDefault();
+        e.target.nextElementSibling.checked = true;
+
+        resultsBMI.innerHTML = "0";
+        currentUnits = e.target.nextElementSibling.classList[1];
+        bmiInputs.classList.toggle("imperial");
+        
+        bmiCategory.innerHTML = "...";
+        weightRange.innerHTML = "...";
+
+        if (currentUnits === "imperial") {
+            bmiInputs.innerHTML = imperialDisplay;
+        } else {
+            bmiInputs.innerHTML = metricDisplay;
         }
     }
 })
@@ -75,7 +96,7 @@ const calculateImperialBMI = () => {
 }
 
 const metricDisplay = `
-    <label class="user-input">
+    <label class="user-input" aria-label="Enter height in centimeters">
         <span class="description">Height</span>
         <span class="input">
             <input type="number" class="input__field height-cm" min="0" name="height-cm">
@@ -83,7 +104,7 @@ const metricDisplay = `
         </span>
     </label>
     
-    <label class="user-input">
+    <label class="user-input" aria-label="Enter weight in kilograms">
         <span class="description">Weight</span>
         <span class="input">
             <input type="number" class="input__field weight-kg" min="0" name="weight-kg">
@@ -93,27 +114,27 @@ const metricDisplay = `
 `;
 
 const imperialDisplay = `
-    <label class="user-input">
+    <label class="user-input" role="group">
         <span class="description">Height</span>
-        <span class="input">
+        <span class="input" aria-label="Enter height in feet">
             <input type="number" class="input__field height-ft" min="0" name="height-ft">
             <span class="input__unit">ft</span>
         </span>
 
-        <span class="input">
+        <span class="input" aria-label="Enter height in inches">
             <input type="number" class="input__field height-in" min="0" name="height-in">
             <span class="input__unit">in</span>
         </span>
     </label>
     
-    <label class="user-input">
+    <label class="user-input" role="group">
         <span class="description">Weight</span>
-        <span class="input">
+        <span class="input" aria-label="Enter weight in stones">
             <input type="number" class="input__field weight-st" min="0" name="weight-st">
             <span class="input__unit">st</span>
         </span>
 
-        <span class="input">
+        <span class="input" aria-label="Enter weight in pounds">
             <input type="number" class="input__field weight-lbs" min="0" name="weight-lbs">
             <span class="input__unit">lbs</span>
         </span>
@@ -168,9 +189,7 @@ const updateSummary = (bmi, height, units) => {
         const html = `${stone[0]}st ${lbs[0]}lbs - ${stone[1]}st ${lbs[1]}lbs`;
         weightRange.innerHTML = html;
     } else {
-        console.log(height);
         height = Math.floor(idealWeightByHeight["conversion"]["cmToInch"] * height);
-        console.log(height);
         const range = idealWeightByHeight["heights"][height];
 
         const kgs = [
