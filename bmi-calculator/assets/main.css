@@ -229,6 +229,10 @@ Header
     font-size: var(--body-s);
 }
 
+.weight-range {
+    font-weight: 700;
+}
+
 /*-----------------------------------------------------
 BMI Meaning Section
 -----------------------------------------------------*/
@@ -344,7 +348,7 @@ Media Queries
     .bmi-calc {
         height: 29.1875rem;
     }
-    
+
     .bmi-calc__header {
         margin-bottom: 2rem;
     }
