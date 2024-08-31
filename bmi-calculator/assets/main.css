@@ -81,6 +81,7 @@ Header
     height: 41.0625rem;
     padding: 1.5rem;
     border-radius: 1rem;
+    box-shadow: 0 0 30px 5px var(--hawkes-blue);
 }
 
 .bmi-calc__header {
@@ -315,6 +316,7 @@ BMI Limitations
     display: grid;
     grid-template-columns: 2rem 1fr;
     gap: 1rem;
+    box-shadow: 0 0 30px 5px var(--hawkes-blue);
 }
 
 .limitations__article img {
