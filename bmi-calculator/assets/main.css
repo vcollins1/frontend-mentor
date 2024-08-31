@@ -94,10 +94,11 @@ Header
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
+    border: none;
 }
 
 .radio-btn {
-    width: 18.75rem;
+    width: 50%;
     display: flex;
     gap: 1.125rem;
     align-items: center;

@@ -78,7 +78,7 @@ const metricDisplay = `
     <label class="user-input">
         <span class="description">Height</span>
         <span class="input">
-            <input type="number" class="input__field height-cm" min="0">
+            <input type="number" class="input__field height-cm" min="0" name="height-cm">
             <span class="input__unit">cm</span>
         </span>
     </label>
@@ -86,7 +86,7 @@ const metricDisplay = `
     <label class="user-input">
         <span class="description">Weight</span>
         <span class="input">
-            <input type="number" class="input__field weight-kg" min="0">
+            <input type="number" class="input__field weight-kg" min="0" name="weight-kg">
             <span class="input__unit">kg</span>
         </span>
     </label>    
@@ -96,12 +96,12 @@ const imperialDisplay = `
     <label class="user-input">
         <span class="description">Height</span>
         <span class="input">
-            <input type="number" class="input__field height-ft" min="0">
+            <input type="number" class="input__field height-ft" min="0" name="height-ft">
             <span class="input__unit">ft</span>
         </span>
 
         <span class="input">
-            <input type="number" class="input__field height-in" min="0">
+            <input type="number" class="input__field height-in" min="0" name="height-in">
             <span class="input__unit">in</span>
         </span>
     </label>
@@ -109,12 +109,12 @@ const imperialDisplay = `
     <label class="user-input">
         <span class="description">Weight</span>
         <span class="input">
-            <input type="number" class="input__field weight-st" min="0">
+            <input type="number" class="input__field weight-st" min="0" name="weight-st">
             <span class="input__unit">st</span>
         </span>
 
         <span class="input">
-            <input type="number" class="input__field weight-lbs" min="0">
+            <input type="number" class="input__field weight-lbs" min="0" name="weight-lbs">
             <span class="input__unit">lbs</span>
         </span>
     </label>
