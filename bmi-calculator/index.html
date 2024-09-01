@@ -26,15 +26,15 @@
       <fieldset class="bmi-calc__units" role="radiogroup" aria-label="select units to calculate BMI" tabindex="0">
         <legend></legend>
         <label class="radio-btn">
-          <span class="bmi-calc__units--radio" role="radio" aria-label="use metric units" tabindex="0"></span>
+          <span class="bmi-calc__units--radio" role="radio" aria-label="use metric units" aria-checked="true" tabindex="0"></span>
           Metric
-          <input type="radio" name="unit" id="" class="bmi-calc__units--radio-input metric" checked>
+          <input type="radio" name="unit" class="bmi-calc__units--radio-input metric" checked>
         </label>
 
         <label class="radio-btn">
-          <span class="bmi-calc__units--radio" role="radio" aria-label="use imperial units" tabindex="0"></span>
+          <span class="bmi-calc__units--radio" role="radio" aria-label="use imperial units" aria-checked="false" tabindex="0"></span>
           Imperial
-          <input type="radio" name="unit" id="" class="bmi-calc__units--radio-input imperial">
+          <input type="radio" name="unit" class="bmi-calc__units--radio-input imperial">
         </label>
       </fieldset>
 
@@ -56,7 +56,7 @@
         </label>
       </div>
 
-      <div class="results" tabindex="0" aria-label="BMI results">
+      <div class="results" tabindex="0" role="group">
         <h3 class="results__header" tabindex="0">Your BMI is...<br> <span class="results__bmi">0</span></h3>
         <p class="results__summary" tabindex="0">BMI suggests you're <span class="bmi-category">...</span>. Your ideal weight is between <span class="weight-range">...</span>.</p> 
       </div>

@@ -19,6 +19,10 @@ document.addEventListener("change", e => {
         } else {
             bmiInputs.innerHTML = metricDisplay;
         }
+
+        const notChecked = document.querySelector("[aria-checked=false]");
+        notChecked.setAttribute("aria-checked", true);
+        document.querySelector("[aria-checked=true]").setAttribute("aria-checked", false);
     }
 
     if (e.target.classList.contains("input__field")) {
