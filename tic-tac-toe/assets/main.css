@@ -150,3 +150,97 @@ body {
 .btn--player:hover {
     background-color: var(--light-blue-hover);
 }
+
+.main.play {
+    margin-top: 24px;
+}
+
+.board-header {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 64px;
+}
+
+.board-header__logo {
+    margin-right: auto;
+}
+
+.turn {
+    color: var(--silver);
+    display: flex;
+    font-size: clamp(14px, 3.73vw, 16px);
+    font-weight: var(--bold);
+    letter-spacing: 0.88px;
+    align-items: center;
+    background-color: var(--semi-dark-nary);
+    padding: 9px 15px 13px;
+    border-radius: 10px;
+}
+
+.turn__img {
+    margin-right: clamp(9px, 2.4vw, 13px);
+}
+
+.turn__img svg {
+    width: clamp(16px, 4.2667vw, 20px);
+    height: clamp(16px, 4.2667vw, 20px);
+}
+
+.turn__img path {
+    fill: var(--silver);
+}
+
+.reset {
+    background-color: var(--silver);
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: clamp(74px, 19.73vw, 108px);
+}
+
+.board {
+    height: 328px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.board__box {
+    background-color: var(--semi-dark-nary);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board__mark {
+    width: 40px;
+    height: 40px;
+}
+
+.results {
+    display: flex;
+    gap: 20px;
+}
+
+.result {
+    width: 33.33%;
+    text-align: center;
+    padding: 12px 15px;
+    border-radius: 10px;
+}
+
+.result--p1 {
+    background-color: var(--light-blue);
+}
+
+.result--p2 {
+    background-color: var(--light-yellow);
+}
+
+.result--ties {
+    background-color: var(--silver);
+}
