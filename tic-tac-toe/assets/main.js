@@ -1,4 +1,23 @@
 const mainContent = document.querySelector(".main");
+let turn = "x";
+
+document.addEventListener("click", e => {
+    
+    
+    if (e.target.classList.contains("board__box--marked"))
+        return;
+    else if (e.target.classList.contains("board__box")) {
+        if (turn === "x") {
+            e.target.innerHTML = `<img src="./assets/images/icon-x.svg" alt="" class="board__mark">`;
+            turn = "o";
+        } else if (turn === "o") {
+            e.target.innerHTML = `<img src="./assets/images/icon-o.svg" alt="" class="board__mark">`;
+            turn = "x";
+        }
+
+        e.target.classList.add("board__box--marked");
+    }
+})
 
 const gameMainMenu = `
     <img class="logo" src="./assets/images/logo.svg" alt="X O">
