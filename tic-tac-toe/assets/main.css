@@ -66,49 +66,35 @@ body {
 
 .mark__selector {
     margin-bottom: 26px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
     background-color: var(--dark-navy);
     border-radius: 10px;
-    position: relative;
-    cursor: pointer;
+    display: flex;
+    padding: 9px 8px;
 }
 
-.mark__selector--checkbox {
-    display: none;
-}
-
-.mark__selector:has(.mark__selector--checkbox)::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 47.14%;
-    height: 77.78%;
-    left: 3.33%;
-    background-color: var(--silver);
+.mark__selector--mark {
+    width: 50%;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
 }
 
-.mark__selector:has(.mark__selector--checkbox:checked)::before {
-    left: 50%;
+.mark__selector--mark:hover {
+    background-color: hsl(202, 32%, 17%);
 }
 
-.mark__selector:has(.mark__selector--checkbox) .mark__selector--x path {
+.mark__selector--mark:has(.mark__selector--radio:checked) {
+    background-color: var(--silver);
+}
+
+.mark__selector--mark:has(.mark__selector--radio:checked) path {
     fill: var(--dark-navy);
 }
 
-.mark__selector:has(.mark__selector--checkbox:checked) .mark__selector--o path {
-    fill: var(--dark-navy);
-}
-
-.mark__selector:has(.mark__selector--checkbox:checked) .mark__selector--o path {
-    fill: var(--dark-navy);
-}
-
-.mark__selector:has(.mark__selector--checkbox:checked) .mark__selector--x path {
-    fill: var(--silver);
+.mark__selector--radio {
+    display: none;
 }
 
 .mark__selector--x svg,
@@ -119,7 +105,6 @@ body {
 
 .mark__selector--x,
 .mark__selector--o {
-    z-index: 1;
     cursor: pointer;
 }
 
@@ -147,6 +132,11 @@ body {
 .btn--cpu {
     margin-bottom: clamp(16px, 4.267vw, 20px);
     background-color: var(--light-yellow);
+    box-shadow: inset 0 -8px hsl(39, 82%, 44%);
+}
+
+.btn--player {
+    box-shadow: inset 0 -8px hsl(178, 78%, 31%);
 }
 
 .btn--cpu:hover {
