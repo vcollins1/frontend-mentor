@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "outfit";
+    src: url(./fonts/Outfit/Outfit-VariableFont_wght.ttf);
+}
+
+:root {
+    /*-----------------------------------------------------
+    Colors
+    -----------------------------------------------------*/
+    --dark-navy: hsl(202, 32%, 15%);
+    --semi-dark-nary: hsl(199, 35%, 19%);
+    --silver: hsl(198, 23%, 72%);
+    --light-blue: hsl(178, 60%,48%);
+    --light-yellow: hsl(39, 88%, 58%);
+
+    --light-blue-hover: hsl(178, 75%,65%);
+    --light-yellow-hover: hsl(39, 100%, 69%);
+
+    /*-----------------------------------------------------
+    Typography
+    -----------------------------------------------------*/
+    --heading-l: 2.5rem;
+    --heading-m: 1.5rem;
+    --heading-s: 1.25rem;
+    --heading-xs: 1rem;
+    --body: 0.875rem;
+
+    --bold: 700;
+    --medium: 500;
+
+}
+
+body {
+    text-transform: uppercase;
+    background-color: var(--dark-navy);
+    color: var(--dark-navy);
+    font-family: "outfit";
+    font-size: var(--body);
+    font-weight: var(--medium);
+}
+
+.container {
+    width: min(87.467%, 28.75rem);
+    margin: clamp(119px, 31.73vw, 215px) auto;
+}
+
+.logo {
+    margin: 0 auto clamp(32px, 8.53vw, 40px);
+}
+
+.mark {
+    text-align: center;
+    margin-bottom: clamp(32px, 8.53vw, 40px);
+    color: var(--silver);
+    background-color: var(--semi-dark-nary);
+    border-radius: 15px;
+    padding: 24px 24px 30px;
+}
+
+.mark__header {
+    margin-bottom: 24px;
+    font-size: var(--heading-xs);
+    font-weight: var(--bold);
+    letter-spacing: 1px;
+}
+
+.mark__selector {
+    margin-bottom: 26px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--dark-navy);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.mark__selector--checkbox {
+    display: none;
+}
+
+.mark__selector:has(.mark__selector--checkbox)::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 47.14%;
+    height: 77.78%;
+    left: 3.33%;
+    background-color: var(--silver);
+    border-radius: 10px;
+}
+
+.mark__selector:has(.mark__selector--checkbox:checked)::before {
+    left: 50%;
+}
+
+.mark__selector:has(.mark__selector--checkbox) .mark__selector--x path {
+    fill: var(--dark-navy);
+}
+
+.mark__selector:has(.mark__selector--checkbox:checked) .mark__selector--o path {
+    fill: var(--dark-navy);
+}
+
+.mark__selector:has(.mark__selector--checkbox:checked) .mark__selector--o path {
+    fill: var(--dark-navy);
+}
+
+.mark__selector:has(.mark__selector--checkbox:checked) .mark__selector--x path {
+    fill: var(--silver);
+}
+
+.mark__selector--x svg,
+.mark__selector--o svg {
+    width: 32px;
+    height: 32px;
+}
+
+.mark__selector--x,
+.mark__selector--o {
+    z-index: 1;
+    cursor: pointer;
+}
+
+.mark__selector--x path,
+.mark__selector--o path {
+    fill: var(--silver);
+}
+
+.info {
+    letter-spacing: 0.88px;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    height: clamp(56px, 14.9vw, 67px);
+    text-transform: uppercase;
+    font-size: clamp(var(--heading-xs), 4.267vw, var(--heading-s));
+    font-weight: var(--bold);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn--cpu {
+    margin-bottom: clamp(16px, 4.267vw, 20px);
+    background-color: var(--light-yellow);
+}
+
+.btn--cpu:hover {
+    background-color: var(--light-yellow-hover);
+}
+
+.btn--player {
+    background-color: var(--light-blue);
+}
+
+.btn--player:hover {
+    background-color: var(--light-blue-hover);
+}
