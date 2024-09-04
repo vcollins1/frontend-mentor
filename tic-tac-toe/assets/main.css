@@ -247,6 +247,6 @@ body {
     background-color: var(--light-yellow);
 }
 
-.result--ties {
+.result--tie {
     background-color: var(--silver);
 }

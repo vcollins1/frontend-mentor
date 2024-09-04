@@ -11,6 +11,7 @@ let turn = "x";
 let p1Mark = undefined;
 let p2Mark = undefined;
 let gameOver = false;
+let moveCount = 0;
 
 
 document.addEventListener("click", e => { 
@@ -43,6 +44,8 @@ document.addEventListener("click", e => {
     else if (e.target.classList.contains("board__box") && !gameOver) {
         e.target.classList.add("board__box--marked");
         const position = parseInt(e.target.classList[1].slice(-1));
+        moveCount += 1;
+
         if (turn === "x") {
             boardArray[position] = turn;
             e.target.innerHTML = `<img src="./assets/images/icon-x.svg" alt="" class="board__mark">`;
@@ -52,8 +55,11 @@ document.addEventListener("click", e => {
                     const box = document.querySelector(`.board__box--${pos}`);
                     box.style.backgroundColor = `var(--light-blue)`;
                     box.querySelector(".board__mark").src = "./assets/images/icon-x-dark.svg";
-                    gameOver = true;
                 }
+
+                const totals = document.querySelector(".result--x .result__total");
+                totals.innerHTML = parseInt(totals.innerHTML) + 1;
+                gameOver = true;
                 return;
             }
 
@@ -73,8 +79,11 @@ document.addEventListener("click", e => {
                     const box = document.querySelector(`.board__box--${pos}`);
                     box.style.backgroundColor = `var(--light-yellow)`;
                     box.querySelector(".board__mark").src = "./assets/images/icon-o-dark.svg";
-                    gameOver = true;
                 }
+
+                const totals = document.querySelector(".result--o .result__total");
+                totals.innerHTML = parseInt(totals.innerHTML) + 1;
+                gameOver = true;
                 return;
             }
 
@@ -86,7 +95,14 @@ document.addEventListener("click", e => {
                 </svg>
             `;
         }
+
+        if (moveCount === 9) {
+            const totals = document.querySelector(".result--tie .result__total");
+            totals.innerHTML = parseInt(totals.innerHTML) + 1;
+        }
     }
+
+
 })
 
 document.addEventListener("change", e => {
@@ -164,17 +180,17 @@ const gameBoard = `
     <div class="results">
         <div class="result result--x">
             <h2 class="result__header--x">X (you)</h2>
-            <h3 class="result__total">14</h3>
+            <h3 class="result__total">0</h3>
         </div>
 
-        <div class="result result--ties">
+        <div class="result result--tie">
             <h2 class="result__header">ties</h2>
-            <h3 class="result__total">32</h3>
+            <h3 class="result__total">0</h3>
         </div>
 
         <div class="result result--o">
             <h2 class="result__header--o">O (cpu)</h2>
-            <h3 class="result__total">11</h3>
+            <h3 class="result__total">0</h3>
         </div>
     </div>
 `;
