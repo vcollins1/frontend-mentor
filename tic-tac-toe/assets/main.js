@@ -59,6 +59,7 @@ document.addEventListener("click", e => {
 
                 const totals = document.querySelector(".result--x .result__total");
                 totals.innerHTML = parseInt(totals.innerHTML) + 1;
+                showDialog(turn);
                 gameOver = true;
                 return;
             }
@@ -83,6 +84,7 @@ document.addEventListener("click", e => {
 
                 const totals = document.querySelector(".result--o .result__total");
                 totals.innerHTML = parseInt(totals.innerHTML) + 1;
+                showDialog(turn);
                 gameOver = true;
                 return;
             }
@@ -99,6 +101,7 @@ document.addEventListener("click", e => {
         if (moveCount === 9) {
             const totals = document.querySelector(".result--tie .result__total");
             totals.innerHTML = parseInt(totals.innerHTML) + 1;
+            showDialog();
         }
     }
 
@@ -195,6 +198,18 @@ const gameBoard = `
     </div>
 `;
 
+const dialogContent = `
+    <div class="dialog__content">
+      <h2 class="dialog--h1"></h2>
+      <h3 class="dialog--h2"></h3>
+  
+      <div class="dialog__btn-group">
+        <button class="dialog--btn dialog--quit">quit</button>
+        <button class="dialog--btn dialog--next">next round</button>
+      </div>
+    </div>
+`;
+
 const showMainMenu = () => {
     mainContent.innerHTML = gameMainMenu;
 }
@@ -212,6 +227,34 @@ const checkWin = (p) => {
     }
 
     return [];
+}
+
+const showDialog = (winner) => {
+    const dialog = document.createElement("section");
+    dialog.classList.add("dialog");
+    dialog.setAttribute("role", "dialog");
+    dialog.innerHTML = dialogContent;
+    document.body.insertBefore(dialog, mainContent);
+
+    if (winner === p1Mark) {
+        dialog.querySelector(".dialog--h1").innerHTML = "player 1 wins";
+        dialog.querySelector(".dialog--h2").innerHTML = `
+            <img src="./assets/images/icon-${turn}.svg" alt="${turn}">
+            takes the round
+        `;
+        dialog.querySelector(".dialog--h2").style.color = `var(--win-${turn})`;
+        
+
+    } else if (winner === p2Mark) {
+        dialog.querySelector(".dialog--h1").innerHTML = "player 2 wins";
+        dialog.querySelector(".dialog--h2").innerHTML = `
+            <img src="./assets/images/icon-${turn}.svg" alt="${turn}">
+            takes the round
+        `;
+        dialog.querySelector(".dialog--h2").style.color = `var(--win-${turn})`;
+    } else {
+        dialog.querySelector(".dialog--h2").innerHTML = "round tied";
+    }
 }
 
 showMainMenu();

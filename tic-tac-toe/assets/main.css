@@ -16,6 +16,9 @@
     --light-blue-hover: hsl(178, 75%,65%);
     --light-yellow-hover: hsl(39, 100%, 69%);
 
+    --win-x: var(--light-blue);
+    --win-o: var(--light-yellow);
+
     /*-----------------------------------------------------
     Typography
     -----------------------------------------------------*/
@@ -152,7 +155,8 @@ body {
 }
 
 .main.play {
-    margin-top: 24px;
+    padding-top: 24px;
+    margin-top: 0;
 }
 
 .board-header {
