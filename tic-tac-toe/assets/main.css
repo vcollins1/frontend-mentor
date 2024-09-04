@@ -229,15 +229,21 @@ body {
 .result {
     width: 33.33%;
     text-align: center;
-    padding: 12px 15px;
+    padding: 11.5px 15px;
     border-radius: 10px;
 }
 
-.result--p1 {
+.result__total {
+    font-size: var(--heading-s);
+    font-weight: var(--bold);
+    line-height: 100%;
+}
+
+.result--x {
     background-color: var(--light-blue);
 }
 
-.result--p2 {
+.result--o {
     background-color: var(--light-yellow);
 }
 
