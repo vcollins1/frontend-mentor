@@ -254,3 +254,62 @@ body {
 .result--tie {
     background-color: var(--silver);
 }
+
+.dialog {
+    color: var(--silver);
+    position: absolute;
+    background-color: rgba(26, 42, 50, 0.6);
+    height: 100vh;
+    width: 100vw;
+}
+
+.dialog__content {
+    margin-top: 210px;
+    background-color: rgba(31, 55, 65, 0.9);
+    text-align: center;
+    padding: 45px 0;
+}
+
+.dialog--h1 {
+    margin-bottom: 16px;
+}
+
+.dialog--h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 24px;
+}
+
+.dialog--h2 img {
+    width: 30px;
+    height: 30px;
+}
+
+.dialog__btn-group {
+    width: 308px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-inline: auto;
+margin-top: 24px;
+}
+
+.dialog--btn {
+    border: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.dialog--btn1 {
+    background-color: var(--silver);
+    box-shadow: inset 0 -5px hsl(199, 18%, 51%);
+}
+
+.dialog--btn2 {
+    background-color: var(--light-yellow);
+    box-shadow: inset 0 -5px hsl(39, 82%, 44%);
+}

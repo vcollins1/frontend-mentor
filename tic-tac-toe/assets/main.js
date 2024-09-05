@@ -101,10 +101,13 @@ document.addEventListener("click", e => {
         if (moveCount === 9) {
             const totals = document.querySelector(".result--tie .result__total");
             totals.innerHTML = parseInt(totals.innerHTML) + 1;
-            showDialog();
+            showDialog("tie");
         }
     }
 
+    if (e.target.classList.contains("reset--btn")) {
+        showDialog("reset")
+    }
 
 })
 
@@ -161,9 +164,9 @@ const gameBoard = `
             </span>
             <h1>turn</h1>
         </div>
-        <span class="reset">
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.524 0h-1.88a.476.476 0 0 0-.476.499l.159 3.284A9.81 9.81 0 0 0 9.835.317C4.415.317-.004 4.743 0 10.167.004 15.597 4.406 20 9.835 20a9.796 9.796 0 0 0 6.59-2.536.476.476 0 0 0 .019-.692l-1.348-1.349a.476.476 0 0 0-.65-.022 6.976 6.976 0 0 1-9.85-.63 6.987 6.987 0 0 1 .63-9.857 6.976 6.976 0 0 1 10.403 1.348l-4.027-.193a.476.476 0 0 0-.498.476v1.881c0 .263.213.476.476.476h7.944A.476.476 0 0 0 20 8.426V.476A.476.476 0 0 0 19.524 0Z" fill="#1F3641"/>
+        <span class="reset reset--btn">
+            <svg class="reset--btn" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path class="reset--btn" d="M19.524 0h-1.88a.476.476 0 0 0-.476.499l.159 3.284A9.81 9.81 0 0 0 9.835.317C4.415.317-.004 4.743 0 10.167.004 15.597 4.406 20 9.835 20a9.796 9.796 0 0 0 6.59-2.536.476.476 0 0 0 .019-.692l-1.348-1.349a.476.476 0 0 0-.65-.022 6.976 6.976 0 0 1-9.85-.63 6.987 6.987 0 0 1 .63-9.857 6.976 6.976 0 0 1 10.403 1.348l-4.027-.193a.476.476 0 0 0-.498.476v1.881c0 .263.213.476.476.476h7.944A.476.476 0 0 0 20 8.426V.476A.476.476 0 0 0 19.524 0Z" fill="#1F3641"/>
             </svg>
         </span>
     </header>
@@ -204,8 +207,8 @@ const dialogContent = `
       <h3 class="dialog--h2"></h3>
   
       <div class="dialog__btn-group">
-        <button class="dialog--btn dialog--quit">quit</button>
-        <button class="dialog--btn dialog--next">next round</button>
+        <button class="dialog--btn dialog--btn1"></button>
+        <button class="dialog--btn dialog--btn2"></button>
       </div>
     </div>
 `;
@@ -229,31 +232,49 @@ const checkWin = (p) => {
     return [];
 }
 
-const showDialog = (winner) => {
+const showDialog = (mode) => {
     const dialog = document.createElement("section");
     dialog.classList.add("dialog");
     dialog.setAttribute("role", "dialog");
     dialog.innerHTML = dialogContent;
     document.body.insertBefore(dialog, mainContent);
 
-    if (winner === p1Mark) {
-        dialog.querySelector(".dialog--h1").innerHTML = "player 1 wins";
-        dialog.querySelector(".dialog--h2").innerHTML = `
-            <img src="./assets/images/icon-${turn}.svg" alt="${turn}">
-            takes the round
-        `;
-        dialog.querySelector(".dialog--h2").style.color = `var(--win-${turn})`;
-        
+    const btn1 = dialog.querySelector(".dialog--btn1");
+    const btn2 = dialog.querySelector(".dialog--btn2");
 
-    } else if (winner === p2Mark) {
-        dialog.querySelector(".dialog--h1").innerHTML = "player 2 wins";
-        dialog.querySelector(".dialog--h2").innerHTML = `
-            <img src="./assets/images/icon-${turn}.svg" alt="${turn}">
-            takes the round
-        `;
-        dialog.querySelector(".dialog--h2").style.color = `var(--win-${turn})`;
+    if (mode === "reset") {
+        btn1.innerHTML = "no, cancel";
+        btn1.classList.add("dialog--cancel");
+
+        btn2.innerHTML = "yes, restart";
+        btn2.classList.add("dialog--restart");
+        dialog.querySelector(".dialog--h2").innerHTML = "restart game?";
     } else {
-        dialog.querySelector(".dialog--h2").innerHTML = "round tied";
+        btn1.innerHTML = "quit";
+        btn1.classList.add("dialog--quit");
+
+        btn2.innerHTML = "next round";
+        btn2.classList.add("dialog--next");
+
+        if (mode === p1Mark) {
+            dialog.querySelector(".dialog--h1").innerHTML = "player 1 wins";
+            dialog.querySelector(".dialog--h2").innerHTML = `
+                <img src="./assets/images/icon-${turn}.svg" alt="${turn}">
+                takes the round
+            `;
+            dialog.querySelector(".dialog--h2").style.color = `var(--win-${turn})`;
+            
+    
+        } else if (mode === p2Mark) {
+            dialog.querySelector(".dialog--h1").innerHTML = "player 2 wins";
+            dialog.querySelector(".dialog--h2").innerHTML = `
+                <img src="./assets/images/icon-${turn}.svg" alt="${turn}">
+                takes the round
+            `;
+            dialog.querySelector(".dialog--h2").style.color = `var(--win-${turn})`;
+        } else if (mode === "tie") {
+            dialog.querySelector(".dialog--h2").innerHTML = "round tied";
+        }
     }
 }
 
