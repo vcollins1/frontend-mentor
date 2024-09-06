@@ -24,6 +24,20 @@ export function displayBoard(view, obj) {
     mainContent.classList.add("play")
 }
 
+export function clearBoard(obj) {
+    const marked = document.querySelectorAll(".board__box--marked");
+    marked.forEach(box => {
+        box.innerHTML = "";
+        box.classList.remove("board__box--marked");
+        box.removeAttribute("style");
+    });
+
+    obj.turn = "x";
+    obj.moveCount = 0;
+    obj.gameOver = false;
+    obj.boardArray = new Array(9).fill("");
+}
+
 /**
  * 
  * @param {string} view - html to be displayed

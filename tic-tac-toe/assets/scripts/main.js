@@ -1,4 +1,4 @@
-import { showMainMenu, showDialog, displayBoard, placeMark } from "./utils.js"
+import { showMainMenu, showDialog, displayBoard, placeMark, clearBoard } from "./utils.js"
 import { gameBoard, gameMainMenu, dialogContent } from "./views.js";
 
 const gameObject = {
@@ -61,6 +61,20 @@ document.addEventListener("click", e => {
         displayBoard(gameBoard, gameObject);
     }
 
+    if (e.target.classList.contains("dialog--quit")) {
+        const dialog = document.querySelector(".dialog");
+        document.body.removeChild(dialog);
+        document.querySelector(".main").classList.remove("play");
+
+        showMainMenu(gameMainMenu);
+    }
+
+    if (e.target.classList.contains("dialog--next")) {
+        const dialog = document.querySelector(".dialog");
+        document.body.removeChild(dialog);
+
+        clearBoard(gameObject);
+    }
 })
 
 document.addEventListener("change", e => {
