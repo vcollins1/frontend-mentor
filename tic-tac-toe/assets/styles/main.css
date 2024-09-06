@@ -1,6 +1,6 @@
 @font-face {
     font-family: "outfit";
-    src: url(./fonts/Outfit/Outfit-VariableFont_wght.ttf);
+    src: url(../fonts/Outfit/Outfit-VariableFont_wght.ttf);
 }
 
 :root {
@@ -186,13 +186,9 @@ body {
     margin-right: clamp(9px, 2.4vw, 13px);
 }
 
-.turn__img svg {
+.turn__img img {
     width: clamp(16px, 4.2667vw, 20px);
     height: clamp(16px, 4.2667vw, 20px);
-}
-
-.turn__img path {
-    fill: var(--silver);
 }
 
 .reset {
