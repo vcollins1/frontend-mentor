@@ -1,5 +1,5 @@
 import { showMainMenu, showDialog, displayBoard, placeMark } from "./utils.js"
-import { gameBoard, gameMainMenu } from "./views.js";
+import { gameBoard, gameMainMenu, dialogContent } from "./views.js";
 
 const gameObject = {
     turn: "x",
@@ -45,7 +45,7 @@ document.addEventListener("click", e => {
     }
 
     if (e.target.classList.contains("reset--btn")) {
-        showDialog(dialogContent, "reset")
+        showDialog(dialogContent, "reset", gameObject)
     }
 
 })
