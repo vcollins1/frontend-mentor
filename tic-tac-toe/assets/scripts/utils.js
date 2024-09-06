@@ -1,6 +1,5 @@
 import { dialogContent } from "./views.js";
 const mainContent = document.querySelector(".main");
-const boardArray = new Array(9).fill("");
 
 /**
  * 
@@ -12,9 +11,15 @@ export function showMainMenu(view) {
 
 /**
  * 
- * @param {string} view 
+ * @param {string} view
+ * @param {object} obj - holds game state
  */
-export function displayBoard(view) {
+export function displayBoard(view, obj) {
+    obj.turn = "x";
+    obj.moveCount = 0;
+    obj.gameOver = false;
+    obj.boardArray = new Array(9).fill("");
+
     mainContent.innerHTML = view;
     mainContent.classList.add("play")
 }
@@ -81,7 +86,7 @@ export function showDialog(view, mode, obj) {
 function checkWin(p, obj) {
     let curState = [];
     obj.winStates.forEach(state => {
-        if (p === boardArray[state[0]] && p === boardArray[state[1]] && p === boardArray[state[2]]) {
+        if (p === obj.boardArray[state[0]] && p === obj.boardArray[state[1]] && p === obj.boardArray[state[2]]) {
             curState = state;
             return;
         }
@@ -100,7 +105,7 @@ export function placeMark(e, obj) {
     e.target.classList.add("board__box--marked");
     obj.moveCount += 1;
     const position = parseInt(e.target.classList[1].slice(-1));
-    boardArray[position] = turn;
+    obj.boardArray[position] = turn;
     e.target.innerHTML = `<img src="./assets/images/icon-${turn}.svg" alt="" class="board__mark">`;
     const winState = checkWin(turn, obj);
  
