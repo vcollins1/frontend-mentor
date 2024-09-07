@@ -159,10 +159,16 @@ body {
     margin-top: 0;
 }
 
+@media screen and (min-width: 460px) {
+    .main.play {
+        padding-top: 140px;
+    }
+}
+
 .board-header {
     display: flex;
     align-items: center;
-    height: 40px;
+    height: clamp(40px, 10.67vw,52px);
     margin-bottom: 64px;
 }
 
@@ -177,9 +183,11 @@ body {
     font-weight: var(--bold);
     letter-spacing: 0.88px;
     align-items: center;
+    justify-content: center;
     background-color: var(--semi-dark-nary);
     padding: 9px 15px 13px;
     border-radius: 10px;
+    width: clamp(96px, 25.6vw, 140px);
 }
 
 .turn__img {
@@ -194,12 +202,20 @@ body {
 .reset {
     background-color: var(--silver);
     padding: 10px;
+    width: clamp(40px, 10.67vw,52px);
+    height: clamp(40px, 10.67vw,52px);
     border-radius: 10px;
     margin-left: clamp(74px, 19.73vw, 108px);
 }
 
+.reset--btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
-    height: 328px;
+    height: clamp(328px, 87.467vw, 460px);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
@@ -217,8 +233,8 @@ body {
 }
 
 .board__mark {
-    width: 40px;
-    height: 40px;
+    width: clamp(40px, 10.67vw, 64px);
+    height: clamp(40px, 10.67vw, 64px);
 }
 
 .results {
@@ -260,10 +276,16 @@ body {
 }
 
 .dialog__content {
-    margin-top: 210px;
+    margin-top: clamp(210px, 56vw, 330px);
     background-color: rgba(31, 55, 65, 0.9);
     text-align: center;
     padding: 45px 0;
+}
+
+@media screen and (min-width: 440px) {
+    .dialog__content {
+        height: 266px;
+    }
 }
 
 .dialog--h1 {
