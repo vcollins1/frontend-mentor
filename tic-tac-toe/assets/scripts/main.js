@@ -1,13 +1,14 @@
-import { showMainMenu, showDialog, displayBoard, placeMark, clearBoard } from "./utils.js"
+import { showMainMenu, showDialog, displayBoard, placeMark, clearBoard, setResultHeaders, getGameBox } from "./utils.js"
 import { gameBoard, gameMainMenu, dialogContent } from "./views.js";
 
 const gameObject = {
-    turn: undefined,
-    p1: undefined,
-    p2: undefined,
-    moveCount: undefined,
-    gameOver: undefined,
-    boardArray: undefined,
+    gameMode: undefined, // string
+    turn: undefined, // string
+    p1: undefined, // string
+    p2: undefined, // string
+    moveCount: undefined, // number
+    gameOver: undefined, // boolean
+    boardArray: undefined, //  array object
     winStates: [
         [0,1,2], [3,4,5], [6,7,8],
         [0,3,6], [1,4,7], [2,5,8],
@@ -19,30 +20,36 @@ showMainMenu(gameMainMenu);
 
 
 document.addEventListener("click", e => {
-    if (e.target.classList.contains("btn--player")) {
+    if (e.target.classList.contains("btn--menu")) {
         gameObject.p1 = document.querySelector(".mark__selector--radio:checked").id.slice(-1);
         displayBoard(gameBoard, gameObject);
-
         const resultHeaderX = document.querySelector(".result__header--x");
         const resultHeaderO = document.querySelector(".result__header--o");
+        gameObject.gameMode = e.target.classList[2].slice(5);
 
-        if (gameObject.p1 === "x") {
-            gameObject.p2 = "o";
-            resultHeaderX.innerHTML = "X (P1)";
-            resultHeaderO.innerHTML = "O (P2)";
-        } else {
-            gameObject.p2 = "x";
-            resultHeaderX.innerHTML = "X (P2)";
-            resultHeaderO.innerHTML = "O (P1)";
+        setResultHeaders(resultHeaderX, resultHeaderO, gameObject);
+
+        if (gameObject.gameMode === "cpu" && gameObject.p2 === 'x') {
+            setTimeout(() => {
+                const box = getGameBox();
+                placeMark(box, gameObject);
+            }, 2000);
         }
-    } else if (e.target.classList.contains("btn--cpu")) {
+
 
     }
 
     if (e.target.classList.contains("board__box--marked"))
         return;
     else if (e.target.classList.contains("board__box") && !gameObject.gameOver) {
-        placeMark(e, gameObject);
+        placeMark(e.target, gameObject);
+
+        if (gameObject.gameMode === "cpu" && !gameObject.gameOver) {
+            setTimeout(() => {
+                const box = getGameBox();
+                placeMark(box, gameObject);
+            }, 2000);
+        }
     }
 
     if (e.target.classList.contains("reset--btn")) {
@@ -74,6 +81,12 @@ document.addEventListener("click", e => {
         document.body.removeChild(dialog);
 
         clearBoard(gameObject);
+        if (gameObject.gameMode === "cpu" && gameObject.p2 === 'x') {
+            setTimeout(() => {
+                const box = getGameBox();
+                placeMark(box, gameObject);
+            }, 2000);
+        }
     }
 })
 

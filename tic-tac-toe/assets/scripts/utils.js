@@ -36,15 +36,37 @@ export function clearBoard(obj) {
     obj.moveCount = 0;
     obj.gameOver = false;
     obj.boardArray = new Array(9).fill("");
+
+    document.querySelector(".turn__img").innerHTML = `<img src="./assets/images/icon-${obj.turn}-silver.svg" alt="">`;
+}
+
+/**
+ * 
+ * @param {object} e1 - result header 1
+ * @param {object} e2 - result header 2
+ * @param {object} obj - holds game state
+ */
+export function setResultHeaders(e1, e2, obj) {
+    if (obj.p1 === "x") {
+        obj.p2 = "o";
+        e1.innerHTML = (obj.gameMode === "cpu") ? "x (you)" : "x (p1)";
+        e2.innerHTML = (obj.gameMode === "cpu") ? "o (cpu)" : "o (p2)";
+    } else {
+        obj.p2 = "x";
+        e1.innerHTML = "X (P2)";
+        e2.innerHTML = "O (P1)";
+        e1.innerHTML = (obj.gameMode === "cpu") ? "x (cpu)" : "x (p2)";
+        e2.innerHTML = (obj.gameMode === "cpu") ? "o (you)" : "o (p1)";
+    }
 }
 
 /**
  * 
  * @param {string} view - html to be displayed
- * @param {string} mode - win (p1/p2) or tie
+ * @param {string} dialogMode - win (p1/p2) or tie
  * @param {object} obj - holds game state
  */
-export function showDialog(view, mode, obj) {
+export function showDialog(view, dialogMode, obj) {
     const turn = obj.turn;
     const dialog = document.createElement("section");
     dialog.classList.add("dialog");
@@ -55,7 +77,7 @@ export function showDialog(view, mode, obj) {
     const btn1 = dialog.querySelector(".dialog--btn1");
     const btn2 = dialog.querySelector(".dialog--btn2");
 
-    if (mode === "reset") {
+    if (dialogMode === "reset") {
         btn1.innerHTML = "no, cancel";
         btn1.classList.add("dialog--cancel");
 
@@ -69,7 +91,7 @@ export function showDialog(view, mode, obj) {
         btn2.innerHTML = "next round";
         btn2.classList.add("dialog--next");
 
-        if (mode === obj.p1) {
+        if (dialogMode === obj.p1) {
             dialog.querySelector(".dialog--h1").innerHTML = "player 1 wins";
             dialog.querySelector(".dialog--h2").innerHTML = `
                 <img src="./assets/images/icon-${turn}.svg" alt="${turn}">
@@ -78,14 +100,14 @@ export function showDialog(view, mode, obj) {
             dialog.querySelector(".dialog--h2").style.color = `var(--win-${turn})`;
             
     
-        } else if (mode === obj.p2) {
+        } else if (dialogMode === obj.p2) {
             dialog.querySelector(".dialog--h1").innerHTML = "player 2 wins";
             dialog.querySelector(".dialog--h2").innerHTML = `
                 <img src="./assets/images/icon-${turn}.svg" alt="${turn}">
                 takes the round
             `;
             dialog.querySelector(".dialog--h2").style.color = `var(--win-${turn})`;
-        } else if (mode === "tie") {
+        } else if (dialogMode === "tie") {
             dialog.querySelector(".dialog--h2").innerHTML = "round tied";
         }
     }
@@ -114,13 +136,13 @@ function checkWin(p, obj) {
  * @param {object} e - board box object
  * @param {object} obj - holds game state
  */
-export function placeMark(e, obj) {
+export function placeMark(box, obj) {
     let turn = obj.turn;
-    e.target.classList.add("board__box--marked");
+    box.classList.add("board__box--marked");
     obj.moveCount += 1;
-    const position = parseInt(e.target.classList[1].slice(-1));
+    const position = parseInt(box.classList[1].slice(-1));
     obj.boardArray[position] = turn;
-    e.target.innerHTML = `<img src="./assets/images/icon-${turn}.svg" alt="" class="board__mark">`;
+    box.innerHTML = `<img src="./assets/images/icon-${turn}.svg" alt="" class="board__mark">`;
     const winState = checkWin(turn, obj);
  
     if (winState.length !== 0) {
@@ -147,4 +169,16 @@ export function placeMark(e, obj) {
     turn = (turn === "x") ? "o" : "x";
     document.querySelector(".turn__img").innerHTML = `<img src="./assets/images/icon-${turn}-silver.svg" alt="">`;
     obj.turn = turn;
+}
+
+export function getGameBox() {
+    let boxIndex = Math.floor(Math.random() * 9);
+    let box = document.querySelector(`.board__box--${boxIndex}`);
+
+    while (box.classList.contains("board__box--marked")) {
+        boxIndex = Math.floor(Math.random() * 9);
+        box = document.querySelector(`.board__box--${boxIndex}`);
+    }
+
+    return box;
 }

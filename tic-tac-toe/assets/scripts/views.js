@@ -29,9 +29,9 @@ export const gameMainMenu = `
       <p class="info">remember: x goes first</p>
     </section>
 
-    <button class="btn btn--cpu">new game (vs cpu)</button>
+    <button class="btn btn--menu btn--cpu">new game (vs cpu)</button>
 
-    <button class="btn btn--player">new game (vs player)</button>
+    <button class="btn btn--menu btn--player">new game (vs player)</button>
 `;
 
 export const gameBoard = `
@@ -64,7 +64,7 @@ export const gameBoard = `
 
     <div class="results">
         <div class="result result--x">
-            <h2 class="result__header--x">X (you)</h2>
+            <h2 class="result__header--x"></h2>
             <h3 class="result__total">0</h3>
         </div>
 
@@ -74,7 +74,7 @@ export const gameBoard = `
         </div>
 
         <div class="result result--o">
-            <h2 class="result__header--o">O (cpu)</h2>
+            <h2 class="result__header--o"></h2>
             <h3 class="result__total">0</h3>
         </div>
     </div>
