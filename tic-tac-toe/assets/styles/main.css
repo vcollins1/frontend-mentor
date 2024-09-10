@@ -84,7 +84,8 @@ body {
     border-radius: 10px;
 }
 
-.mark__selector--mark:hover {
+.mark__selector--mark:hover,
+.mark__selector--mark:focus {
     background-color: hsl(202, 32%, 17%);
 }
 
@@ -191,12 +192,9 @@ body {
 }
 
 .turn__img {
-    margin-right: clamp(9px, 2.4vw, 13px);
-}
-
-.turn__img img {
     width: clamp(16px, 4.2667vw, 20px);
     height: clamp(16px, 4.2667vw, 20px);
+    margin-right: clamp(9px, 2.4vw, 13px);
 }
 
 .reset {
@@ -206,12 +204,10 @@ body {
     height: clamp(40px, 10.67vw,52px);
     border-radius: 10px;
     margin-left: clamp(74px, 19.73vw, 108px);
-}
-
-.reset--btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
 }
 
 .board {
@@ -230,6 +226,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
 }
 
 .board__mark {

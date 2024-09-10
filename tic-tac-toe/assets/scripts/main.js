@@ -1,4 +1,4 @@
-import { showMainMenu, showDialog, displayBoard, placeMark, clearBoard, setResultHeaders, getGameBox } from "./utils.js"
+import { showMainMenu, showDialog, displayBoard, placeMark, clearBoard, setResultHeaders, getGameBox, setFocus } from "./utils.js"
 import { gameBoard, gameMainMenu, dialogContent } from "./views.js";
 
 const gameObject = {
@@ -9,12 +9,16 @@ const gameObject = {
     moveCount: undefined, // number
     gameOver: undefined, // boolean
     boardArray: undefined, //  array object
+    board: undefined,
+    selected: undefined,
     winStates: [
         [0,1,2], [3,4,5], [6,7,8],
         [0,3,6], [1,4,7], [2,5,8],
         [0,4,8], [2,4,6]
-    ]
+    ],
+    shadowOpen: false
 };
+
 
 showMainMenu(gameMainMenu);
 
@@ -59,11 +63,13 @@ document.addEventListener("click", e => {
     if (e.target.classList.contains("dialog--cancel")) {
         const dialog = document.querySelector(".dialog");
         document.body.removeChild(dialog);
+        gameObject.shadowOpen = false;
     }
 
     if (e.target.classList.contains("dialog--restart")) {
         const dialog = document.querySelector(".dialog");
         document.body.removeChild(dialog);
+        gameObject.shadowOpen = false;
 
         displayBoard(gameBoard, gameObject);
     }
@@ -72,6 +78,7 @@ document.addEventListener("click", e => {
         const dialog = document.querySelector(".dialog");
         document.body.removeChild(dialog);
         document.querySelector(".main").classList.remove("play");
+        gameObject.shadowOpen = false;
 
         showMainMenu(gameMainMenu);
     }
@@ -79,6 +86,7 @@ document.addEventListener("click", e => {
     if (e.target.classList.contains("dialog--next")) {
         const dialog = document.querySelector(".dialog");
         document.body.removeChild(dialog);
+        gameObject.shadowOpen = false;
 
         clearBoard(gameObject);
         if (gameObject.gameMode === "cpu" && gameObject.p2 === 'x') {
@@ -90,8 +98,28 @@ document.addEventListener("click", e => {
     }
 })
 
-document.addEventListener("change", e => {
-    if (e.target.id === "radio-o") {
-        
+document.addEventListener("keydown", e => {
+    if (e.code == "Tab" && gameObject.shadowOpen) {
+        const btns = document.querySelectorAll(".dialog--btn");
+
+        if (document.activeElement == btns[1]) {
+            e.preventDefault();
+            btns[0].focus();
+        }
+    }
+
+    if (e.code == "Space" && e.target.classList.contains("mark__selector--mark")) {
+        e.target.firstElementChild.checked = true;
+    }
+
+    if (!gameObject.shadowOpen) {
+        switch (e.code) {
+            case "ArrowLeft":
+            case "ArrowRight":
+            case "ArrowUp":
+            case "ArrowDown":
+                e.preventDefault();
+                setFocus(gameObject, e.code)
+        }
     }
 })

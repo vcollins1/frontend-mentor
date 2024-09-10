@@ -15,14 +15,18 @@ export function showMainMenu(view) {
  * @param {object} obj - holds game state
  */
 export function displayBoard(view, obj) {
+    mainContent.innerHTML = view;
+    mainContent.classList.add("play");
+
     obj.turn = "x";
     obj.moveCount = 0;
     obj.gameOver = false;
     obj.boardArray = new Array(9).fill("");
-
-    mainContent.innerHTML = view;
-    mainContent.classList.add("play")
+    obj.selected = -1;
+    obj.board = document.querySelectorAll(".board__box");
 }
+
+
 
 export function clearBoard(obj) {
     const marked = document.querySelectorAll(".board__box--marked");
@@ -67,6 +71,7 @@ export function setResultHeaders(e1, e2, obj) {
  * @param {object} obj - holds game state
  */
 export function showDialog(view, dialogMode, obj) {
+    obj.shadowOpen = true;
     const turn = obj.turn;
     const dialog = document.createElement("section");
     dialog.classList.add("dialog");
@@ -111,6 +116,8 @@ export function showDialog(view, dialogMode, obj) {
             dialog.querySelector(".dialog--h2").innerHTML = "round tied";
         }
     }
+    
+    document.querySelector(".dialog--btn1").focus();
 }
 
 /**
@@ -167,10 +174,14 @@ export function placeMark(box, obj) {
 
     
     turn = (turn === "x") ? "o" : "x";
-    document.querySelector(".turn__img").innerHTML = `<img src="./assets/images/icon-${turn}-silver.svg" alt="">`;
+    document.querySelector(".turn__img").innerHTML = `<img src="./assets/images/icon-${turn}-silver.svg" alt="${turn}">`;
     obj.turn = turn;
 }
 
+/**
+ * 
+ * @returns {object} - box object from game board
+ */
 export function getGameBox() {
     let boxIndex = Math.floor(Math.random() * 9);
     let box = document.querySelector(`.board__box--${boxIndex}`);
@@ -181,4 +192,51 @@ export function getGameBox() {
     }
 
     return box;
+}
+
+/**
+ * 
+ * @param {object} obj - game state object
+ * @param {string} direction - arrow press direction
+ */
+export function setFocus(obj, direction) {
+    // const selected = obj.selected;
+    switch (direction) {
+        case "ArrowLeft":
+        case "ArrowDown":
+            if (obj.selected == -1) {
+                obj.selected = 0;
+                obj.board[obj.selected].setAttribute("tabindex", 0);
+                obj.board[obj.selected].focus();
+            } else if (obj.selected == 0) {
+                obj.board[obj.selected].setAttribute("tabindex", -1);
+                obj.selected = obj.board.length - 1;
+                obj.board[obj.selected].setAttribute("tabindex", 0);
+                obj.board[obj.selected].focus();     
+            } else {
+                obj.board[obj.selected].setAttribute("tabindex", -1);
+                obj.selected -= 1;
+                obj.board[obj.selected].setAttribute("tabindex", 0);
+                obj.board[obj.selected].focus();
+            }   
+            break;
+        case "ArrowRight":
+        case "ArrowUp":
+            if (obj.selected == -1) {
+                obj.selected = 0;
+                obj.board[obj.selected].setAttribute("tabindex", 0);
+                obj.board[obj.selected].focus();
+            } else if (obj.selected == obj.board.length - 1) {
+                obj.board[obj.selected].setAttribute("tabindex", -1);
+                obj.selected = 0;
+                obj.board[obj.selected].setAttribute("tabindex", 0);
+                obj.board[obj.selected].focus();     
+            } else {
+                obj.board[obj.selected].setAttribute("tabindex", -1);
+                obj.selected += 1;
+                obj.board[obj.selected].setAttribute("tabindex", 0);
+                obj.board[obj.selected].focus();
+            }   
+            break;
+    }           
 }
