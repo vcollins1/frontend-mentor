@@ -45,7 +45,8 @@ document.addEventListener("click", e => {
 
     if (e.target.classList.contains("board__box--marked"))
         return;
-    else if (e.target.classList.contains("board__box") && !gameObject.gameOver) {
+    else if (e.target.classList.contains("box--click") && !gameObject.gameOver) {
+
         placeMark(e.target, gameObject);
 
         if (gameObject.gameMode === "cpu" && !gameObject.gameOver) {

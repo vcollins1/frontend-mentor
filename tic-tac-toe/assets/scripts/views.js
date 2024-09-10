@@ -51,15 +51,15 @@ export const gameBoard = `
     </header>
 
     <div class="board" role="grid" aria-label="tic tac toe game board" tabindex="0">
-        <button class="board__box board__box--0" aria-label="board square 1" tabindex="-1"></button>
-        <button class="board__box board__box--1" aria-label="board square 2" tabindex="-1"></button>
-        <button class="board__box board__box--2" aria-label="board square 3" tabindex="-1"></button>
-        <button class="board__box board__box--3" aria-label="board square 4" tabindex="-1"></button>
-        <button class="board__box board__box--4" aria-label="board square 5" tabindex="-1"></button>
-        <button class="board__box board__box--5" aria-label="board square 6" tabindex="-1"></button>
-        <button class="board__box board__box--6" aria-label="board square 7" tabindex="-1"></button>
-        <button class="board__box board__box--7" aria-label="board square 8" tabindex="-1"></button>
-        <button class="board__box board__box--8" aria-label="board square 9" tabindex="-1"></button>
+        <button class="board__box board__box--0 box--click" aria-label="board square 1" tabindex="-1"></button>
+        <button class="board__box board__box--1 box--click" aria-label="board square 2" tabindex="-1"></button>
+        <button class="board__box board__box--2 box--click" aria-label="board square 3" tabindex="-1"></button>
+        <button class="board__box board__box--3 box--click" aria-label="board square 4" tabindex="-1"></button>
+        <button class="board__box board__box--4 box--click" aria-label="board square 5" tabindex="-1"></button>
+        <button class="board__box board__box--5 box--click" aria-label="board square 6" tabindex="-1"></button>
+        <button class="board__box board__box--6 box--click" aria-label="board square 7" tabindex="-1"></button>
+        <button class="board__box board__box--7 box--click" aria-label="board square 8" tabindex="-1"></button>
+        <button class="board__box board__box--8 box--click" aria-label="board square 9" tabindex="-1"></button>
     </div>
 
     <div class="results">

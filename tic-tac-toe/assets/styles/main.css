@@ -15,6 +15,7 @@
 
     --light-blue-hover: hsl(178, 75%,65%);
     --light-yellow-hover: hsl(39, 100%, 69%);
+    --silver-hover: hsl(198, 35%, 89%);
 
     --win-x: var(--light-blue);
     --win-o: var(--light-yellow);
@@ -143,7 +144,8 @@ body {
     box-shadow: inset 0 -8px hsl(178, 78%, 31%);
 }
 
-.btn--cpu:hover {
+.btn--cpu:hover,
+.btn--cpu:focus {
     background-color: var(--light-yellow-hover);
 }
 
@@ -151,7 +153,8 @@ body {
     background-color: var(--light-blue);
 }
 
-.btn--player:hover {
+.btn--player:hover,
+.btn--player:focus {
     background-color: var(--light-blue-hover);
 }
 
@@ -208,6 +211,12 @@ body {
     justify-content: center;
     align-items: center;
     border: none;
+}
+
+.reset:hover,
+.reset:focus {
+    background-color: var(--silver-hover);
+    cursor: pointer;
 }
 
 .board {
@@ -309,7 +318,7 @@ body {
     justify-content: center;
     gap: 1rem;
     margin-inline: auto;
-margin-top: 24px;
+    margin-top: 24px;
 }
 
 .dialog--btn {
@@ -324,7 +333,19 @@ margin-top: 24px;
     box-shadow: inset 0 -5px hsl(199, 18%, 51%);
 }
 
+.dialog--btn1:hover,
+.dialog--btn1:focus {
+    background-color: var(--silver-hover);
+    cursor: pointer;
+}
+
 .dialog--btn2 {
     background-color: var(--light-yellow);
     box-shadow: inset 0 -5px hsl(39, 82%, 44%);
+}
+
+.dialog--btn2:hover,
+.dialog--btn2:focus {
+    background-color: var(--light-yellow-hover);
+    cursor: pointer;
 }

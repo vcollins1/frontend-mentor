@@ -24,6 +24,22 @@ export function displayBoard(view, obj) {
     obj.boardArray = new Array(9).fill("");
     obj.selected = -1;
     obj.board = document.querySelectorAll(".board__box");
+
+    obj.board.forEach(box => {
+        box.addEventListener("mouseover", e => {
+            if (e.target.classList.contains("board__box--marked"))
+                return
+
+            e.target.innerHTML = `<img src="./assets/images/icon-${obj.turn}-outline.svg" alt="" class="box--click box--hover">`;
+        })
+
+        box.addEventListener("mouseleave", e => {
+            if (e.target.classList.contains("board__box--marked"))
+                return
+            
+            e.target.innerHTML = "";
+        })
+    })
 }
 
 
@@ -144,6 +160,9 @@ function checkWin(p, obj) {
  * @param {object} obj - holds game state
  */
 export function placeMark(box, obj) {
+    if (box.classList.contains("box--hover"))
+        box = box.parentElement;
+    
     let turn = obj.turn;
     box.classList.add("board__box--marked");
     obj.moveCount += 1;
