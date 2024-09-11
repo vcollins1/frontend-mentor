@@ -63,3 +63,7 @@ body {
 .user__img {
     width: 33px;
 }
+
+.user__info--white {
+    color: hsl(0, 0%, 100%);
+}
