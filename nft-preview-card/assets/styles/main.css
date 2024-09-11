@@ -21,12 +21,43 @@ body {
 .card__img {
     border-radius: 8px;
     margin-bottom: 24px;
+    position: relative;
+    background-image: url(../images/image-equilibrium.jpg);
+    background-size: clamp(279px, 74.4vw, 303px);
+    width: clamp(279px, 74.4vw, 303px);
+    height: clamp(279px, 74.4vw, 303px);
+}
+
+.card__img:hover {
+    cursor: pointer;
+}
+
+.card__img:hover .card__img--hover {
+    z-index: 0;
+}
+
+.card__img--hover {
+    background-color: hsla(178, 100%, 50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(279px, 74.4vw, 303px);
+    height: clamp(279px, 74.4vw, 303px);
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 
 .card__header {
     font-size: 22px;
     color: hsl(0, 0%, 100%);
     margin-bottom: clamp(12px, 3.2vw, 16px);
+}
+
+.card__header:hover {
+    cursor: pointer;
+    color: hsl(178, 100%, 50%);
 }
 
 .card__text {
@@ -66,4 +97,9 @@ body {
 
 .user__info--white {
     color: hsl(0, 0%, 100%);
+}
+
+.user__info--white:hover {
+    cursor: pointer;
+    color: hsl(178, 100%, 50%);
 }
