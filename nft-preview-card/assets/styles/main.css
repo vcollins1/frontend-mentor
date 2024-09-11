@@ -52,6 +52,7 @@ body {
 }
 
 .card__header {
+    display: block;
     font-size: 22px;
     color: hsl(0, 0%, 100%);
     margin-bottom: clamp(12px, 3.2vw, 16px);
@@ -96,6 +97,8 @@ body {
 
 .user__img {
     width: 33px;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 100%;
 }
 
 .user__info {
