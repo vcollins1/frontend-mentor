@@ -13,9 +13,9 @@
         <title>Frontend Mentor | Loopstudios landing page</title>
     </head>
     <body>
-        <section class="hero" role="banner">
+        <header class="hero">
             <div class="hero__content">
-                <header class="hero__header">
+                <div class="hero__header">
                     <img src="./assets/images/logo.svg" alt="loopstudios">
 
                     <img src="./assets/images/icon-hamburger.svg" alt="menu-hamburger" class="menu-control">
@@ -29,16 +29,16 @@
                             <li class="item"><a href="#">support</a></li>
                         </ul>
                     </nav>
-                </header>
+                </div>
     
                 <h1 class="hero__text header">
                     Immersive experiences that deliver
                 </h1>
             </div>
-        </section>
+        </header>
 
         <main>
-            <section class="interactive" role="presentation">
+            <article class="interactive">
                 <img src="./assets/images/mobile/image-interactive.jpg" alt="man using vr headset" class="interactive__img">
                 <div class="interactive__content">
                     <h2 class="interactive__header header">The leader in interactive VR</h2>
@@ -46,11 +46,11 @@
                         reality projects for some of the best companies around the globe. Our award-winning creations have 
                         transformed businesses through digital experiences that bind to their brand.</p>
                 </div>
-            </section>
+            </article>
 
-            <section class="creations">
+            <section class="creations" aria-label="Creations Grid">
                 <h2 class="creations__header header">Our Creations</h2>
-                <div class="creations__grid" role="grid">
+                <div class="creations__grid">
                     <div class="creations__item creations__item--earth header">    <h3 class="item__header">deep earth      </h3></div>
                     <div class="creations__item creations__item--arcade header">   <h3 class="item__header">night arcade    </h3></div>
                     <div class="creations__item creations__item--soccer header">   <h3 class="item__header">soccer team vr  </h3></div>
