@@ -13,14 +13,14 @@
         <title>Frontend Mentor | Loopstudios landing page</title>
     </head>
     <body>
-        <section class="hero">
+        <section class="hero" role="banner">
             <div class="hero__content">
-                <header class="hero__header" aria-label="Primary-nav">
+                <header class="hero__header">
                     <img src="./assets/images/logo.svg" alt="loopstudios">
 
                     <img src="./assets/images/icon-hamburger.svg" alt="menu-hamburger" class="menu-control">
 
-                    <nav class="hero__nav">
+                    <nav class="hero__nav" aria-label="Primary-nav">
                         <ul class="nav__items nav__items--hero">
                             <li class="item"><a href="#">about</a></li>
                             <li class="item"><a href="#">careers</a></li>
@@ -48,9 +48,9 @@
                 </div>
             </section>
 
-            <section class="creations" role="list">
+            <section class="creations">
                 <h2 class="creations__header header">Our Creations</h2>
-                <div class="creations__grid">
+                <div class="creations__grid" role="grid">
                     <div class="creations__item creations__item--earth header">    <h3 class="item__header">deep earth      </h3></div>
                     <div class="creations__item creations__item--arcade header">   <h3 class="item__header">night arcade    </h3></div>
                     <div class="creations__item creations__item--soccer header">   <h3 class="item__header">soccer team vr  </h3></div>
@@ -64,11 +64,11 @@
             </section>
         </main>
 
-        <footer class="footer" aria-label="Footer-nav">
+        <footer class="footer">
             <div class="footer__content">
                 <img src="./assets/images/logo.svg" alt="loppstudios" class="footer__logo">
     
-                <nav class="footer__nav">
+                <nav class="footer__nav" aria-label="Footer-nav">
                     <ul class="nav__items">
                         <li class="item"><a href="#">about</a></li>
                         <li class="item"><a href="#">careers</a></li>
