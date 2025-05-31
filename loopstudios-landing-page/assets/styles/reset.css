@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "alata";
+    src: url("../fonts/Alata/Alata-Regular.ttf");
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     padding: 0;
@@ -6,6 +11,7 @@
 }
 
 body {
+    font-family: "alata" Arial, Helvetica, sans-serif;
     line-height: 1.5;
 }
 
